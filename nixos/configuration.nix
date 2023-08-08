@@ -135,8 +135,8 @@
     networkmanagerapplet
     gnome.nautilus
     font-manager
-    git-credential-manager
     git
+    git-credential-manager
   ];
 
   # Fonts!
