@@ -136,10 +136,11 @@
     gnome.nautilus
     font-manager
     git
+    git-credential-manager
   ];
 
   # Fonts!
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     font-awesome
   ];
 
