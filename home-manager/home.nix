@@ -58,9 +58,8 @@
           format = "{capacity}% {icon}";
           format-icons = [ "" "" "" "" "" ];
         };
-        "custom/clock" = {
-          exec = "'%H:%M' + date";
-	  interval = 1;
+        "clock" = {
+          format-alt = "{:%H:%M  %a, %b %d}";
         };
       };
     };
