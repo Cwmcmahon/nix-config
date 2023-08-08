@@ -50,7 +50,7 @@
         layer = "top";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "battery" "custom/clock" ];
+        modules-right = [ "battery" "clock" ];
         "hyprland/window" = {
           format = "{class}";
         };
