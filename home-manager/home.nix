@@ -58,7 +58,7 @@
           format = "{capacity}% {icon}";
           format-icons = [ "" "" "" "" "" ];
         };
-        "clock": {
+        "clock" = {
           format = "{:%H:%M  %a, %b %d}";
         };
       };
