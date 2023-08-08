@@ -50,7 +50,7 @@
         layer = "top";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "battery" "clock" ];
+        modules-right = [ "battery" "simpleclock" ];
         "hyprland/window" = {
           format = "{class}";
         };
@@ -58,8 +58,8 @@
           format = "{capacity}% {icon}";
           format-icons = [ "" "" "" "" "" ];
         };
-        "clock" = {
-          format-alt = "{:%H:%M  %a, %b %d}";
+        "simpleclock" = {
+          format = "{:%H:%M  %a, %b %d}";
         };
       };
     };
