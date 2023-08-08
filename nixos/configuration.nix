@@ -140,7 +140,7 @@
   ];
 
   # Fonts!
-  fonts.packages = with pkgs; [
+  fonts.fonts = with pkgs; [
     font-awesome
   ];
 
