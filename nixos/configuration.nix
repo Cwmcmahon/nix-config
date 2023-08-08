@@ -139,7 +139,7 @@
     gnome.nautilus
     font-manager
     git
-    git-credential-manager
+    gh
   ];
 
   # Fonts!
