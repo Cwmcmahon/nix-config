@@ -40,7 +40,7 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-  # Enable home-manager and git
+  # Enable and configure programs
   programs.home-manager.enable = true;
   programs.git.enable = true;
   programs.waybar = {
@@ -63,6 +63,10 @@
         };
       };
     };
+  };
+  programs.eww = {
+    eww.enable = true;
+    eww.configDir = ./eww-config
   };
 
   # Nicely reload system units when changing configs

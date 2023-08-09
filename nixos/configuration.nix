@@ -140,6 +140,7 @@
     font-manager
     git
     gh
+    eww-wayland
   ];
 
   # Fonts!
