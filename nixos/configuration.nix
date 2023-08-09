@@ -140,7 +140,7 @@
     font-manager
     git
     gh
-    eww = pkgs.eww-wayland.overrideAttrs ( finalAttrs: previousAttrs: { 
+    eww-wayland.overrideAttrs ( finalAttrs: previousAttrs: { 
       src = fetchFromGitHub {
         owner = "elkowar";
         repo = "eww";
@@ -149,7 +149,7 @@
       };
 
       cargoHash = lib.fakeHash;
-    });
+    })
     jq
     python3
   ];
