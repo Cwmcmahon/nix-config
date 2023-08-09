@@ -15,7 +15,7 @@
     )
   )
 
-(defwindow test
+(defwindow test_window
            :monitor 0
            :geometry (geometry :x "0%"
                                :y "0%"
