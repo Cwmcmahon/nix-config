@@ -141,6 +141,8 @@
     git
     gh
     eww-wayland
+    jq
+    python3
   ];
 
   # Fonts!
