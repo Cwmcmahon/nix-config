@@ -65,8 +65,8 @@
     };
   };
   programs.eww = {
-    eww.enable = true;
-    eww.configDir = ./eww-config
+    enable = true;
+    configDir = ./eww-config;
   };
 
   # Nicely reload system units when changing configs
