@@ -164,7 +164,6 @@
     settings = {
       mainBar = {
         layer = "top";
-	position = "left";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "battery" "clock" ];
@@ -177,7 +176,6 @@
         };
         "clock" = {
           format = "{:%H:%M  %a, %b %d}";
-	  rotate = 90;
         };
       };
     };
