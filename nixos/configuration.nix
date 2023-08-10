@@ -129,20 +129,16 @@
     home-manager
     firefox-wayland
     waybar
+    wbg
     dunst
     libnotify
-    swww
     kitty
     rofi-wayland
     neovim
-    networkmanagerapplet
-    gnome.nautilus
+    thunar
     font-manager
     git
     gh
-    eww-wayland 
-    jq
-    python3
   ];
 
   # Fonts!
