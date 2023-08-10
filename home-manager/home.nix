@@ -102,7 +102,7 @@
       bind = [ 
                "$mainMod, Q, killactive,"
                "$mainMod, E, exit,"
-               "$mainMod, ENTER, exec, kitty"
+               "$mainMod, RETURN, exec, kitty"
                "$mainMod, F, exec, thunar"
                "$mainMod, S, exec, rofi -show drun -show-icons"
                "$mainMod, M, fullscreen, 1"
@@ -146,11 +146,11 @@
 	       "$mainMod, G, togglegroup,"
 	       "$mainMod, N, changegroupactive, f"
 	       "$mainMod, L, moveoutofgroup,"
-        ];
+      ];
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = [ "$mainMod, mouse:272, movewindow"
                 "$mainMod, mouse:273, resizewindow"
-	];	
+      ];	
     };
   };
 
