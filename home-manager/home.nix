@@ -163,7 +163,8 @@
     enable = true;
     settings = {
       mainBar = {
-        layer = "left";
+        layer = "top";
+	position = "left";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "battery" "clock" ];
