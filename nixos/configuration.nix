@@ -95,12 +95,12 @@
     ];
   };
 
-#  # Enable Hyprland
-#  programs.hyprland = {
-#    enable = true;
-#    nvidiaPatches = true;
-#    xwayland.enable = true;
-#  };
+  # Enable Hyprland
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
