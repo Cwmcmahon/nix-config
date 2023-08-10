@@ -103,7 +103,7 @@
                "$mainMod, Q, killactive,"
                "$mainMod, E, exit,"
                "$mainMod, F, exec, thunar"
-               "$mainMod, M, fullscreen,"
+               "$mainMod, M, fullscreen, 1"
                "$mainMod, S, exec, rofi -show drun -show-icons"
 	       "$mainMod, G, togglegroup,"
                "$mainMod, P, layoutmsg, preselect 1" # dwindle
@@ -139,10 +139,10 @@
                "$mainMod, mouse_down, workspace, e+1"
                "$mainMod, mouse_up, workspace, e-1"
 	       # Move active window around with mainMod + CONTROL + arrow keys
-               "$mainMod CONTROL, left, moveactive, l"                
-               "$mainMod CONTROL, right, moveactive, r"
-               "$mainMod CONTROL, up, moveactive, u"
-               "$mainMod CONTROL, down, moveactive, d" 
+               "$mainMod CONTROL, left, movewindow, l"                
+               "$mainMod CONTROL, right, movewindow, r"
+               "$mainMod CONTROL, up, movewindow, u"
+               "$mainMod CONTROL, down, movewindow, d" 
         ];
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = [ "$mainMod, mouse:272, movewindow"
