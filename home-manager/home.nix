@@ -103,10 +103,10 @@
                "$mainMod, Q, killactive,"
                "$mainMod, E, exit,"
                "$mainMod, F, exec, thunar"
-               "$mainMod, V, togglefloating,"
+               "$mainMod, M, fullscreen,"
                "$mainMod, S, exec, rofi -show drun -show-icons"
-               "$mainMod, P, pseudo," # dwindle
-               "$mainMod, J, togglesplit," # dwindle  
+               "$mainMod, P, preserve_split," # dwindle
+               "$mainMod, O, togglesplit," # dwindle  
                # Move focus with mainMod + arrow keys
                "$mainMod, left, movefocus, l"
                "$mainMod, right, movefocus, r"
