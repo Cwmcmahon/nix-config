@@ -100,11 +100,11 @@
       "$mainMod" = "SUPER";
       # Semi-custom binds
       bind = [ "$mainMod, T, exec, kitty"
-               "$mainMod, C, killactive,"
+               "$mainMod, Q, killactive,"
                "$mainMod, E, exit,"
                "$mainMod, F, exec, thunar"
                "$mainMod, V, togglefloating,"
-               "$mainMod, S, exec, rofi -show drun"
+               "$mainMod, S, exec, rofi -show drun -show-icons"
                "$mainMod, P, pseudo," # dwindle
                "$mainMod, J, togglesplit," # dwindle  
                # Move focus with mainMod + arrow keys
