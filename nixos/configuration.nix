@@ -135,7 +135,7 @@
     kitty
     rofi-wayland
     neovim
-    thunar
+    xfce.thunar
     font-manager
     git
     gh
