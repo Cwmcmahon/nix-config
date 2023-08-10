@@ -99,14 +99,13 @@
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       "$mainMod" = "SUPER";
       # Semi-custom binds
-      bind = [ "$mainMod, T, exec, kitty"
+      bind = [ 
                "$mainMod, Q, killactive,"
                "$mainMod, E, exit,"
+               "$mainMod, ENTER, exec, kitty"
                "$mainMod, F, exec, thunar"
-               "$mainMod, M, fullscreen, 1"
                "$mainMod, S, exec, rofi -show drun -show-icons"
-	       "$mainMod, G, togglegroup,"
-               "$mainMod, P, layoutmsg, preselect 1" # dwindle
+               "$mainMod, M, fullscreen, 1"
                "$mainMod, O, togglesplit," # dwindle  
                # Move focus with mainMod + arrow keys
                "$mainMod, left, movefocus, l"
@@ -142,7 +141,11 @@
                "$mainMod CONTROL, left, movewindow, l"                
                "$mainMod CONTROL, right, movewindow, r"
                "$mainMod CONTROL, up, movewindow, u"
-               "$mainMod CONTROL, down, movewindow, d" 
+               "$mainMod CONTROL, down, movewindow, d"
+               # Group settings 
+	       "$mainMod, G, togglegroup,"
+	       "$mainMod, N, changegroupactive, f"
+	       "$mainMod, L, moveoutofgroup,"
         ];
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = [ "$mainMod, mouse:272, movewindow"
