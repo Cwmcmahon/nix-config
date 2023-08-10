@@ -172,7 +172,7 @@
           format = "{class}";
         };
         "battery" = {
-          format = "{capacity}% {icon}";
+          format = "{capacity}% \n {icon}";
           format-icons = [ "" "" "" "" "" ];
         };
         "clock" = {
