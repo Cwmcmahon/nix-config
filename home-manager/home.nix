@@ -223,9 +223,8 @@
 	  tooltip = false;
 	};
 	"network" = {
-	  format-wifi = "  {bandwidthUpBits}  {bandwidthDownBits} ";
+	  format-wifi = "  {signalStrength}";
 	  format-disconnected = "";
-	  interval = 1;
 	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
@@ -276,7 +275,7 @@
       
       #workspaces,
       #clock,
-      #network
+      #network,
       #pulseaudio,
       #battery { 
         background: #1a1a1a;
