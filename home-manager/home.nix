@@ -223,7 +223,7 @@
 	"network" = {
 	  format-wifi = "  {ifName:12}";
 	  format-disconnected = "  Disconnected";
-	  on-click = "nm-connection-editor"
+	  on-click = "nm-connection-editor";
 	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
