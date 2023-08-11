@@ -222,10 +222,9 @@
 	  format = "{:%m-%d}";
 	  tooltip = false;
 	};
-	#"tray" = {
-	#  icon-size = 20;
-	#  spacing = 0;
-	#};
+	"tray" = {
+	  spacing = 5;
+	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
 	  format-bluetooth = "{icon}  {volume}%";
