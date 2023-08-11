@@ -280,12 +280,12 @@
       }
       
       #workspaces,
-      #clock.1,
-      #clock.2,
-      #clock.3,
+      #clock,
       #tray,
       #pulseaudio,
-      #battery
+      #battery { 
+        background: #1a1a1a;
+      }
       
       #workspaces button {
         padding: 0 2px;
@@ -297,8 +297,6 @@
       #workspaces button:hover {
         box-shadow: inherit;
         text-shadow: inherit;
-      }
-      #workspaces button:hover {
         background: #1a1a1a;
         border: #1a1a1a;
         padding: 0 3px;
@@ -306,7 +304,6 @@
      
       #tray {
         color: #268bd2;
-        background: #1a1a1a;
       }
       #pulseaudio {
         color: #2aa198;
@@ -316,9 +313,10 @@
       }
       
       #clock,
-      #tray,
       #pulseaudio,
-      #battery
+      #battery {
+        padding: 0 10px;
+      }
     '';
   };
 
