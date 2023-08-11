@@ -131,7 +131,7 @@
         "$mainMod, G, togglegroup,"
         "$mainMod, N, changegroupactive, f"
         "$mainMod, L, moveoutofgroup,"
-	", Print, exec, grim -g '$(slurp)'"
+	'', Print, exec, grim -g "$(slurp)"''
       ];
       binde = [
         # Adjust brightness or volume           
@@ -204,7 +204,7 @@
 	  tooltip = false;
 	};
 	"clock#2" = {
-	  format = "{:%H:%M}";
+	  format = "{:%I:%M}";
 	  tooltip = false;
 	};
 	"clock#3" = {

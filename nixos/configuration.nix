@@ -133,6 +133,7 @@
     papirus-icon-theme
     grim
     slurp
+    gtk4
   ];
 
   # Fonts!
