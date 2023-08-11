@@ -53,7 +53,7 @@
         kb_layout = "us";
         follow_mouse = 1;
         touchpad = {
-            natural_scroll = "yes";
+          natural_scroll = "yes";
         };
       };
       general = {
@@ -80,12 +80,13 @@
       animations = {
         enabled = "yes";
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-        animation = [ "windows, 1, 7, myBezier"
-	              "windowsOut, 1, 7, default, popin 80%"
-                      "border, 1, 10, default"
-                      "borderangle, 1, 8, default"
-                      "fade, 1, 7, default"
-                      "workspaces, 1, 6, default"
+        animation = [ 
+	  "windows, 1, 7, myBezier"
+	  "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
         ];
       };
       dwindle = {
@@ -102,62 +103,65 @@
       "$mainMod" = "SUPER";
       # Semi-custom binds
       bind = [ 
-               "$mainMod, Q, killactive,"
-               "$mainMod, E, exit,"
-               "$mainMod, RETURN, exec, kitty"
-               "$mainMod, F, exec, thunar"
-               "$mainMod, S, exec, rofi -show drun -show-icons"
-               "$mainMod, M, fullscreen, 1"
-               "$mainMod, O, togglesplit," # dwindle  
-               # Move focus with mainMod + arrow keys
-               "$mainMod, left, movefocus, l"
-               "$mainMod, right, movefocus, r"
-               "$mainMod, up, movefocus, u"
-               "$mainMod, down, movefocus, d"           
-               # Switch workspaces with mainMod + [0-9]
-               "$mainMod, 1, workspace, 1"
-               "$mainMod, 2, workspace, 2"
-               "$mainMod, 3, workspace, 3"
-               "$mainMod, 4, workspace, 4"
-               "$mainMod, 5, workspace, 5"
-               "$mainMod, 6, workspace, 6"
-               "$mainMod, 7, workspace, 7"
-               "$mainMod, 8, workspace, 8"
-               "$mainMod, 9, workspace, 9"
-               "$mainMod, 0, workspace, 10"
-               # Move active window to a workspace with mainMod + SHIFT + [0-9]
-               "$mainMod SHIFT, 1, movetoworkspace, 1"
-               "$mainMod SHIFT, 2, movetoworkspace, 2"
-               "$mainMod SHIFT, 3, movetoworkspace, 3"
-               "$mainMod SHIFT, 4, movetoworkspace, 4"
-               "$mainMod SHIFT, 5, movetoworkspace, 5"
-               "$mainMod SHIFT, 6, movetoworkspace, 6"
-               "$mainMod SHIFT, 7, movetoworkspace, 7"
-               "$mainMod SHIFT, 8, movetoworkspace, 8"
-               "$mainMod SHIFT, 9, movetoworkspace, 9"
-               "$mainMod SHIFT, 0, movetoworkspace, 10"
-               # Scroll through existing workspaces with mainMod + scroll
-               "$mainMod, mouse_down, workspace, e+1"
-               "$mainMod, mouse_up, workspace, e-1"
-	       # Move active window around with mainMod + CONTROL + arrow keys
-               "$mainMod CONTROL, left, movewindow, l"                
-               "$mainMod CONTROL, right, movewindow, r"
-               "$mainMod CONTROL, up, movewindow, u"
-               "$mainMod CONTROL, down, movewindow, d"
-               # Group settings 
-	       "$mainMod, G, togglegroup,"
-	       "$mainMod, N, changegroupactive, f"
-	       "$mainMod, L, moveoutofgroup,"
-	       # Function keys
-	       "F2, exec, light -U 30"
-	       "F3, exec, light -A 30"
-	       "F6, exec, pamixer -t"
-	       "F7, exec, pamixer -d 5"
-	       "F8, exec, pamixer -i 5"
+        "$mainMod, Q, killactive,"
+        "$mainMod, E, exit,"
+        "$mainMod, RETURN, exec, kitty"
+        "$mainMod, F, exec, thunar"
+        "$mainMod, S, exec, rofi -show drun -show-icons"
+        "$mainMod, M, fullscreen, 1"
+        "$mainMod, O, togglesplit," # dwindle  
+        # Move focus with mainMod + arrow keys
+        "$mainMod, left, movefocus, l"
+        "$mainMod, right, movefocus, r"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"           
+        # Switch workspaces with mainMod + [0-9]
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
+        # Move active window to a workspace with mainMod + SHIFT + [0-9]
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
+        # Scroll through existing workspaces with mainMod + scroll
+        "$mainMod, mouse_down, workspace, e+1"
+        "$mainMod, mouse_up, workspace, e-1"
+        # Move active window around with mainMod + CONTROL + arrow keys
+        "$mainMod CONTROL, left, movewindow, l"                
+        "$mainMod CONTROL, right, movewindow, r"
+        "$mainMod CONTROL, up, movewindow, u"
+        "$mainMod CONTROL, down, movewindow, d"
+        # Group settings 
+        "$mainMod, G, togglegroup,"
+        "$mainMod, N, changegroupactive, f"
+        "$mainMod, L, moveoutofgroup,"
+      ];
+      binde = [
+        # Function keys           
+        ",F2, exec, light -U 30"
+        ",F3, exec, light -A 30"
+        ",F6, exec, pamixer -t"
+        ",F7, exec, pamixer -d 5"
+        ",F8, exec, pamixer -i 5"
       ];
       # Move/resize windows with mainMod + LMB/RMB and dragging
-      bindm = [ "$mainMod, mouse:272, movewindow"
-                "$mainMod, mouse:273, resizewindow"
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
       ];	
     };
   };
