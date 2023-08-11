@@ -344,7 +344,7 @@
       #disk {
         padding: 0 10px;
       } 
-    ''
+    '';
   };
 
   # Nicely reload system units when changing configs
