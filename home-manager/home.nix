@@ -47,7 +47,7 @@
     xwayland.enable = true;
     settings = {
       monitor = "eDP-1,1920x1080,auto,1";
-      exec-once = "wbg ~/Pictures/Wallpapers/mult_falls.jpg & waybar & dunst";
+      exec-once = "wbg ~/Pictures/Wallpapers/mult_falls.jpg & waybar & dunst & blueman-applet & nm-applet";
       env = "XCURSOR_SIZE,24";
       input = {
         kb_layout = "us";
@@ -148,6 +148,12 @@
 	       "$mainMod, G, togglegroup,"
 	       "$mainMod, N, changegroupactive, f"
 	       "$mainMod, L, moveoutofgroup,"
+	       # Function keys
+	       "F2, exec, light -U 30"
+	       "F3, exec, light -A 30"
+	       "F6, exec, pamixer -t"
+	       "F7, exec, pamixer -d 5"
+	       "F8, exec, pamixer -i 5"
       ];
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = [ "$mainMod, mouse:272, movewindow"
@@ -181,22 +187,14 @@
         ];
         modules-right = [ 
 	  "custom/left-arrow-dark"
+	  "tray"
+	  "custom/left-arrow-light"
+	  "custom/left-arrow-dark"
 	  "pulseaudio"
-	  "custom/left-arrow-light"
-	  "custom/left-arrow-dark"
-	  "memory"
-	  "custom/left-arrow-light"
-	  "custom/left-arrow-dark"
-	  "cpu"
 	  "custom/left-arrow-light"
 	  "custom/left-arrow-dark"
 	  "battery"
 	  "custom/left-arrow-light"
-	  "custom/left-arrow-dark"
-	  "disk"
-	  "custom/left-arrow-light"
-	  "custom/left-arrow-dark"
-	  "tray"
 	];
 	"custom/left-arrow-dark" = {
 	  format = "";
@@ -226,6 +224,10 @@
 	  format = "{:%m-%d}";
 	  tooltip = false;
 	};
+	"tray" = {
+	  icon-size = 20;
+	  spacing = 0;
+	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
 	  format-bluetooth = "{icon}  {volume}%";
@@ -241,14 +243,6 @@
 	  on-click = "pamixer -t";
 	  on-click-right = "pavucontrol";
 	};
-	"memory" = {
-	  interval = 5;
-	  format = "Mem {}%";
-	};
-	"cpu" = {
-	  interval = 5;
-	  format = "CPU {usage:2}%";
-	};
         "battery" = {
           states = {
 	    good = 95;
@@ -258,14 +252,6 @@
 	  format = "{icon} {capacity}%";
           format-icons = [ "" "" "" "" "" ];
         };
-        "disk" = {
-	  interval = 5;
-	  format = "Disk {percentage_used:2}%";
-	  path = "/";
-	};
-	"tray" = {
-	  icon-size = 20;
-	};
       };
     };
     style = ''
@@ -293,14 +279,11 @@
       #clock.1,
       #clock.2,
       #clock.3,
-      #pulseaudio,
-      #memory,
-      #cpu,
-      #battery,
-      #disk,
       #tray {
         background: #1a1a1a;
-      }
+      },
+      #pulseaudio,
+      #battery
       
       #workspaces button {
         padding: 0 2px;
@@ -318,31 +301,21 @@
         border: #1a1a1a;
         padding: 0 3px;
       }
-      
-      #pulseaudio {
+     
+      #tray {
         color: #268bd2;
       }
-      #memory {
+      #pulseaudio {
         color: #2aa198;
-      }
-      #cpu {
-        color: #6c71c4;
       }
       #battery {
         color: #859900;
       }
-      #disk {
-        color: #b58900;
-      }
       
       #clock,
+      #tray,
       #pulseaudio,
-      #memory,
-      #cpu,
-      #battery,
-      #disk {
-        padding: 0 10px;
-      } 
+      #battery
     '';
   };
 

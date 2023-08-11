@@ -75,6 +75,10 @@
     networkmanager.enable = true;
   };
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -139,6 +143,9 @@
     font-manager
     git
     gh
+    pamixer
+    pavucontrol
+    networkmanagerapplet
   ];
 
   # Fonts!
