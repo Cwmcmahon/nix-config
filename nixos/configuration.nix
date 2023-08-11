@@ -139,6 +139,7 @@
     font-manager
     git
     gh
+    hack-font
   ];
 
   # Fonts!
