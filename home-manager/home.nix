@@ -31,8 +31,6 @@
       exec-once = [
         "wbg ~/Pictures/Wallpapers/mult_falls.jpg & waybar"
 	"dunst"
-	"blueman-applet"
-	"nm-applet --indicator"
       ];
       env = "XCURSOR_SIZE,24";
       input = {
@@ -223,12 +221,13 @@
 	  tooltip = false;
 	};
 	"network" = {
-	  format-wifi = "  {signalStrength}";
-	  format-disconnected = "";
+	  format-wifi = "  {ifName:12}";
+	  format-disconnected = "  Disconnected";
+	  on-click = "nm-connection-editor"
 	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
-	  format-muted = " ";
+	  format-muted = "MUTE";
 	  format-icons = {
 	    headphones = "";
 	    default = [
@@ -247,7 +246,7 @@
 	    critical = 15;
 	  };
 	  format = "{icon} {capacity}%";
-	  format-charging = "  {capacity}%";
+	  format-plugged = "  {capacity}%";
           format-icons = [ "" "" "" "" "" ];
         };
       };
