@@ -132,6 +132,7 @@
     glib
     grim
     slurp
+    papirus-icon-theme
   ];
 
   # Fonts!

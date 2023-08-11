@@ -152,10 +152,7 @@
   # GTK enable and icons
   gtk = {
     enable = true;
-    iconTheme = {
-      package = "papirus-icon-theme";
-      name = "Papirus";
-    };
+    iconTheme.name = "Papirus";
   };
 
   # Enable and configure programs
