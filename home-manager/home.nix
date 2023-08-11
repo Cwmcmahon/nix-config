@@ -169,7 +169,6 @@
 	  "custom/right-arrow-dark"
 	];
         modules-center = [ 
-	  "custom/left-arrow-dark" 
 	  "custom/left-arrow-dark"
 	  "clock#1"
 	  "custom/left-arrow-light"
