@@ -129,6 +129,10 @@
     pamixer
     pavucontrol
     networkmanagerapplet
+    glib
+    papirus-icon-theme
+    grim
+    slurp
   ];
 
   # Fonts!

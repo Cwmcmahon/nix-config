@@ -28,7 +28,7 @@
     xwayland.enable = true;
     settings = {
       monitor = "eDP-1,1920x1080,auto,1";
-      exec-once = "wbg ~/Pictures/Wallpapers/mult_falls.jpg & waybar & dunst & blueman-applet & nm-applet --indicator";
+      exec-once = "wbg ~/Pictures/Wallpapers/mult_falls.jpg & waybar & dunst & blueman-applet & nm-applet --indicator & gsettings set org.gnome.desktop.interface icon-theme 'Papirus' ";
       env = "XCURSOR_SIZE,24";
       input = {
         kb_layout = "us";
@@ -87,6 +87,7 @@
         "$mainMod, Q, killactive,"
         "$mainMod, E, exit,"
         "$mainMod, RETURN, exec, kitty"
+	"$mainMod, B, exec firefox"
         "$mainMod, F, exec, thunar"
         "$mainMod, S, exec, rofi -show drun -show-icons"
         "$mainMod, M, fullscreen, 1"
@@ -130,11 +131,12 @@
         "$mainMod, G, togglegroup,"
         "$mainMod, N, changegroupactive, f"
         "$mainMod, L, moveoutofgroup,"
+	", Print, exec, grim -g '$(slurp)'"
       ];
       binde = [
-        # Function keys           
-        ",F2, exec, light -U 30"
-        ",F3, exec, light -A 30"
+        # Adjust brightness or volume           
+        ",F2, exec, light -U 12"
+        ",F3, exec, light -A 12"
         ",F6, exec, pamixer -t"
         ",F7, exec, pamixer -d 5"
         ",F8, exec, pamixer -i 5"
