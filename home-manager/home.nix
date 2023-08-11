@@ -221,9 +221,10 @@
 	  tooltip = false;
 	};
 	"network" = {
-	  format-wifi = "  {ifname:12}";
+	  format-wifi = "  {essid}";
 	  format-disconnected = "  Disconnected";
 	  on-click = "nm-connection-editor";
+	  max-length = 14;
 	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
