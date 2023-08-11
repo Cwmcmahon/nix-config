@@ -225,7 +225,7 @@
 	"network" = {
 	  format-wifi = "  {bandwidthUpBits}  {bandwidthDownBits} ";
 	  format-disconnected = "";
-	  interval = 1
+	  interval = 1;
 	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
