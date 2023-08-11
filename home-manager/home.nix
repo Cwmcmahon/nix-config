@@ -87,7 +87,7 @@
         "$mainMod, Q, killactive,"
         "$mainMod, E, exit,"
         "$mainMod, RETURN, exec, kitty"
-	"$mainMod, B, exec firefox"
+	"$mainMod, B, exec, firefox"
         "$mainMod, F, exec, thunar"
         "$mainMod, S, exec, rofi -show drun -show-icons"
         "$mainMod, M, fullscreen, 1"
