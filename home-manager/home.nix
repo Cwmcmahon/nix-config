@@ -283,9 +283,7 @@
       #clock.1,
       #clock.2,
       #clock.3,
-      #tray {
-        background: #1a1a1a;
-      },
+      #tray,
       #pulseaudio,
       #battery
       
@@ -308,6 +306,7 @@
      
       #tray {
         color: #268bd2;
+        background: #1a1a1a;
       }
       #pulseaudio {
         color: #2aa198;
