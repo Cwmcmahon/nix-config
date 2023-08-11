@@ -185,7 +185,7 @@
         ];
         modules-right = [ 
 	  "custom/left-arrow-dark"
-	  "tray"
+	  "network"
 	  "custom/left-arrow-light"
 	  "custom/left-arrow-dark"
 	  "pulseaudio"
@@ -222,13 +222,14 @@
 	  format = "{:%m-%d}";
 	  tooltip = false;
 	};
-	"tray" = {
-	  spacing = 5;
+	"network" = {
+	  format-wifi = "  {bandwidthUpBits}  {bandwidthDownBits} ";
+	  format-disconnected = "";
+	  interval = 1
 	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
-	  format-bluetooth = "{icon}  {volume}%";
-	  format-muted = "MUTE";
+	  format-muted = " ";
 	  format-icons = {
 	    headphones = "";
 	    default = [
@@ -247,6 +248,7 @@
 	    critical = 15;
 	  };
 	  format = "{icon} {capacity}%";
+	  format-charging = "  {capacity}%";
           format-icons = [ "" "" "" "" "" ];
         };
       };
@@ -274,7 +276,7 @@
       
       #workspaces,
       #clock,
-      #tray,
+      #network
       #pulseaudio,
       #battery { 
         background: #1a1a1a;
@@ -294,9 +296,12 @@
         border: #1a1a1a;
         padding: 0 3px;
       }
-     
-      #tray {
+      
+      #network {
         color: #268bd2;
+      }
+      #network.disconnected {
+        color: #da4e4d;
       }
       #pulseaudio {
         color: #2aa198;
@@ -304,8 +309,12 @@
       #battery {
         color: #859900;
       }
-      
+      #battery.critical:not(.charging) {
+        color: #da4e4d;
+      }
+
       #clock,
+      #network,
       #pulseaudio,
       #battery {
         padding: 0 10px;
