@@ -221,7 +221,7 @@
 	  tooltip = false;
 	};
 	"network" = {
-	  format-wifi = "  {ifName:12}";
+	  format-wifi = "  {ifname:12}";
 	  format-disconnected = "  Disconnected";
 	  on-click = "nm-connection-editor";
 	};
