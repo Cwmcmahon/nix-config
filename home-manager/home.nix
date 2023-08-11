@@ -149,6 +149,15 @@
     };
   };
 
+  # GTK enable and icons
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = "papirus-icon-theme";
+      name = "Papirus";
+    };
+  };
+
   # Enable and configure programs
   programs.home-manager.enable = true;
   programs.git.enable = true;

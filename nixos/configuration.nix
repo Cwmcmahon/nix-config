@@ -130,10 +130,8 @@
     pavucontrol
     networkmanagerapplet
     glib
-    papirus-icon-theme
     grim
     slurp
-    gtk4
   ];
 
   # Fonts!
@@ -142,7 +140,7 @@
       font-awesome
       hack-font
     ];
-    enableDefaultFonts = true;
+    enableDefaultPackages = true;
   };
 
   # Brightness control
