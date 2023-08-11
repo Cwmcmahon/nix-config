@@ -28,7 +28,12 @@
     xwayland.enable = true;
     settings = {
       monitor = "eDP-1,1920x1080,auto,1";
-      exec-once = "wbg ~/Pictures/Wallpapers/mult_falls.jpg & waybar & dunst & blueman-applet & nm-applet --indicator & gsettings set org.gnome.desktop.interface icon-theme 'Papirus' ";
+      exec-once = [
+        "wbg ~/Pictures/Wallpapers/mult_falls.jpg & waybar"
+	"dunst"
+	"blueman-applet"
+	"nm-applet --indicator"
+      ];
       env = "XCURSOR_SIZE,24";
       input = {
         kb_layout = "us";
@@ -217,10 +222,10 @@
 	  format = "{:%m-%d}";
 	  tooltip = false;
 	};
-	"tray" = {
-	  icon-size = 20;
-	  spacing = 0;
-	};
+	#"tray" = {
+	#  icon-size = 20;
+	#  spacing = 0;
+	#};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
 	  format-bluetooth = "{icon}  {volume}%";
