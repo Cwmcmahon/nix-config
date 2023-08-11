@@ -224,7 +224,7 @@
 	  format-wifi = "  {essid}";
 	  format-disconnected = "  Disconnected";
 	  on-click = "nm-connection-editor";
-	  max-length = 14;
+	  max-length = 17;
 	};
 	"pulseaudio" = {
 	  format = "{icon} {volume:2}%";
@@ -247,7 +247,7 @@
 	    critical = 15;
 	  };
 	  format = "{icon} {capacity}%";
-	  format-plugged = "  {capacity}%";
+	  format-charging = "  {capacity}%";
           format-icons = [ "" "" "" "" "" ];
         };
       };
@@ -304,6 +304,9 @@
       }
       #pulseaudio {
         color: #2aa198;
+      }
+      #pulseaudio.muted {
+        color: #da4e4d;
       }
       #battery {
         color: #859900;
