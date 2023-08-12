@@ -312,7 +312,7 @@
         color: #c5192b;
       }
       #backlight {
-        color; #f6bb40;
+        color: #f6bb40;
       }
       #battery {
         color: #19bf45;
