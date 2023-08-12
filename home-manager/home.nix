@@ -245,7 +245,7 @@
 	};
 	"backlight" = {
 	  format = "{icon} {percent}%";
-	  format-icons = [ "", "" ];
+	  format-icons = [ "" "" ];
 	  on-scroll-up = "light -U 10";
 	  on-scroll-down = "light -A 10";
 	};
