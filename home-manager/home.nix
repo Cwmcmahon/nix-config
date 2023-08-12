@@ -138,8 +138,8 @@
       ];
       binde = [
         # Adjust brightness or volume           
-        ",F2, exec, light -U 12"
-        ",F3, exec, light -A 12"
+        ",F2, exec, light -U 10"
+        ",F3, exec, light -A 10"
         ",F6, exec, pamixer -t"
         ",F7, exec, pamixer -d 5"
         ",F8, exec, pamixer -i 5"
@@ -187,6 +187,9 @@
 	  "custom/left-arrow-light"
 	  "custom/left-arrow-dark"
 	  "pulseaudio"
+	  "custom/left-arrow-light"
+          "custom/left-arrow-dark"
+	  "backlight"
 	  "custom/left-arrow-light"
 	  "custom/left-arrow-dark"
 	  "battery"
@@ -240,6 +243,12 @@
 	  on-click = "pamixer -t";
 	  on-click-right = "pavucontrol";
 	};
+	"backlight" = {
+	  format = "{icon} {percent}%";
+	  format-icons = [ "", "" ];
+	  on-scroll-up = "light -U 10";
+	  on-scroll-down = "light -A 10";
+	};
         "battery" = {
           states = {
 	    good = 95;
@@ -277,6 +286,7 @@
       #clock,
       #network,
       #pulseaudio,
+      #backlight,
       #battery { 
         background: #1a1a1a;
       }
@@ -285,39 +295,36 @@
         padding: 0 2px;
         color: #fdf6e3;
       }
-      #workspaces button.focused {
-        color: #268bd2;
-      }
-      #workspaces button:hover {
-        box-shadow: inherit;
-        text-shadow: inherit;
-        background: #1a1a1a;
-        border: #1a1a1a;
-        padding: 0 3px;
+      #workspaces button.active {
+        color: #ff5f08;
       }
       
       #network {
-        color: #268bd2;
+        color: #1595ca;
       }
       #network.disconnected {
-        color: #da4e4d;
+        color: #c5192b;
       }
       #pulseaudio {
-        color: #2aa198;
+        color: #f5ab98;
       }
       #pulseaudio.muted {
-        color: #da4e4d;
+        color: #c5192b;
+      }
+      #backlight {
+        color; #f6bb40;
       }
       #battery {
-        color: #859900;
+        color: #19bf45;
       }
       #battery.critical:not(.charging) {
-        color: #da4e4d;
+        color: #c5192b;
       }
 
       #clock,
       #network,
       #pulseaudio,
+      #backlight,
       #battery {
         padding: 0 10px;
       }
