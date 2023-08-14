@@ -225,7 +225,7 @@
 	};
 	"network" = {
 	  format-wifi = "  {essid}";
-	  format-disconnected = "  Disconnected";
+	  format-disconnected = "🗙 Disconnected";
 	  on-click = "nm-connection-editor";
 	  max-length = 17;
 	};
@@ -245,9 +245,9 @@
 	};
 	"backlight" = {
 	  format = "{icon} {percent}%";
-	  format-icons = [ "" "" ];
-	  on-scroll-up = "light -U 10";
-	  on-scroll-down = "light -A 10";
+	  format-icons = [ "" "" ];
+	  on-scroll-down = "light -U 10";
+	  on-scroll-up = "light -A 10";
 	};
         "battery" = {
           states = {
@@ -258,6 +258,7 @@
 	  format = "{icon} {capacity}%";
 	  format-charging = "  {capacity}%";
           format-icons = [ "" "" "" "" "" ];
+	  interval = 1;
         };
       };
     };
