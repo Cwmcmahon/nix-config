@@ -212,7 +212,7 @@
 	  tooltip = false;
 	};
 	"clock#1" = {
-	  format = "'{:^5}', '{:%a}'";
+	  format = "{: ^5%a}";
 	  tooltip = false;
 	};
 	"clock#2" = {
@@ -231,8 +231,8 @@
 	  max-length = 17;
 	};
 	"pulseaudio" = {
-	  format = "'{:10}', '{icon}', '{volume:3}%'";
-	  format-muted = "'{:^8}', 'MUTE'";
+	  format = "{icon} {volume:3}%";
+	  format-muted = "MUTE";
 	  format-icons = {
 	    headphones = "";
 	    default = [
@@ -243,12 +243,16 @@
 	  scroll-step = 5;
 	  on-click = "pamixer -t";
 	  on-click-right = "pavucontrol";
+	  max-length = 8;
+	  min-length = 8;
 	};
 	"backlight" = {
-	  format = "{icon} {percent}%";
+	  format = "{icon} {percent:3}%";
 	  format-icons = [ "" "" ];
 	  on-scroll-down = "light -U 10";
 	  on-scroll-up = "light -A 10";
+	  max-length = 7;
+	  min-length = 7;
 	};
         "battery" = {
           states = {
@@ -256,7 +260,7 @@
 	    warning = 30;
 	    critical = 15;
 	  };
-	  format = "{icon} {capacity}%";
+	  format = "{icon} {capacity:3}%";
 	  format-charging = "  {capacity}%";
           format-icons = [ "" "" "" "" "" ];
 	  interval = 1;
@@ -304,7 +308,6 @@
         box-shadow: inherit;
         text-shadow: inherit;
         background: #1a1a1a;
-	border: #fdf6e3;
         padding: 0 3px;
       }
       
