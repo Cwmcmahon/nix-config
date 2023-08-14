@@ -212,7 +212,7 @@
 	  tooltip = false;
 	};
 	"clock#1" = {
-	  format = "{:%a:^5}";
+	  format = "'{:^5}', '{:%a}'";
 	  tooltip = false;
 	};
 	"clock#2" = {
@@ -231,8 +231,8 @@
 	  max-length = 17;
 	};
 	"pulseaudio" = {
-	  format = "{icon:^3} {volume:3}%";
-	  format-muted = "{MUTED:^8}";
+	  format = "'{:10}', '{icon}', '{volume:3}%'";
+	  format-muted = "'{:^8}', 'MUTE'";
 	  format-icons = {
 	    headphones = "";
 	    default = [
