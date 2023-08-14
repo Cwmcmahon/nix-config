@@ -212,7 +212,7 @@
 	  tooltip = false;
 	};
 	"clock#1" = {
-	  format = "{: ^5%a}";
+	  format = "{: %a }";
 	  tooltip = false;
 	};
 	"clock#2" = {
@@ -243,8 +243,8 @@
 	  scroll-step = 5;
 	  on-click = "pamixer -t";
 	  on-click-right = "pavucontrol";
-	  max-length = 8;
-	  min-length = 8;
+	  max-length = 7;
+	  min-length = 7;
 	};
 	"backlight" = {
 	  format = "{icon} {percent:3}%";
