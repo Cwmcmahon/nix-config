@@ -212,7 +212,7 @@
 	  tooltip = false;
 	};
 	"clock#1" = {
-	  format = "{:%a}";
+	  format = "{:^5%a}";
 	  tooltip = false;
 	};
 	"clock#2" = {
@@ -226,12 +226,13 @@
 	"network" = {
 	  format-wifi = "  {essid}";
 	  format-disconnected = "🗙 Disconnected";
+	  format-ethernet = "  Ethernet";
 	  on-click = "nm-connection-editor";
 	  max-length = 17;
 	};
 	"pulseaudio" = {
-	  format = "{icon} {volume:2}%";
-	  format-muted = "MUTE";
+	  format = "{icon} {volume:3}%";
+	  format-muted = "  MUTE";
 	  format-icons = {
 	    headphones = "";
 	    default = [
@@ -299,6 +300,12 @@
       #workspaces button.active {
         color: #ff5f08;
       }
+      #workspaces button:hover {
+        box-shadow: inherit;
+        text-shadow: inherit;
+        background: #1a1a1a;
+        padding: 0 3px;
+      }
       
       #network {
         color: #1595ca;
@@ -307,7 +314,7 @@
         color: #c5192b;
       }
       #pulseaudio {
-        color: #f5ab98;
+        color: #cd77f6;
       }
       #pulseaudio.muted {
         color: #c5192b;
