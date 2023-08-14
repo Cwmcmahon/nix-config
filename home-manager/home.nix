@@ -29,8 +29,8 @@
     settings = {
       monitor = "eDP-1,1920x1080,auto,1";
       exec-once = [
-        "wbg ~/Pictures/Wallpapers/mult_falls.jpg & waybar"
-	"dunst"
+        "wbg ~/Pictures/Wallpapers/mult_falls.jpg"
+	"waybar"
       ];
       env = "XCURSOR_SIZE,24";
       input = {
@@ -212,7 +212,7 @@
 	  tooltip = false;
 	};
 	"clock#1" = {
-	  format = "{:^5%a}";
+	  format = "{:^5:%a}";
 	  tooltip = false;
 	};
 	"clock#2" = {
@@ -231,8 +231,8 @@
 	  max-length = 17;
 	};
 	"pulseaudio" = {
-	  format = "{icon} {volume:3}%";
-	  format-muted = "  MUTE";
+	  format = "{icon:3} {volume:3}%";
+	  format-muted = "MUTED{:^8}";
 	  format-icons = {
 	    headphones = "";
 	    default = [
@@ -304,6 +304,7 @@
         box-shadow: inherit;
         text-shadow: inherit;
         background: #1a1a1a;
+	border: #fdf6e3
         padding: 0 3px;
       }
       
