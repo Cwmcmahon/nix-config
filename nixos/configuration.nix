@@ -117,8 +117,8 @@
     firefox-wayland
     waybar
     wbg
-    dunst
     libnotify
+    mako
     kitty
     rofi-wayland
     neovim
