@@ -304,7 +304,7 @@
         box-shadow: inherit;
         text-shadow: inherit;
         background: #1a1a1a;
-	border: #fdf6e3
+	border: #fdf6e3;
         padding: 0 3px;
       }
       
