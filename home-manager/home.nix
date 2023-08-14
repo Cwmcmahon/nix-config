@@ -212,15 +212,15 @@
 	  tooltip = false;
 	};
 	"clock#1" = {
-	  format = "{: %a }";
+	  format = "{:  %a  }";
 	  tooltip = false;
 	};
 	"clock#2" = {
-	  format = "{:%I:%M}";
+	  format = "{:%I:%M %p}";
 	  tooltip = false;
 	};
 	"clock#3" = {
-	  format = "{:%m-%d}";
+	  format = "{:%b  %e}";
 	  tooltip = false;
 	};
 	"network" = {
@@ -308,7 +308,7 @@
         box-shadow: inherit;
         text-shadow: inherit;
         background: #1a1a1a;
-        padding: 0 3px;
+        padding: 0 2px;
       }
       
       #network {
