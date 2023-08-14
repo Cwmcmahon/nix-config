@@ -166,7 +166,8 @@
     settings = {
       mainBar = {
         layer = "top";
-        modules-left = [ 
+        modules-left = [
+	  "custom/right-arrow-light"
 	  "hyprland/workspaces" 
 	  "custom/right-arrow-dark"
 	];
