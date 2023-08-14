@@ -206,7 +206,7 @@
 	  tooltip = false;
 	};
 	"clock" = {
-	  format = "{:%I:%M %p  %b %e}";
+	  format = "{:%b %e  %I:%M %p}";
 	};
 	"network" = {
 	  format-wifi = "  {essid}";
