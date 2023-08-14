@@ -172,13 +172,7 @@
 	];
         modules-center = [ 
 	  "custom/left-arrow-dark"
-	  "clock#1"
-	  "custom/left-arrow-light"
-	  "custom/left-arrow-dark"
-	  "clock#2"
-	  "custom/right-arrow-dark"
-	  "custom/right-arrow-light"
-	  "clock#3"
+	  "clock"
 	  "custom/right-arrow-dark"
         ];
         modules-right = [ 
@@ -211,17 +205,8 @@
 	  format = "";
 	  tooltip = false;
 	};
-	"clock#1" = {
-	  format = "{:  %a  }";
-	  tooltip = false;
-	};
-	"clock#2" = {
-	  format = "{:%I:%M %p}";
-	  tooltip = false;
-	};
-	"clock#3" = {
-	  format = "{:%b  %e}";
-	  tooltip = false;
+	"clock" = {
+	  format = "{:%I:%M %p  %b %e}";
 	};
 	"network" = {
 	  format-wifi = "  {essid}";
