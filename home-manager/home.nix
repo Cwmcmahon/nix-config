@@ -166,8 +166,8 @@
     neovim = {
       enable = true;
       defaultEditor = true;
-      plugins = [
-        pkgs.vimPlugins.nvchad
+      plugins = with pkgs.vimPlugins; [
+        nvchad
       ];
     };
     rofi = {
