@@ -165,14 +165,18 @@
     git.enable = true;
     kitty = {
       enable = true;
-      font.name = "JetBrainsMono Nerd Font"; 
+      theme = "Alabaster Dark";
     };
     neovim = {
       enable = true;
       defaultEditor = true;
-      plugins = with pkgs.vimPlugins; [
-        nvchad
-      ];
+      extraLuaConfig = ''
+        vim.o.clipboard = "unnamedplus"
+        vim.o.number = true
+	vim.o.tabstop = 2
+	vim.o.shiftwidth = 2
+	vim.o.termguicolors = true
+      ''
     };
     rofi = {
       enable = true;
