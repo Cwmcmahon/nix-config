@@ -163,9 +163,16 @@
   programs = {
     home-manager.enable = true;
     git.enable = true;
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      plugins = [
+        pkgs.vimPlugins.nvchad
+      ];
+    };
     rofi = {
       enable = true;
-      theme = "paper-float";
+      theme = "Paper";
     };
     waybar = {
       enable = true;
