@@ -62,10 +62,17 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # Enabling opengl
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
     layout = "us";
     xkbVariant = "";
     displayManager.gdm = {
@@ -73,6 +80,13 @@
       wayland = true;
     };
   };
+
+  # Nvidia setup
+	hardware.nvidia = {
+		modesetting.enable = true;
+		open = false;
+		nvidiaSettings = true;
+	};
 
   # Wayland desktop portals
   xdg.portal = {

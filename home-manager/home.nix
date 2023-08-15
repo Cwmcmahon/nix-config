@@ -30,7 +30,7 @@
       monitor = "eDP-1,1920x1080,auto,1";
       exec-once = [
         "wbg ~/Pictures/Wallpapers/mult_falls.jpg"
-	"waybar"
+				"waybar"
       ];
       env = "XCURSOR_SIZE,24";
       input = {
@@ -46,9 +46,9 @@
         border_size = 2;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
-	"col.group_border_active" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+				"col.group_border_active" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.group_border" = "rgba(595959aa)";
-	layout = "dwindle";
+				layout = "dwindle";
       };
       decoration = {
         rounding = 10;
@@ -65,12 +65,12 @@
         enabled = "yes";
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         animation = [ 
-	  "windows, 1, 7, myBezier"
-	  "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
+	 		  "windows, 1, 7, myBezier"
+	  		"windowsOut, 1, 7, default, popin 80%"
+        "border, 1, 10, default"
+        "borderangle, 1, 8, default"
+        "fade, 1, 7, default"
+        "workspaces, 1, 6, default"
         ];
       };
       dwindle = {
@@ -90,7 +90,7 @@
         "$mainMod, Q, killactive,"
         "$mainMod, E, exit,"
         "$mainMod, RETURN, exec, kitty"
-	"$mainMod, B, exec, firefox"
+				"$mainMod, B, exec, firefox"
         "$mainMod, F, exec, thunar"
         "$mainMod, S, exec, rofi -show drun -show-icons"
         "$mainMod, M, fullscreen, 1"
@@ -135,7 +135,7 @@
         "$mainMod, N, changegroupactive, f"
         "$mainMod, L, moveoutofgroup,"
 	# Screenshot with Prt Sc button
-	'', Print, exec, grim -g "$(slurp)"''
+				'', Print, exec, grim -g "$(slurp)"''
       ];
       binde = [
         # Adjust brightness or volume           
@@ -173,10 +173,10 @@
       extraLuaConfig = ''
         vim.o.clipboard = "unnamedplus"
         vim.o.number = true
-	vim.o.tabstop = 2
-	vim.o.shiftwidth = 2
-	vim.o.termguicolors = true
-      ''
+				vim.o.tabstop = 2
+				vim.o.shiftwidth = 2
+				vim.o.termguicolors = true
+      '';
     };
     rofi = {
       enable = true;
