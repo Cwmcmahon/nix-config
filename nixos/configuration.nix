@@ -140,6 +140,7 @@
     packages = with pkgs; [
       font-awesome
       hack-font
+      nerdfonts
     ];
     enableDefaultPackages = true;
   };

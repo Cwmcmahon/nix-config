@@ -163,6 +163,10 @@
   programs = {
     home-manager.enable = true;
     git.enable = true;
+    kitty = {
+      enable = true;
+      font.name = "JetBrainsMono Nerd Font"; 
+    };
     neovim = {
       enable = true;
       defaultEditor = true;
