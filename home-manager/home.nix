@@ -180,7 +180,7 @@
 				vim.o.termguicolors = true
       '';
 			plugins = {
-				#telescope.enable = true;
+				telescope.enable = true;
 			};
 			extraPlugins = with pkgs.vimExtraPlugins; [
 				telekasten-nvim
