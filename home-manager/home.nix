@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
+		nixneovim.nixosModules.default
   ];
 
   nixpkgs = {
@@ -167,10 +168,10 @@
       enable = true;
       theme = "Alabaster Dark";
     };
-    neovim = {
+    nixneovim = {
       enable = true;
       defaultEditor = true;
-      extraLuaConfig = ''
+      extraConfigLua = ''
         vim.o.clipboard = "unnamedplus"
         vim.o.number = true
 				vim.o.tabstop = 2

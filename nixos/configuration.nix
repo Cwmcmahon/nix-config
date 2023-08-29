@@ -7,6 +7,7 @@
   nixpkgs = {
     # You can add overlays here
     overlays = [
+			nixneovim.overlays.default
     ];
     config = {
       allowUnfree = true;
