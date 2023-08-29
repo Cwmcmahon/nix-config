@@ -179,6 +179,12 @@
 				vim.o.shiftwidth = 2
 				vim.o.termguicolors = true
       '';
+			plugins = {
+				#telescope.enable = true;
+			};
+			extraPlugins = with pkgs.vimExtraPlugins; [
+				telekasten-nvim
+			];
     };
     rofi = {
       enable = true;
