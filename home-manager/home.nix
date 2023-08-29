@@ -1,13 +1,13 @@
 { inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
-		nixneovim.nixosModules.default
+		inputs.nixneovim.nixosModules.default
   ];
 
   nixpkgs = {
     # You can add overlays here
     overlays = [
-			nixneovim.overlays.default
+			inputs.nixneovim.overlays.default
     ];
     # Configure your nixpkgs instance
     config = {
