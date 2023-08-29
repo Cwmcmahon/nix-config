@@ -7,6 +7,7 @@
   nixpkgs = {
     # You can add overlays here
     overlays = [
+			nixneovim.overlays.default
     ];
     # Configure your nixpkgs instance
     config = {
