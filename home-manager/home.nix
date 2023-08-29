@@ -172,19 +172,22 @@
     nixneovim = {
       enable = true;
       defaultEditor = true;
-      extraConfigLua = ''
-        vim.o.clipboard = "unnamedplus"
-        vim.o.number = true
-				vim.o.tabstop = 2
-				vim.o.shiftwidth = 2
-				vim.o.termguicolors = true
-      '';
 			plugins = {
 				telescope.enable = true;
 			};
 			extraPlugins = with pkgs.vimExtraPlugins; [
 				telekasten-nvim
 			];
+      extraConfigLua = ''
+        vim.o.clipboard = "unnamedplus"
+        vim.o.number = true
+				vim.o.tabstop = 2
+				vim.o.shiftwidth = 2
+				vim.o.termguicolors = true
+				require('telekasten').setup({
+				  home = vim.fn.expand("~/Documents/notes"),
+				})
+      '';
     };
     rofi = {
       enable = true;
