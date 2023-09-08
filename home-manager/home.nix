@@ -25,7 +25,7 @@
 		blueman-applet.enable = true;
 		syncthing = {
 			enable = true;
-			tray = true;
+			tray.enable = true;
 		};
 	}; 
 
@@ -248,6 +248,7 @@
           #};
 					"tray" = {
 						icon-size = 20;
+						spacing = 10;
 					};
           "pulseaudio" = {
             format = "{icon} {volume:3}%";

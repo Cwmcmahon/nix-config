@@ -96,6 +96,7 @@
   # Enable Hyprland
   programs.hyprland = {
     enable = true;
+		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     nvidiaPatches = true;
     xwayland.enable = true;
   };
