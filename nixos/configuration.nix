@@ -145,8 +145,8 @@
     grim
     slurp
     papirus-icon-theme
-		qownnotes
-  ];
+  	obsidian
+	];
 
 	# Syncthing enable and config
 	services = {

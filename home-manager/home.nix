@@ -25,7 +25,6 @@
 		blueman-applet.enable = true;
 		syncthing = {
 			enable = true;
-			tray.enable = true;
 		};
 	}; 
 
