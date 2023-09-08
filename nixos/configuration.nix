@@ -91,9 +91,6 @@
   # Wayland desktop portals
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-    ];
   };
 
   # Enable Hyprland
