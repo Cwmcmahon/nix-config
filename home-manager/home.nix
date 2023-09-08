@@ -1,14 +1,10 @@
 { inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
-		inputs.nixneovim.nixosModules.default
   ];
 
   nixpkgs = {
     # You can add overlays here
-    overlays = [
-			inputs.nixneovim.overlays.default
-    ];
     # Configure your nixpkgs instance
     config = {
       allowUnfree = true;
@@ -22,6 +18,16 @@
     username = "carterm";
     homeDirectory = "/home/carterm";
   };
+
+	# Services
+	services = {
+		network-manager-applet.enable = true;
+		blueman-applet.enable = true;
+		syncthing = {
+			enable = true;
+			tray = true;
+		};
+	}; 
 
   # Hyprland config
   wayland.windowManager.hyprland = {
@@ -169,24 +175,15 @@
       enable = true;
       theme = "Alabaster Dark";
     };
-    nixneovim = {
+    neovim = {
       enable = true;
       defaultEditor = true;
-			plugins = {
-				telescope.enable = true;
-			};
-			extraPlugins = with pkgs.vimExtraPlugins; [
-				telekasten-nvim
-			];
-      extraConfigLua = ''
+      extraLuaConfig = ''
         vim.o.clipboard = "unnamedplus"
         vim.o.number = true
 				vim.o.tabstop = 2
 				vim.o.shiftwidth = 2
 				vim.o.termguicolors = true
-				require('telekasten').setup({
-				  home = vim.fn.expand("~/Documents/notes"),
-				})
       '';
     };
     rofi = {
@@ -210,7 +207,7 @@
           ];
           modules-right = [ 
             "custom/left-arrow-dark"
-            "network"
+            "tray"
             "custom/left-arrow-light"
             "custom/left-arrow-dark"
             "pulseaudio"
@@ -241,13 +238,17 @@
           "clock" = {
             format = "{:%b %e  %I:%M %p}";
           };
-          "network" = {
-            format-wifi = "  {essid}";
-            format-disconnected = "🗙 Disconnected";
-            format-ethernet = "  Ethernet";
-            on-click = "nm-connection-editor";
-            max-length = 17;
-          };
+          #"network" = {
+          #  format-wifi = "  {essid}";
+          #  format-disconnected = "🗙 Disconnected";
+          #  format-ethernet = "  Ethernet";
+          #  on-click = "nm-applet";
+					#	on-click-right = "nm-applet";
+          #  max-length = 17;
+          #};
+					"tray" = {
+						icon-size = 20;
+					};
           "pulseaudio" = {
             format = "{icon} {volume:3}%";
             format-muted = "MUTE";
@@ -308,7 +309,7 @@
         
         #workspaces,
         #clock,
-        #network,
+        #tray,
         #pulseaudio,
         #backlight,
         #battery { 
@@ -327,23 +328,19 @@
           text-shadow: inherit;
           background: #1a1a1a;
           padding: 0 2px;
-        }
+        }      
         
-        #network {
-          color: #1595ca;
-        }
-        #network.disconnected {
-          color: #c5192b;
-        }
         #pulseaudio {
-          color: #cd77f6;
+          color: #1595ca;
         }
         #pulseaudio.muted {
           color: #c5192b;
         }
+
         #backlight {
           color: #f6bb40;
         }
+
         #battery {
           color: #19bf45;
         }
@@ -352,7 +349,7 @@
         }
 
         #clock,
-        #network,
+        #tray,
         #pulseaudio,
         #backlight,
         #battery {

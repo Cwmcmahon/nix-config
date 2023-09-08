@@ -92,7 +92,7 @@
   xdg.portal = {
     enable = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
@@ -147,7 +147,18 @@
     grim
     slurp
     papirus-icon-theme
+		qownnotes
   ];
+
+	# Syncthing enable and config
+	services = {
+		syncthing = {
+			enable = true;
+			user = "carterm";
+			dataDir = "/home/carterm/Documents/notes";
+			configDir = "/home/carterm/Documents/.config/syncthing";
+		};
+	};
 
   # Fonts!
   fonts = {
