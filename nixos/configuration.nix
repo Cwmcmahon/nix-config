@@ -153,7 +153,7 @@
 		syncthing = {
 			enable = true;
 			user = "carterm";
-			dataDir = "/home/carterm/Documents/notes";
+			dataDir = "/home/carterm/Documents";
 			configDir = "/home/carterm/Documents/.config/syncthing";
 		};
 	};

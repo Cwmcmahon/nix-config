@@ -38,6 +38,8 @@
       exec-once = [
         "wbg ~/Pictures/Wallpapers/mult_falls.jpg"
 				"waybar"
+				"nm-applet"
+				"blueman-applet"
       ];
       env = "XCURSOR_SIZE,24";
       input = {
