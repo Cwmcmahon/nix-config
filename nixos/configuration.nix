@@ -91,12 +91,12 @@
   # Wayland desktop portals
   xdg.portal = {
     enable = true;
+		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   # Enable Hyprland
   programs.hyprland = {
     enable = true;
-		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     nvidiaPatches = true;
     xwayland.enable = true;
   };
