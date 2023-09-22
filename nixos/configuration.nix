@@ -146,6 +146,7 @@
     slurp
     papirus-icon-theme
   	obsidian
+		logseq
 	];
 
 	# Syncthing enable and config
