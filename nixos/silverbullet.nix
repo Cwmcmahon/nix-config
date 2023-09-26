@@ -6,6 +6,6 @@ pkgs.writeShellApplication {
 	runtimeInputs = [ pkgs.deno ];
 	
 	text = ''
-	deno install -f --name silverbullet --unstable -A
+	deno install -f --name silverbullet --unstable -A https://get.silverbullet.md
 	'';
 }
