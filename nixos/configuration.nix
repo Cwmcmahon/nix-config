@@ -124,30 +124,35 @@
   };
 
   # System Packages
-  environment.systemPackages = with pkgs; [
-    home-manager
-    firefox-wayland
-    waybar
-    wbg
-    libnotify
-    mako
-    kitty
-    rofi-wayland
-    neovim
-    xfce.thunar
-    font-manager
-    git
-    gh
-    pamixer
-    pavucontrol
-    networkmanagerapplet
-    glib
-    grim
-    slurp
-    papirus-icon-theme
-  	obsidian
-		logseq
-	];
+  environment.systemPackages =
+		let
+			silverbullet = import ./silverbullet.nix { inherit pkgs; };
+		in
+			with pkgs; [
+  		  home-manager
+  		  firefox-wayland
+  		  waybar
+  		  wbg
+  		  libnotify
+  		  mako
+  		  kitty
+  		  rofi-wayland
+  		  neovim
+  		  xfce.thunar
+  		  font-manager
+  		  git
+  		  gh
+  		  pamixer
+  		  pavucontrol
+  		  networkmanagerapplet
+  		  glib
+  		  grim
+  		  slurp
+  		  papirus-icon-theme
+  			obsidian
+				kakoune
+				silverbullet
+	];	
 
 	# Syncthing enable and config
 	services = {
