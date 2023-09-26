@@ -3,7 +3,7 @@
 pkgs.writeShellApplication {
 	name = "install_silverbullet";
 
-	runtimeInputs = [ deno ];
+	runtimeInputs = [ pkgs.deno ];
 	
 	text = ''
 	deno install -f --name silverbullet --unstable -A
