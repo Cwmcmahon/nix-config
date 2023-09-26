@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, host, ... }: {
   # You can import other home-manager modules here
   imports = [
 		./hyprland.nix
@@ -19,6 +19,10 @@
   home = {
     username = "carterm";
     homeDirectory = "/home/carterm";
+		shellAliases = {
+			# Doing this when I understand it better and can do it with home-manager as well
+			#rebuild nixos = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#${host}"
+		};
   };
 
 	# Services
@@ -40,7 +44,14 @@
   programs = {
     home-manager.enable = true;
     git.enable = true;
-    kitty = {
+    bash = {
+			enable = true;
+			enableCompletion = true;
+			shellAliases = {
+				silverbullet = "bash ~/.deno/bin/silverbullet";
+			};
+		};
+		kitty = {
       enable = true;
       theme = "Alabaster Dark";
     };
