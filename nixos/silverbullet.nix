@@ -7,5 +7,5 @@ pkgs.writeShellApplication {
 	
 	text = ''
 	deno install -f --name silverbullet --unstable -A
-	''
+	'';
 };
