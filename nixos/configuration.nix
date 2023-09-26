@@ -126,7 +126,7 @@
   # System Packages
   environment.systemPackages =
 		let
-			silverbullet = import ./silverbullet.nix { inherit pkgs; };
+			install_silverbullet = import ./install_silverbullet.nix { inherit pkgs; };
 		in
 			with pkgs; [
   		  home-manager
@@ -151,7 +151,8 @@
   		  papirus-icon-theme
   			obsidian
 				kakoune
-				silverbullet
+				deno
+				install_silverbullet
 	];	
 
 	# Syncthing enable and config
