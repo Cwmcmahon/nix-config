@@ -7,6 +7,6 @@ pkgs.writeShellApplication {
 	
 	text = ''
 	deno install -f --name silverbullet --unstable -A https://get.silverbullet.md
-	ln -s ~/.deno/bin/silverbullet ~/.nix-profile/bin/silverbullet
+	export PATH="/home/carterm/.deno/bin:$PATH"
 	'';
 }
