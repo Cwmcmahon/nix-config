@@ -2,11 +2,14 @@
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
+		inputs.deno2nix.overlays.default
+		inputs.silverbullet
   ];
 
   nixpkgs = {
     # You can add overlays here
     overlays = [
+			deno2nix.overlays.default
     ];
     config = {
       allowUnfree = true;
@@ -126,7 +129,17 @@
   # System Packages
   environment.systemPackages =
 		let
-			install_silverbullet = import ./install_silverbullet.nix { inherit pkgs; };
+			#install_silverbullet = import ./install_silverbullet.nix { inherit pkgs; };
+			silverbullet = pkgs.deno2nix.mkExecutable {
+				pname = "silverbullet";
+				version = "0.4.0";
+				src = inputs.silverbullet;
+				lockfile = "./package-lock.json";
+				config = "./deno.jsonc";
+				entrypoint = "silverbullet.ts";
+				allow = "all";
+				additionalDenoFlags = "-f --unstable";
+			};
 		in
 			with pkgs; [
   		  home-manager
@@ -152,7 +165,8 @@
   			obsidian
 				kakoune
 				deno
-				install_silverbullet
+				#install_silverbullet
+				silverbullet
 	];	
 
 	# Syncthing enable and config
