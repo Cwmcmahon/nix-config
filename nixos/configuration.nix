@@ -7,10 +7,9 @@
   ];
 
   nixpkgs = {
-		inherit system;
     # You can add overlays here
 		overlays = [
-			deno2nix.overlays.default
+			inputs.deno2nix.overlays.default
     ];
     config = {
       allowUnfree = true;

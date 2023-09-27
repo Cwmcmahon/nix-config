@@ -11,6 +11,9 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		# flake-utils
+		# utils.url = "github:numtide/flake-utils";
+
 		# deno2nix
 		deno2nix = {
 			url = "github:SnO2WMaN/deno2nix";
