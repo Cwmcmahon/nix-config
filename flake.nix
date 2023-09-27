@@ -11,9 +11,9 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# deno2nix
-		deno2nix = {
-			url = "github:SnO2WMaN/deno2nix";
+		# deno-template
+		deno-template = {
+			url = "github:MordragT/nix-templates/tree/master/deno";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
