@@ -11,9 +11,9 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# templates (templates.deno is the one I want)
-		templates = {
-			url = "github:MordragT/nix-templates";
+		# deno2nix
+		deno2nix = {
+			url = "github:SnO2WMaN/deno2nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
