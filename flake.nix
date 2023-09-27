@@ -13,7 +13,7 @@
 
 		# deno-template
 		deno-template = {
-			url = "github:MordragT/nix-templates/tree/master/deno";
+			url = "github:MordragT/nix-templates#deno";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
