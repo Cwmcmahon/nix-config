@@ -9,7 +9,7 @@
   nixpkgs = {
     # You can add overlays here
 		overlays = [
-			input.templates.deno.deno2nix.overlays.default
+			inputs.templates.deno.deno2nix.overlays.default
     ];
     config = {
       allowUnfree = true;
