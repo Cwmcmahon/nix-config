@@ -2,13 +2,14 @@
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-		inputs.deno2nix.default
+		inputs.deno2nix.overlays.default
 		inputs.silverbullet
   ];
 
   nixpkgs = {
     # You can add overlays here
 		overlays = [
+			inputs.deno2nix.overlays.default
     ];
     config = {
       allowUnfree = true;
