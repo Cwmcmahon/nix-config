@@ -2,7 +2,7 @@
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-		inputs.deno2nix
+		inputs.deno2nix.default
 		inputs.silverbullet
   ];
 
