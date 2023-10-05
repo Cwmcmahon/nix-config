@@ -44,13 +44,13 @@
   programs = {
     home-manager.enable = true;
     git.enable = true;
-    #bash = {
-		#	enable = true;
-		#	enableCompletion = true;
-		#	shellAliases = {
-		#		silverbullet = "bash ~/.deno/bin/silverbullet";
-		#	};
-		#};
+    bash = {
+			enable = true;
+			enableCompletion = true;
+			shellAliases = {
+				#silverbullet = "bash ~/.deno/bin/silverbullet";
+			};
+		};
 		kitty = {
       enable = true;
       theme = "Alabaster Dark";

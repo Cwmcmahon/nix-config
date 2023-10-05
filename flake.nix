@@ -38,7 +38,10 @@
       cwm-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main nixos configuration file <
-        modules = [ ./nixos/configuration.nix ];
+        modules = [ 
+					./nixos/configuration.nix 
+					deno2nix
+				];
       };
     };
 
@@ -48,7 +51,10 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main home-manager configuration file <
-        modules = [ ./home-manager/home.nix ];
+        modules = [ 
+					./home-manager/home.nix
+					deno2nix
+				];
     };
   };
 }
