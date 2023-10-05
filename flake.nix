@@ -40,7 +40,7 @@
         # > Our main nixos configuration file <
         modules = [ 
 					./nixos/configuration.nix 
-					deno2nix
+					inputs.deno2nix
 				];
       };
     };
@@ -53,7 +53,7 @@
         # > Our main home-manager configuration file <
         modules = [ 
 					./home-manager/home.nix
-					deno2nix
+					inputs.deno2nix
 				];
     };
   };
