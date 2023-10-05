@@ -40,7 +40,7 @@
         # > Our main nixos configuration file <
         modules = [ 
 					./nixos/configuration.nix 
-					inputs.deno2nix.overlays
+					inputs.deno2nix.overlays.default
 				];
       };
     };
@@ -53,7 +53,7 @@
         # > Our main home-manager configuration file <
         modules = [ 
 					./home-manager/home.nix
-					inputs.deno2nix.overlays
+					inputs.deno2nix.overlays.default
 				];
     };
   };
