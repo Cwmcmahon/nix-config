@@ -16,7 +16,7 @@
 
 		# deno2nix
 		deno2nix = {
-			url = "github:SnO2WMaN/deno2nix";
+			url = "github:MordragT/nix-templates#deno";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -40,7 +40,7 @@
         # > Our main nixos configuration file <
         modules = [ 
 					./nixos/configuration.nix 
-					inputs.deno2nix.defaultNix
+					inputs.deno2nix
 				];
       };
     };
@@ -53,7 +53,7 @@
         # > Our main home-manager configuration file <
         modules = [ 
 					./home-manager/home.nix
-					inputs.deno2nix.defaultNix
+					inputs.deno2nix
 				];
     };
   };
