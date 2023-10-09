@@ -151,7 +151,7 @@
 		pandoc
 		bat
 		nmap
-		rg
+		ripgrep
 		tig
 		w3m
 	];	
