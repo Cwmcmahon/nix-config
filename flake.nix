@@ -11,22 +11,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# flake-utils
-		# utils.url = "github:numtide/flake-utils";
-
-		# deno2nix
-		deno2nix = {
-			url = "github:SnO2WMaN/deno2nix";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
-		# silverbullet
-		silverbullet = {
-			url = "github:silverbulletmd/silverbullet";
-			flake = false;
-		};
-
-    # Shameless plug: looking for a way to nixify your themes and make
+		# Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
   };
@@ -40,7 +25,6 @@
         # > Our main nixos configuration file <
         modules = [ 
 					./nixos/configuration.nix 
-					inputs.deno2nix.overlays.default
 				];
       };
     };
@@ -53,7 +37,6 @@
         # > Our main home-manager configuration file <
         modules = [ 
 					./home-manager/home.nix
-					inputs.deno2nix.overlays.default
 				];
     };
   };

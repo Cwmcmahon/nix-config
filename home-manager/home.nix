@@ -48,7 +48,7 @@
 			enable = true;
 			enableCompletion = true;
 			shellAliases = {
-				#silverbullet = "bash ~/.deno/bin/silverbullet";
+				# add good ones here
 			};
 		};
 		kitty = {
