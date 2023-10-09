@@ -101,6 +101,11 @@
     xwayland.enable = true;
   };
 
+	# Enable bash
+	programs.bash = {
+		enableCompletion = true;
+	};
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -164,6 +169,12 @@
 			dataDir = "/home/carterm/Documents";
 			configDir = "/home/carterm/Documents/.config/syncthing";
 		};
+	};
+
+	# Set Kakoune as default editor
+	environment.variables = {
+		EDITOR = "kak";
+		VISUAL = "kak";
 	};
 
   # Fonts!

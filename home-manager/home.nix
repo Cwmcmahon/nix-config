@@ -60,6 +60,12 @@
 			config = {
 				alignWithTabs = true;
 				indentWidth = 0;
+				colorScheme = "gruvbox-dark";
+				numberLines = {
+					enable = true;
+					highlightCursor = true;
+				};
+				tabStop = 2;
 			};
 			defaultEditor = true;
 		};
