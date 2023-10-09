@@ -55,9 +55,17 @@
       enable = true;
       theme = "Alabaster Dark";
     };
+		kakoune = {
+			enable = true;
+			config = {
+				alignWithTabs = true;
+				indentWidth = 0;
+			};
+			defaultEditor = true;
+		};
     neovim = {
       enable = true;
-      defaultEditor = true;
+      #defaultEditor = true;
 			viAlias = true;
 			vimAlias = true;
 			vimdiffAlias = true;

@@ -148,6 +148,12 @@
   	obsidian
 		kakoune
 		nb
+		pandoc
+		bat
+		nmap
+		rg
+		tig
+		w3m
 	];	
 
 	# Syncthing enable and config
