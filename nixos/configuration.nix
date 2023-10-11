@@ -129,11 +129,10 @@
 	};
 
 	# System Packages
-	let
-		daily_todo = import ./daily_todo.nix { inherit pkgs; };
-	in
-	{
-		environment.systemPackages = with pkgs; [
+	environment.systemPackages = 
+		let
+			daily_todo = import ./daily_todo.nix { inherit pkgs; };
+		in with pkgs; [
 			home-manager
 			firefox-wayland
 			waybar
@@ -165,7 +164,6 @@
 			w3m
 			daily_todo
 		];
-	};
 	
 	# Syncthing enable and config
 	services = {
