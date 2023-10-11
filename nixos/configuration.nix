@@ -165,7 +165,8 @@
 			w3m
 			daily_todo
 		];
-	}
+	};
+	
 	# Syncthing enable and config
 	services = {
 		syncthing = {
