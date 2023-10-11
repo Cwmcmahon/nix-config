@@ -1,29 +1,29 @@
 { inputs, lib, config, pkgs, host, ... }: {
-  # You can import other home-manager modules here
-  imports = [
+	# You can import other home-manager modules here
+	imports = [
 		./hyprland.nix
 		./waybar.nix
-  ];
+	];
 
-  nixpkgs = {
-    # You can add overlays here
-    # Configure your nixpkgs instance
-    config = {
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = (_: true);
-    };
-  };
+	nixpkgs = {
+		# You can add overlays here
+		# Configure your nixpkgs instance
+		config = {
+			allowUnfree = true;
+			# Workaround for https://github.com/nix-community/home-manager/issues/2942
+			allowUnfreePredicate = (_: true);
+		};
+	};
 
-  # Username
-  home = {
-    username = "carterm";
-    homeDirectory = "/home/carterm";
+	# Username
+	home = {
+		username = "carterm";
+		homeDirectory = "/home/carterm";
 		shellAliases = {
 			# Doing this when I understand it better and can do it with home-manager as well
 			#rebuild nixos = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#${host}"
 		};
-  };
+	};
 
 	# Services
 	services = {
@@ -34,17 +34,17 @@
 		};
 	}; 
 
-  # GTK enable and icons
-  gtk = {
-    enable = true;
-    iconTheme.name = "Papirus";
-  };
+	# GTK enable and icons
+	gtk = {
+		enable = true;
+		iconTheme.name = "Papirus";
+	};
 
-  # Enable and configure programs
-  programs = {
-    home-manager.enable = true;
-    git.enable = true;
-    bash = {
+	# Enable and configure programs
+	programs = {
+		home-manager.enable = true;
+		git.enable = true;
+		bash = {
 			enable = true;
 			enableCompletion = true;
 			shellAliases = {
@@ -52,9 +52,9 @@
 			};
 		};
 		kitty = {
-      enable = true;
-      theme = "Alabaster Dark";
-    };
+			enable = true;
+			theme = "Alabaster Dark";
+		};
 		kakoune = {
 			enable = true;
 			config = {
@@ -69,29 +69,29 @@
 			};
 			defaultEditor = true;
 		};
-    neovim = {
-      enable = true;
-      #defaultEditor = true;
+		neovim = {
+			enable = true;
+			#defaultEditor = true;
 			viAlias = true;
 			vimAlias = true;
 			vimdiffAlias = true;
-      extraLuaConfig = ''
-        vim.o.clipboard = "unnamedplus"
-        vim.o.number = true
+			extraLuaConfig = ''
+				vim.o.clipboard = "unnamedplus"
+				vim.o.number = true
 				vim.o.tabstop = 2
 				vim.o.shiftwidth = 2
 				vim.o.termguicolors = true
-      '';
-    };
-    rofi = {
-      enable = true;
-      theme = "Paper";
-    };
-  };
+			'';
+		};
+		rofi = {
+			enable = true;
+			theme = "Paper";
+		};
+	};
 
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
+	# Nicely reload system units when changing configs
+	systemd.user.startServices = "sd-switch";
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "22.11";
+	# https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+	home.stateVersion = "22.11";
 }
