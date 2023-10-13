@@ -53,7 +53,7 @@
 		};
 		kitty = {
 			enable = true;
-			theme = "Gruvbox Material Dark Medium";
+			theme = "Gruvbox Material Dark Hard";
 		};
 		kakoune = {
 			enable = true;
