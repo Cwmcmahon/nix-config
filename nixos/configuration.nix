@@ -186,7 +186,7 @@
 		packages = with pkgs; [
 			font-awesome
 			hack-font
-			google-fonts
+			(google-fonts.override { fonts = [ "Roboto" "Signika" "Alegreya" "Alegreya Sans" ]; })
 		];
 		enableDefaultPackages = true;
 	};
