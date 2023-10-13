@@ -99,18 +99,18 @@
 				}
  
 				window#waybar {
-					background: #292b2e;
-					color: #fdf6e3;
+					background: #504945;
+					color: #ebdbb2;
 				}
 				
 				#custom-right-arrow-dark,
 				#custom-left-arrow-dark {
-					color: #1a1a1a;
+					color: #282828;
 				}
 				#custom-right-arrow-light,
 				#custom-left-arrow-light {
-					color: #292b2e;
-					background: #1a1a1a;
+					color: #504945;
+					background: #282828;
 				}
 				
 				#workspaces,
@@ -119,39 +119,39 @@
 				#pulseaudio,
 				#backlight,
 				#battery { 
-					background: #1a1a1a;
+					background: #282828;
 				}
  
 				#workspaces button {
 					padding: 0 2px;
-					color: #fdf6e3;
+					color: #ebdbb2;
 				}
 				#workspaces button.active {
-					color: #ff5f08;
+					color: #d65d0e;
 				}
 				#workspaces button:hover {
 					box-shadow: inherit;
 					text-shadow: inherit;
-					background: #1a1a1a;
+					background: #282828;
 					padding: 0 2px;
 				}
  
 				#pulseaudio {
-					color: #1595ca;
+					color: #458588;
 				}
 				#pulseaudio.muted {
-					color: #c5192b;
+					color: #cc241d;
 				}
  
 				#backlight {
-					color: #f6bb40;
+					color: #fabd2f;
 				}
  
 				#battery {
-					color: #19bf45;
+					color: #98971a;
 				}
 				#battery.critical:not(.charging) {
-					color: #c5192b;
+					color: #cc241d;
 				}
  
 				#clock,
