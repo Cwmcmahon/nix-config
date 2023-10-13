@@ -186,6 +186,7 @@
 		packages = with pkgs; [
 			font-awesome
 			hack-font
+			google-fonts
 		];
 		enableDefaultPackages = true;
 	};
