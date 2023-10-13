@@ -99,7 +99,7 @@
 				}
  
 				window#waybar {
-					background: #504945;
+					background: #3c3836;
 					color: #ebdbb2;
 				}
 				
@@ -109,7 +109,7 @@
 				}
 				#custom-right-arrow-light,
 				#custom-left-arrow-light {
-					color: #504945;
+					color: #3c3836;
 					background: #282828;
 				}
 				
