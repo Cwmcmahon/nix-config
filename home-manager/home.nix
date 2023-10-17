@@ -3,6 +3,7 @@
 	imports = [
 		./hyprland.nix
 		./waybar.nix
+		./todo.nix
 	];
 
 	nixpkgs = {
@@ -86,14 +87,6 @@
 		rofi = {
 			enable = true;
 			theme = "Paper";
-		};
-	};
-
-	# Non-Home Manager config files
-	home.file = {
-		todo = {
-			target = ".todo/config";
-			text = "";
 		};
 	};
 
