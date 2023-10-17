@@ -4,7 +4,7 @@
 
 	xdg.configFile.todo = {
 		target = "todo/config";
-		te = ''
+		text = ''
 			=== EDIT FILE LOCATIONS BELOW ===
 			Your todo.txt directory (this should be an absolute path)
 			#export TODO_DIR="/Users/gina/Documents/todo"
