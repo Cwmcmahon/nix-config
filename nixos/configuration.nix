@@ -163,6 +163,7 @@
 			tig
 			w3m
 			daily_todo
+			todo-txt-cli
 		];
 	
 	# Syncthing enable and config

@@ -89,6 +89,14 @@
 		};
 	};
 
+	# Non-Home Manager config files
+	home.file = {
+		todo = {
+			target = ".todo/config";
+			text = "";
+		};
+	};
+
 	# Nicely reload system units when changing configs
 	systemd.user.startServices = "sd-switch";
 
