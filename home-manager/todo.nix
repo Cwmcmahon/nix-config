@@ -5,8 +5,7 @@
 	xdg.configFile.todo = {
 		target = "todo/config";
 		text = ''
-			=== EDIT FILE LOCATIONS BELOW ===
-			Your todo.txt directory (this should be an absolute path)
+			# Your todo.txt directory (this should be an absolute path)
 			#export TODO_DIR="/Users/gina/Documents/todo"
 			export TODO_DIR="/Users/carterm/Documents/todo"
 						# Your todo/done/report.txt locations
