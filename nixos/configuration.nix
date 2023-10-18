@@ -130,8 +130,6 @@
 
 	# System Packages
 	environment.systemPackages = 
-		let
-			daily_todo = import ./daily_todo.nix { inherit pkgs; };
 		in with pkgs; [
 			home-manager
 			firefox-wayland
@@ -153,19 +151,11 @@
 			grim
 			slurp
 			papirus-icon-theme
-			obsidian
 			kakoune
-			nb
 			pandoc
-			bat
-			nmap
-			ripgrep
-			tig
-			w3m
-			daily_todo
 			todo-txt-cli
 		];
-	
+
 	# Syncthing enable and config
 	services = {
 		syncthing = {
