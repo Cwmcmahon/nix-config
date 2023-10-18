@@ -131,7 +131,7 @@
 	# System Packages
 	environment.systemPackages =
 		let
-			daily_todo = import ./daily_todo.nix { inherit pkgs };
+			daily_todo = import ./daily_todo.nix { inherit pkgs; };
 		in with pkgs; [
 			home-manager
 			firefox-wayland
