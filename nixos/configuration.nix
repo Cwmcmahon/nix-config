@@ -129,8 +129,8 @@
 	};
 
 	# System Packages
-	environment.systemPackages = 
-		in with pkgs; [
+	environment.systemPackages =
+		with pkgs; [
 			home-manager
 			firefox-wayland
 			waybar
