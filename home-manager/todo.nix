@@ -51,7 +51,7 @@
 			# export PRI_A=$YELLOW        # color for A priority
 			# export PRI_B=$GREEN         # color for B priority
 			# export PRI_C=$LIGHT_BLUE    # color for C priority
-			# export PRI_D=...            # define your own
+			# export PRI_D=$...            # define your own
 			# export PRI_X=$WHITE         # color unless explicitly defined
 						# There is highlighting for tasks that have been done,
 			# but haven't been archived yet.
@@ -74,7 +74,7 @@
 			# inserted, but before colorization, and before hiding of
 			# priority, context, and project.
 			#
-			# export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -f -k2'
+			export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort --ignore-case --field-separator=":" -k2,2 --stable'
 						# TODOTXT_FINAL_FILTER will filter list output after colorization,
 			# priority hiding, context hiding, and project hiding. That is,
 			# just before the list output is displayed.
