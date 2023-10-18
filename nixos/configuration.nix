@@ -154,6 +154,7 @@
 			kakoune
 			pandoc
 			todo-txt-cli
+			zoom-us
 		];
 
 	# Syncthing enable and config
