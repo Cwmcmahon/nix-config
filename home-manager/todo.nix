@@ -74,12 +74,12 @@
 			# inserted, but before colorization, and before hiding of
 			# priority, context, and project.
 			#
-			export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort --ignore-case --field-separator=":" -k2,2 --stable'
+			# export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort --ignore-case --field-separator=":" -k2,2 --stable'
 						# TODOTXT_FINAL_FILTER will filter list output after colorization,
 			# priority hiding, context hiding, and project hiding. That is,
 			# just before the list output is displayed.
 			#
-			# export TODOTXT_FINAL_FILTER='cat'
+			export TODOTXT_FINAL_FILTER='sort --ignore-case --field-separator=":" -k2,2 --stable'
 			'';
 	};
 }
