@@ -130,7 +130,9 @@
 
 	# System Packages
 	environment.systemPackages =
-		with pkgs; [
+		let
+			daily_todo = import ./daily_todo.nix { inherit pkgs };
+		in with pkgs; [
 			home-manager
 			firefox-wayland
 			waybar
@@ -154,7 +156,7 @@
 			kakoune
 			pandoc
 			todo-txt-cli
-			zoom-us
+			daily_todo
 		];
 
 	# Syncthing enable and config
