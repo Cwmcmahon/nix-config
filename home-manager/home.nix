@@ -65,7 +65,6 @@
 		};
 		kakoune = {
 			enable = true;
-			package = pkgs.kakoune;
 			config = {
 				alignWithTabs = true;
 				indentWidth = 0;
