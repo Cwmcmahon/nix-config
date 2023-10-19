@@ -41,6 +41,13 @@
 		iconTheme.name = "Papirus";
 	};
 
+	# MIME Types
+	xdg.mimeApps.defaultApplications = {
+		"text/plain" = [ "kakoune.desktop"  ];
+		"application/pdf" = [ "firefox.desktop" ];
+		"image/*" = [ "org.gnome.EyeOfGnome"  ];
+	};
+
 	# Enable and configure programs
 	programs = {
 		home-manager.enable = true;
@@ -58,6 +65,7 @@
 		};
 		kakoune = {
 			enable = true;
+			package = pkgs.kakoune;
 			config = {
 				alignWithTabs = true;
 				indentWidth = 0;
@@ -69,20 +77,6 @@
 				tabStop = 2;
 			};
 			defaultEditor = true;
-		};
-		neovim = {
-			enable = true;
-			#defaultEditor = true;
-			viAlias = true;
-			vimAlias = true;
-			vimdiffAlias = true;
-			extraLuaConfig = ''
-				vim.o.clipboard = "unnamedplus"
-				vim.o.number = true
-				vim.o.tabstop = 2
-				vim.o.shiftwidth = 2
-				vim.o.termguicolors = true
-			'';
 		};
 		rofi = {
 			enable = true;

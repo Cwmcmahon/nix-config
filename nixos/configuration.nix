@@ -144,6 +144,7 @@
 			neovim
 			xfce.thunar
 			font-manager
+			gnome.eog
 			git
 			gh
 			pamixer
@@ -157,6 +158,7 @@
 			pandoc
 			todo-txt-cli
 			daily_todo
+			vscodium
 		];
 
 	# Syncthing enable and config
