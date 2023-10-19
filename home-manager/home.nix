@@ -43,9 +43,9 @@
 
 	# MIME Types
 	xdg.mimeApps.defaultApplications = {
-		"text/plain" = [ "kakoune.desktop"  ];
+		"text/plain" = [ "codium.desktop"  ];
 		"application/pdf" = [ "firefox.desktop" ];
-		"image/*" = [ "org.gnome.EyeOfGnome"  ];
+		"image/*" = [ "org.gnome.eog.desktop"  ];
 	};
 
 	# Enable and configure programs
