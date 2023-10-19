@@ -43,7 +43,7 @@
 
 	# MIME Types
 	xdg.mimeApps.defaultApplications = {
-		"text/plain" = [ "codium.desktop"  ];
+		"text/*" = [ "codium.desktop"  ];
 		"application/pdf" = [ "firefox.desktop" ];
 		"image/*" = [ "org.gnome.eog.desktop"  ];
 	};
