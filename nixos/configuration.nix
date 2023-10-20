@@ -132,7 +132,12 @@
 	environment.systemPackages =
 		let
 			daily_todo = import ./daily_todo.nix { inherit pkgs; };
-		in with pkgs; [
+		in with pkgs;
+		let
+			RStudio-with-my-packages = rstudioWrapper.override{
+				packages = with rPackages; [ tidyverse shiny quarto crosstalk leaflet plotly sf gt cowplot patchwork ggiraph flexdashboard ];
+			};
+		[
 			home-manager
 			firefox-wayland
 			waybar
@@ -161,6 +166,7 @@
 			vscodium
 			itch
 			steam-run
+			RStudio-with-my-packages
 		];
 
 	# Syncthing enable and config
