@@ -159,6 +159,8 @@
 			todo-txt-cli
 			daily_todo
 			vscodium
+			itch
+			steam-run
 		];
 
 	# Syncthing enable and config
@@ -175,6 +177,13 @@
 	environment.variables = {
 		EDITOR = "kak";
 		VISUAL = "kak";
+	};
+
+	# Steam
+	programs.steam = {
+		enable = true;
+		remotePlay.openFirewall = true;
+		dedicatedServer.openFirewall = true;
 	};
 
 	# Fonts!
