@@ -137,6 +137,7 @@
 			RStudio-with-my-packages = rstudioWrapper.override{
 				packages = with rPackages; [ tidyverse shiny quarto crosstalk leaflet plotly sf gt cowplot patchwork ggiraph flexdashboard ];
 			};
+		in
 		[
 			home-manager
 			firefox-wayland
