@@ -34,10 +34,12 @@
 			};
 			decoration = {
 				rounding = 10;
-				blur = "yes";
-				blur_size = 3;
-				blur_passes = 1;
-				blur_new_optimizations = "on";
+				blur = {
+					enable = true;
+					size = 3;
+					passes = 1;
+					new_optimizations = true;
+				};
 				drop_shadow = "yes";
 				shadow_range = 4;
 				shadow_render_power = 3;
