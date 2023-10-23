@@ -79,7 +79,7 @@
 		};
 		rofi = {
 			enable = true;
-			theme = "Paper";
+			theme = "gruvbox-light-soft";
 		};
 		#direnv = {
 		#	enable = true;
