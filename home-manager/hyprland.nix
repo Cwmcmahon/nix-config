@@ -69,6 +69,10 @@
 			};
 			# See https://wiki.hyprland.org/Configuring/Keywords/ for more
 			"$mainMod" = "SUPER";
+			# Rofi
+			bindr = [
+				"$mainMod, SUPER_L, exec, rofi -show drun -show-icons"
+			];
 			# Semi-custom binds
 			bind = [ 
 				"$mainMod, Q, killactive,"
@@ -76,7 +80,8 @@
 				"$mainMod, RETURN, exec, kitty"
 				"$mainMod, B, exec, firefox"
 				"$mainMod, F, exec, thunar"
-				"$mainMod, S, exec, rofi -show drun -show-icons"
+				#"$mainMod, R, exec, rofi -show drun -show-icons"
+				"$mainMod, T, exec, todofi.sh"
 				"$mainMod, M, fullscreen, 1"
 				"$mainMod, O, togglesplit," # dwindle	
 				# Move focus with mainMod + arrow keys
@@ -119,7 +124,7 @@
 				"$mainMod, N, changegroupactive, f"
 				"$mainMod, L, moveoutofgroup,"
 				# Screenshot with Prt Sc button
-			 '', Print, exec, grim -g "$(slurp)"''
+				'', Print, exec, grim -g "$(slurp)"''
 			];
 			binde = [
 				# Adjust brightness or volume					 

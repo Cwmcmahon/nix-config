@@ -163,6 +163,7 @@
 			kakoune
 			pandoc
 			todo-txt-cli
+			todofi-sh
 			daily_todo
 			vscodium
 			#itch # don't use until nixpkgs version is up to date (>=26)
