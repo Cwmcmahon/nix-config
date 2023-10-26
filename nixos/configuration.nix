@@ -166,9 +166,9 @@
 			pandoc
 			todo-txt-cli
 			todofi-sh
-			daily_todo
-			push_notes
-			pull_notes
+			#daily_todo
+			#push_notes
+			#pull_notes
 			vscodium
 			#itch # don't use until nixpkgs version is up to date (>=26)
 			steam-run
