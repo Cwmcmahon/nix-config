@@ -30,9 +30,9 @@
 	services = {
 		network-manager-applet.enable = true;
 		blueman-applet.enable = true;
-		syncthing = {
-			enable = true;
-		};
+		#syncthing = {
+		#	enable = true;
+		#};
 	}; 
 
 	# GTK enable and icons

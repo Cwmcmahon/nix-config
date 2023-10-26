@@ -172,14 +172,14 @@
 		];
 
 	# Syncthing enable and config
-	services = {
-		syncthing = {
-			enable = true;
-			user = "carterm";
-			dataDir = "/home/carterm/Documents";
-			configDir = "/home/carterm/Documents/.config/syncthing";
-		};
-	};
+	#services = {
+	#	syncthing = {
+	#		enable = true;
+	#		user = "carterm";
+	#		dataDir = "/home/carterm/Documents";
+	#		configDir = "/home/carterm/Documents/.config/syncthing";
+	#	};
+	#};
 
 	# Set Kakoune as default editor
 	environment.variables = {
