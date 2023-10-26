@@ -21,6 +21,7 @@
 		username = "carterm";
 		homeDirectory = "/home/carterm";
 		shellAliases = {
+			t = "todo.sh -d ~/.config/todo/config";
 			# Doing this when I understand it better and can do it with home-manager as well
 			#rebuild nixos = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#${host}"
 		};

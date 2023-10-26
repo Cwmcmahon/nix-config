@@ -14,6 +14,8 @@
 			export REPORT_FILE="$TODO_DIR/report.txt"
 						# You can customize your actions directory location
 			#export TODO_ACTIONS_DIR="$HOME/.todo.actions.d"
+						# Default action
+			export TODOTXT_DEFAULT_ACTION=ls
 						# == EDIT FILE LOCATIONS ABOVE ===
 						# === COLOR MAP ===
 						## Text coloring and formatting is done by inserting ANSI escape codes.

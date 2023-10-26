@@ -132,6 +132,8 @@
 	environment.systemPackages =
 		let
 			daily_todo = import ./daily_todo.nix { inherit pkgs; };
+			push_notes = import ./push_notes.nix { inherit pkgs; };
+			pull_notes = import ./pull_notes.nix { inherit pkgs; };
 		in with pkgs;
 		let
 			RStudio-with-my-packages = rstudioWrapper.override{
@@ -165,6 +167,8 @@
 			todo-txt-cli
 			todofi-sh
 			daily_todo
+			push_notes
+			pull_notes
 			vscodium
 			#itch # don't use until nixpkgs version is up to date (>=26)
 			steam-run
