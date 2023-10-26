@@ -10,7 +10,7 @@
 (B) Set up scene @home +daily due:$(date +%F)
 (B) Do dishes @home +daily due:$(date +%F)
 (A) Brush teeth PM @home +daily due:$(date +%F)"'';
-    commit-notes = ''cd ~/Documents/workbench/ && git add -A && git commit -am "''${1:-$(date +%F)}"'';
+    commit-notes = ''cd ~/Documents/workbench/ && git add -A && git commit -am "''${1:-$(date)}"'';
 		push-notes = ''cd ~/Documents/workbench/ && git push'';
 		pull-notes = "cd ~/Documents/workbench/ && git pull";
 		nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#cwm-nixos";

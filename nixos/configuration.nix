@@ -129,12 +129,7 @@
 	};
 
 	# System Packages
-	environment.systemPackages =
-		let
-			daily_todo = import ./daily_todo.nix { inherit pkgs; };
-			push_notes = import ./push_notes.nix { inherit pkgs; };
-			pull_notes = import ./pull_notes.nix { inherit pkgs; };
-		in with pkgs;
+	environment.systemPackages = with pkgs;
 		let
 			RStudio-with-my-packages = rstudioWrapper.override{
 				packages = with rPackages; [ tidyverse shiny quarto crosstalk leaflet plotly sf gt cowplot patchwork ggiraph flexdashboard ];
