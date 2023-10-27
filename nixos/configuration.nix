@@ -170,6 +170,7 @@
 			zip
 			unzip
 			expat
+			gdal
 		];
 
 	# Syncthing enable and config
