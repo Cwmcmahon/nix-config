@@ -15,6 +15,6 @@
 		pull-notes = "(cd ~/Documents/workbench/ && git pull)";
 		nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#cwm-nixos";
 		hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm@cwm-nixos";
-		open-notes = "codium ; sleep 2 ; codium ~/Documents/workbench/README.md"
+		open-notes = "codium ; sleep 2 ; codium ~/Documents/workbench/README.md";
 	};
 }
