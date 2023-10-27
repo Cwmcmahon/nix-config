@@ -169,6 +169,7 @@
 			RStudio-with-my-packages
 			zip
 			unzip
+			expat
 		];
 
 	# Syncthing enable and config
