@@ -167,6 +167,8 @@
 			#itch # don't use until nixpkgs version is up to date (>=26)
 			steam-run
 			RStudio-with-my-packages
+			zip
+			unzip
 		];
 
 	# Syncthing enable and config
