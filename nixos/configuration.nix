@@ -29,8 +29,7 @@
 	}; 
 
 	# Bootloader
-	boot.loader = {
-		systemd-boot.enable = true;
+	boot.loader = {		 systemd-boot.enable = true;
 		efi.canTouchEfiVariables = true;
 	};
 
@@ -132,7 +131,7 @@
 	environment.systemPackages = with pkgs;
 		let
 			RStudio-with-my-packages = rstudioWrapper.override{
-				packages = with rPackages; [ tidyverse shiny quarto crosstalk leaflet plotly sf gt cowplot patchwork ggiraph flexdashboard ];
+				packages = with rPackages; [ tidyverse shiny quarto crosstalk leaflet plotly sf gt cowplot patchwork ggiraph flexdashboard DT paletteer countrycode tidytuesdayR ];
 			};
 		in
 		[
