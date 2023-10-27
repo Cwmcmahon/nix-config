@@ -29,9 +29,6 @@
 	services = {
 		network-manager-applet.enable = true;
 		blueman-applet.enable = true;
-		#syncthing = {
-		#	enable = true;
-		#};
 	}; 
 
 	# GTK enable and icons
@@ -77,11 +74,6 @@
 			enable = true;
 			theme = "Paper";
 		};
-		#direnv = {
-		#	enable = true;
-		#	enableBashIntegration = true;
-		#	nix-direnv.enable = true;
-		#};
 	};
 
 	# Nicely reload system units when changing configs

@@ -160,28 +160,11 @@
 			pandoc
 			todo-txt-cli
 			todofi-sh
-			#daily_todo
-			#push_notes
-			#pull_notes
 			vscodium
-			#itch # don't use until nixpkgs version is up to date (>=26)
 			steam-run
 			RStudio-with-my-packages
-			#zip
 			unzip
-			#expat
-			#gdal
 		];
-
-	# Syncthing enable and config
-	#services = {
-	#	syncthing = {
-	#		enable = true;
-	#		user = "carterm";
-	#		dataDir = "/home/carterm/Documents";
-	#		configDir = "/home/carterm/Documents/.config/syncthing";
-	#	};
-	#};
 
 	# Set Kakoune as default editor
 	environment.variables = {
@@ -201,7 +184,6 @@
 		packages = with pkgs; [
 			font-awesome
 			hack-font
-			#(google-fonts.override { fonts = [ "Roboto" "Signika" "Alegreya" "Alegreya Sans" ]; })
 		];
 		enableDefaultPackages = true;
 	};
