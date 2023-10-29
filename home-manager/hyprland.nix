@@ -34,7 +34,9 @@
 				"col.border_active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
 				"col.border_inactive" = "rgba(504945aa)";
 				groupbar = {
-					"col.active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
+					font_size = 10;
+					gradients = false;
+					"col.active" = "rgba(d3869bee)" ;
 					"col.inactive" = "rgba(504945aa)";
 				};
 			};
