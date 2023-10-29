@@ -28,8 +28,6 @@
 				border_size = 2;
 				"col.active_border" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
 				"col.inactive_border" = "rgba(504945aa)";
-				"col.group_border_active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
-				"col.group_border" = "rgba(504945aa)";
 				layout = "dwindle";
 			};
 			group = {
