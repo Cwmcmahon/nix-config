@@ -33,8 +33,8 @@
 				layout = "dwindle";
 			};
 			group = {
-				col.border_active = "rgba(feba1bee) rgba(d65d0eee) 45deg";
-				col.border_inactive = "rgba(504945aa)";
+				"col.border_active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
+				"col.border_inactive" = "rgba(504945aa)";
 				groupbar = {
 					font_size = 10;
 					render_titles = false;
