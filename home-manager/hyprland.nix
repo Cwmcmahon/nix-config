@@ -32,6 +32,16 @@
 				"col.group_border" = "rgba(504945aa)";
 				layout = "dwindle";
 			};
+			group = {
+				col.border_active = "rgba(feba1bee) rgba(d65d0eee) 45deg";
+				col.border_inactive = "rgba(504945aa)";
+				groupbar = {
+					font_size = 10;
+					render_titles = false;
+					"col.active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
+					"col.inactive" = "rgba(504945aa)";
+				};
+			};
 			decoration = {
 				rounding = 10;
 				blur = {
@@ -80,7 +90,6 @@
 				"$mainMod, RETURN, exec, kitty"
 				"$mainMod, B, exec, firefox"
 				"$mainMod, F, exec, thunar"
-				#"$mainMod, R, exec, rofi -show drun -show-icons"
 				"$mainMod, T, exec, todofi.sh"
 				"$mainMod, M, fullscreen, 1"
 				"$mainMod, O, togglesplit," # dwindle	
