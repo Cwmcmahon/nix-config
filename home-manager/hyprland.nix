@@ -30,6 +30,7 @@
 				"col.active_border" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
 				"col.inactive_border" = "rgba(504945aa)";
 				layout = "dwindle";
+				resize_on_border = true;
 			};
 			group = {
 				"col.border_active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
