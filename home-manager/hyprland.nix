@@ -35,6 +35,8 @@
 			misc = {
 				focus_on_activate = true;
 				new_window_takes_over_fullscreen = 2;
+				disable_hyprland_logo = true;
+				disable_splash_rendering = true;
 			};
 			group = {
 				"col.border_active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
