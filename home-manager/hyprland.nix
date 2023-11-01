@@ -32,6 +32,10 @@
 				layout = "dwindle";
 				resize_on_border = true;
 			};
+			misc = {
+				focus_on_activate = true;
+				new_window_takes_over_fullscreen = 2;
+			};
 			group = {
 				"col.border_active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
 				"col.border_inactive" = "rgba(504945aa)";
@@ -45,18 +49,18 @@
 			decoration = {
 				rounding = 10;
 				blur = {
-					enabled = true;
+					enabled = false;
 					size = 3;
 					passes = 1;
 					new_optimizations = true;
 				};
-				drop_shadow = "yes";
+				drop_shadow = false;
 				shadow_range = 4;
 				shadow_render_power = 3;
 				"col.shadow" = "rgba(1a1a1aee)";
 			};
 			animations = {
-				enabled = "yes";
+				enabled = true;
 				bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 				animation = [ 
 					"windows, 1, 7, myBezier"
@@ -68,11 +72,11 @@
 				];
 			};
 			dwindle = {
-				pseudotile = "yes"; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-				preserve_split = "yes"; # you probably want this
+				pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+				preserve_split = true; # you probably want this
 			};
 			master = {
-				new_is_master = "true";
+				new_is_master = true;
 			};
 			gestures	= {
 				workspace_swipe = "on";
