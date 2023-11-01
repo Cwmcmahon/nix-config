@@ -17,9 +17,10 @@
 			env = "XCURSOR_SIZE,24";
 			input = {
 				kb_layout = "us";
-				follow_mouse = 1;
+				follow_mouse = 2;
 				touchpad = {
-					natural_scroll = "yes";
+					natural_scroll = true;
+					tap-and-drag = true;
 				};
 			};
 			general = {
@@ -73,7 +74,7 @@
 				new_is_master = "true";
 			};
 			gestures	= {
-				workspace_swipe = "off";
+				workspace_swipe = "on";
 			};
 			# See https://wiki.hyprland.org/Configuring/Keywords/ for more
 			"$mainMod" = "SUPER";
