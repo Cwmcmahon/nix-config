@@ -7,7 +7,10 @@
 		enableNvidiaPatches = true;
 		xwayland.enable = true;
 		settings = {
-			monitor = "eDP-1,1920x1080,auto,1";
+			monitor = [
+				"eDP-1,1920x1080,auto,1"
+				"HDMI-A-1,1920x1080,auto,auto"
+			];
 			exec-once = [
 				"wbg ~/Pictures/Wallpapers/mult_falls.jpg"
 				"waybar"
