@@ -165,6 +165,7 @@
 			steam-run
 			RStudio-with-my-packages
 			unzip
+			discord
 		];
 
 	# Set Kakoune as default editor

@@ -32,7 +32,7 @@
 				border_size = 2;
 				"col.active_border" = "rgba(feba1bee) rgba(d65d0eee) 45deg";
 				"col.inactive_border" = "rgba(504945aa)";
-				layout = "dwindle";
+				layout = "master";
 				resize_on_border = true;
 			};
 			misc = {
@@ -101,7 +101,9 @@
 				"$mainMod, F, exec, thunar"
 				"$mainMod, T, exec, todofi.sh"
 				"$mainMod, M, fullscreen, 1"
-				"$mainMod, O, togglesplit," # dwindle	
+				# "$mainMod, O, togglesplit," # dwindle
+				"$mainMod, S, layoutmsg, swapwithmaster auto" # master
+				"$mainMod, O, layoutmsg, orientationcycle right left" # master
 				# Move focus with mainMod + arrow keys
 				"$mainMod, left, movefocus, l"
 				"$mainMod, right, movefocus, r"
