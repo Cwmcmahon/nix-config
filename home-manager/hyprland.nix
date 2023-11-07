@@ -81,7 +81,8 @@
 				preserve_split = true; # you probably want this
 			};
 			master = {
-				new_is_master = true;
+				new_is_master = false;
+				new_on_top = true;
 			};
 			gestures	= {
 				workspace_swipe = "on";
