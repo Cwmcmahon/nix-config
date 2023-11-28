@@ -99,7 +99,7 @@
 				"$mainMod, E, exit,"
 				"$mainMod, RETURN, exec, kitty"
 				"$mainMod, B, exec, firefox"
-				"$mainMod, F, exec, thunar"
+				"$mainMod, F, exec, nautilus"
 				"$mainMod, T, exec, todofi.sh"
 				"$mainMod, M, fullscreen, 1"
 				# "$mainMod, O, togglesplit," # dwindle

@@ -144,9 +144,10 @@
 			wbg
 			libnotify
 			mako
+			swaylock
 			kitty
 			rofi-wayland
-			neovim
+			hyprland-autoname-workspaces
 			font-manager
 			gnome.nautilus
 			gnome.eog

@@ -5,6 +5,7 @@
 		./waybar.nix
 		./todo.nix
 		./aliases.nix
+		./autoname_workspaces.nix
 	];
 
 	nixpkgs = {
@@ -29,6 +30,14 @@
 	services = {
 		network-manager-applet.enable = true;
 		blueman-applet.enable = true;
+		swayidle = {
+			enable = true;
+			timeouts = [
+				{ timeout = 300; command = "swaylock"; }
+				{ timeout = 305; command = "hyprctl dispatch dpms off"; }
+				{ resumeCommand = "hyprctl dispatch dpms on"; }
+			];
+		};
 	}; 
 
 	# GTK enable and icons
