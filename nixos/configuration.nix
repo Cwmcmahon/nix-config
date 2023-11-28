@@ -52,6 +52,9 @@
 		LC_TIME = "en_US.UTF-8";
 	};
 
+	# Power management
+	powerManagement.enable = true;
+
 	# Networking
 	networking = {
 		hostName = "cwm-nixos";
@@ -137,7 +140,6 @@
 		in
 		[
 			home-manager
-			firefox-wayland
 			waybar
 			wbg
 			libnotify
@@ -145,15 +147,14 @@
 			kitty
 			rofi-wayland
 			neovim
-			xfce.thunar
 			font-manager
+			gnome.nautilus
 			gnome.eog
 			git
 			gh
 			pamixer
 			pavucontrol
 			networkmanagerapplet
-			glib
 			grim
 			slurp
 			papirus-icon-theme
@@ -172,6 +173,11 @@
 	environment.variables = {
 		EDITOR = "kak";
 		VISUAL = "kak";
+	};
+
+	# Firefox
+	programs.firefox = {
+		enable = true;
 	};
 
 	# Steam
