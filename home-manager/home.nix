@@ -34,8 +34,7 @@
 			enable = true;
 			timeouts = [
 				{ timeout = 300; command = "swaylock"; }
-				{ timeout = 305; command = "hyprctl dispatch dpms off"; }
-				{ resumeCommand = "hyprctl dispatch dpms on"; }
+				{ timeout = 305; command = "hyprctl dispatch dpms off"; resumeCommand = "hyprctl dispatch dpms on"; }
 			];
 		};
 	}; 
