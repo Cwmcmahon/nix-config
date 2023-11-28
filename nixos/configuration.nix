@@ -195,6 +195,7 @@
 			hack-font
 		];
 		enableDefaultPackages = true;
+		fontDir.enable = true;
 	};
 
 	# Brightness control

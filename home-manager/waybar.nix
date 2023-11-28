@@ -49,7 +49,19 @@
 						tooltip = false;
 					};
 					"hyprland/workspaces" = {
-						format = "{name}";
+						format = "{name}: {windows}";
+						format-window-separator = "\n";
+						window-rewrite-default = "";
+						window-rewrite = {
+							kitty = "";
+							firefox = "";
+							steam = "";
+							discord = "";
+							rstudio = "";
+							VScodium = "";
+							eog = "";
+							Nautilus = "";
+						};
 						on-scroll-up = "hyprctl dispatch workspace e+1";
 						on-scroll-down = "hyprctl dispatch workspace e-1";
 					};
