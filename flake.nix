@@ -11,6 +11,12 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		# anyrun
+		anyrun = {
+			url = "github:Kirottu/anyrun";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+		
 		# Shameless plug: looking for a way to nixify your themes and make
 		# everything match nicely? Try nix-colors!
 		# nix-colors.url = "github:misterio77/nix-colors";
@@ -26,6 +32,7 @@
 				modules = [ 
 					./nixos/configuration.nix 
 				];
+				system.packages = [ anyrun.packages.${system}.anyrun ];
 			};
 		};
 

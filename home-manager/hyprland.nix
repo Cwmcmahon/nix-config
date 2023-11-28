@@ -16,7 +16,7 @@
 				"waybar"
 				"nm-applet"
 				"blueman-applet"
-				"hyprland-autoname-workspaces"
+				#"hyprland-autoname-workspaces"
 			];
 			env = "XCURSOR_SIZE,24";
 			input = {

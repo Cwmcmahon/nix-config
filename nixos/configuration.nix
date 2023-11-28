@@ -147,7 +147,7 @@
 			swaylock
 			kitty
 			rofi-wayland
-			hyprland-autoname-workspaces
+			#hyprland-autoname-workspaces
 			font-manager
 			gnome.nautilus
 			gnome.eog

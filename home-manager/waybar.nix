@@ -50,8 +50,8 @@
 					};
 					"hyprland/workspaces" = {
 						format = "{name}: {windows}";
-						format-window-separator = "\n";
-						window-rewrite-default = "";
+						format-window-separator = " ";
+						window-rewrite-default = "";
 						window-rewrite = {
 							kitty = "";
 							firefox = "";
