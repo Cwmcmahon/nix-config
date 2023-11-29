@@ -144,6 +144,7 @@
 			wbg
 			libnotify
 			mako
+			swayidle
 			swaylock
 			kitty
 			rofi-wayland

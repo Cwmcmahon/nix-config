@@ -22,7 +22,7 @@
 		# nix-colors.url = "github:misterio77/nix-colors";
 	};
 
-	outputs = { nixpkgs, home-manager, ... }@inputs: {
+	outputs = { nixpkgs, home-manager, anyrun, ... }@inputs: {
 		# NixOS configuration entrypoint
 		# Available through 'nixos-rebuild --flake .#your-hostname'
 		nixosConfigurations = {
@@ -32,7 +32,7 @@
 				modules = [ 
 					./nixos/configuration.nix 
 				];
-				system.packages = [ anyrun.packages.${system}.anyrun ];
+				system.packages = [ anyrun.packages.x86_64-linux.anyrun.default ];
 			};
 		};
 
