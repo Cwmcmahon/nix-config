@@ -16,7 +16,7 @@
 				"waybar"
 				"nm-applet"
 				"blueman-applet"
-				#"hyprland-autoname-workspaces"
+				"swayidle -w timeout 30 'hyprctl dispatch dpms off'"
 			];
 			env = "XCURSOR_SIZE,24";
 			input = {
@@ -41,6 +41,8 @@
 				new_window_takes_over_fullscreen = 2;
 				disable_hyprland_logo = true;
 				disable_splash_rendering = true;
+				mouse_move_enables_dpms = true;
+				key_press_enables_dpms = true;
 			};
 			group = {
 				"col.border_active" = "rgba(feba1bee) rgba(d65d0eee) 45deg";

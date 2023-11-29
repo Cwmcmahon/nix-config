@@ -22,17 +22,16 @@
 		# nix-colors.url = "github:misterio77/nix-colors";
 	};
 
-	outputs = { nixpkgs, home-manager, anyrun, ... }@inputs: {
+	outputs = { self, nixpkgs, home-manager, anyrun, ... }@inputs: {
 		# NixOS configuration entrypoint
 		# Available through 'nixos-rebuild --flake .#your-hostname'
 		nixosConfigurations = {
 			cwm-nixos = nixpkgs.lib.nixosSystem {
 				specialArgs = { inherit inputs; }; # Pass flake inputs to our config
 				# > Our main nixos configuration file <
-				modules = [ 
+				modules = [
 					./nixos/configuration.nix 
 				];
-				system.packages = [ anyrun.packages.x86_64-linux.anyrun.default ];
 			};
 		};
 

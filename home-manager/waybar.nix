@@ -49,7 +49,7 @@
 						tooltip = false;
 					};
 					"hyprland/workspaces" = {
-						format = "{name}: {windows}";
+						format = "{name}: {windows} ";
 						format-window-separator = " ";
 						window-rewrite-default = "";
 						window-rewrite = {
