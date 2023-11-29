@@ -10,6 +10,9 @@
 					layer = "top";
 					modules-left = [
 						"custom/right-arrow-light"
+						"idle_inhibitor"
+						"custom/right-arrow-dark"
+						"custom/right-arrow-light"
 						"hyprland/workspaces" 
 						"custom/right-arrow-dark"
 					];
@@ -47,6 +50,13 @@
 					"custom/right-arrow-light" = {
 						format = "";
 						tooltip = false;
+					};
+					"idle_inhibitor" = {
+						format = "{icon}";
+						format-icons = {
+							activated = "";
+							deactivated = "";
+						};
 					};
 					"hyprland/workspaces" = {
 						format = "{name}: {windows} ";
@@ -129,7 +139,8 @@
 					color: #3c3836;
 					background: #282828;
 				}
-				
+
+				#idle_inhibitor,
 				#workspaces,
 				#clock,
 				#tray,
@@ -137,6 +148,13 @@
 				#backlight,
 				#battery { 
 					background: #282828;
+				}
+
+				#idle_inhibitor.activated {
+					color: #cc241d;
+				}
+				#idle_inhibitor.deactivated {
+					color: #ebdbb2;
 				}
  
 				#workspaces button {
@@ -170,7 +188,8 @@
 				#battery.critical:not(.charging) {
 					color: #cc241d;
 				}
- 
+
+ 				#idle_inhibitor,
 				#clock,
 				#tray,
 				#pulseaudio,

@@ -16,7 +16,7 @@
 				"waybar"
 				"nm-applet"
 				"blueman-applet"
-				"swayidle -w timeout 30 'hyprctl dispatch dpms off'"
+				"swayidle -w timeout 60 'hyprctl dispatch dpms off'"
 			];
 			env = "XCURSOR_SIZE,24";
 			input = {
