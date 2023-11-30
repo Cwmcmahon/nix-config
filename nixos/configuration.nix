@@ -148,7 +148,6 @@
 			swaylock
 			kitty
 			rofi-wayland
-			#hyprland-autoname-workspaces
 			font-manager
 			gnome.nautilus
 			gnome.eog
@@ -169,6 +168,7 @@
 			RStudio-with-my-packages
 			unzip
 			discord
+			#eww-wayland # One day, when I'm braver (or just have the time)
 		];
 
 	# Set Kakoune as default editor

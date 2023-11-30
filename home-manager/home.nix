@@ -5,7 +5,6 @@
 		./waybar.nix
 		./todo.nix
 		./aliases.nix
-		inputs.anyrun.homeManagerModules.default
 	];
 
 	nixpkgs = {
@@ -74,20 +73,6 @@
 		rofi = {
 			enable = true;
 			theme = "Paper";
-		};
-		anyrun = {
-			enable = true;
-			config = {
-				plugins = [
-					inputs.anyrun.packages.${pkgs.system}.applications
-					inputs.anyrun.packages.${pkgs.system}.kidex
-					inputs.anyrun.packages.${pkgs.system}.rink
-					inputs.anyrun.packages.${pkgs.system}.shell
-					inputs.anyrun.packages.${pkgs.system}.websearch
-				];
-				width = { fraction = 0.3; };
-				closeOnClick = true;
-			};
 		};
 	};
 
