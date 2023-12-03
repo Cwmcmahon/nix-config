@@ -168,7 +168,6 @@
 			RStudio-with-my-packages
 			unzip
 			discord
-			skypeforlinux
 			#eww-wayland # One day, when I'm braver (or just have the time)
 		];
 
