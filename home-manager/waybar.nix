@@ -26,13 +26,13 @@
 						"tray"
 						"custom/left-arrow-light"
 						"custom/left-arrow-dark"
-						"pulseaudio"
+						"pulseaudio/slider"
 						"custom/left-arrow-light"
 						"custom/left-arrow-dark"
-						"backlight"
+						"backlight/slider"
 						"custom/left-arrow-light"
 						"custom/left-arrow-dark"
-						"battery"
+						"group/power"
 						"custom/left-arrow-light"
 					];
 					"custom/left-arrow-dark" = {
@@ -82,22 +82,22 @@
 						icon-size = 20;
 						spacing = 10;
 					};
-					"pulseaudio" = {
-						format = "{icon} {volume:3}%";
-						format-muted = "MUTE";
-						format-icons = {
-							headphones = "";
-							default = [
-								""
-								""
-							];
-						};
-						scroll-step = 5;
-						on-click = "pamixer -t";
-						on-click-right = "pavucontrol";
-						max-length = 7;
-						min-length = 7;
-					};
+					#"pulseaudio" = {
+					#	format = "{icon} {volume:3}%";
+					#	format-muted = "MUTE";
+					#	format-icons = {
+					#		headphones = "";
+					#		default = [
+					#			""
+					#			""
+					#		];
+					#	};
+					#	scroll-step = 5;
+					#	on-click = "pamixer -t";
+					#	on-click-right = "pavucontrol";
+					#	max-length = 7;
+					#	min-length = 7;
+					}#;
 					"backlight" = {
 						format = "{icon} {percent:3}%";
 						format-icons = [ "" "" ];
@@ -105,6 +105,14 @@
 						on-scroll-up = "light -A 10";
 						max-length = 7;
 						min-length = 7;
+					};
+					"group/power" = {
+						orientation = "horizontal";
+						modules = [
+							"battery"
+							"custom/reboot"
+						];
+						drawer = true;
 					};
 					"battery" = {
 						states = {
@@ -116,6 +124,10 @@
 						format-charging = "	{capacity}%";
 						format-icons = [ "" "" "" "" "" ];
 						interval = 1;
+					};
+					"custom/reboot" {
+						format = "";
+						on-click = "reboot";
 					};
 				};
 			};
@@ -144,7 +156,7 @@
 				#workspaces,
 				#clock,
 				#tray,
-				#pulseaudio,
+				#pulseaudio-slider,
 				#backlight,
 				#battery { 
 					background: #282828;
@@ -170,18 +182,43 @@
 					background: #282828;
 					padding: 0 2px;
 				}
- 
+				
+				/* 
 				#pulseaudio {
 					color: #458588;
 				}
 				#pulseaudio.muted {
 					color: #cc241d;
 				}
- 
+ 				
 				#backlight {
 					color: #fabd2f;
 				}
- 
+				*/
+
+				#pulseaudio-slider trough,
+				#pulseaudio-slider highlight,
+				#backlight-slider trough,
+				#backlight-slider highlight {
+					min-height: 10px;
+					min-width: 80px;
+				}
+
+				#pulseaudio-slider trough,
+				#pulseaudio-slider highlight {
+					color: #458588;
+				}
+
+				#backlight-slider trough,
+				#backlight-slider highlight {
+					color: #fabd2f;
+				}
+
+				#backlight-slider trough,
+				#pulseaudio-slider trough {
+					opacity: 50;
+				}
+
 				#battery {
 					color: #98971a;
 				}
@@ -192,7 +229,7 @@
  				#idle_inhibitor,
 				#clock,
 				#tray,
-				#pulseaudio,
+				#pulseaudio-slider,
 				#backlight,
 				#battery {
 					padding: 0 10px;
