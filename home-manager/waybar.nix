@@ -26,10 +26,10 @@
 						"tray"
 						"custom/left-arrow-light"
 						"custom/left-arrow-dark"
-						"pulseaudio/slider"
+						"pulseaudio"
 						"custom/left-arrow-light"
 						"custom/left-arrow-dark"
-						"backlight/slider"
+						"backlight"
 						"custom/left-arrow-light"
 						"custom/left-arrow-dark"
 						"group/power"
@@ -82,22 +82,22 @@
 						icon-size = 20;
 						spacing = 10;
 					};
-					#"pulseaudio" = {
-					#	format = "{icon} {volume:3}%";
-					#	format-muted = "MUTE";
-					#	format-icons = {
-					#		headphones = "";
-					#		default = [
-					#			""
-					#			""
-					#		];
-					#	};
-					#	scroll-step = 5;
-					#	on-click = "pamixer -t";
-					#	on-click-right = "pavucontrol";
-					#	max-length = 7;
-					#	min-length = 7;
-					}#;
+					"pulseaudio" = {
+						format = "{icon} {volume:3}%";
+						format-muted = "MUTE";
+						format-icons = {
+							headphones = "";
+							default = [
+								""
+								""
+							];
+						};
+						scroll-step = 5;
+						on-click = "pamixer -t";
+						on-click-right = "pavucontrol";
+						max-length = 7;
+						min-length = 7;
+					};
 					"backlight" = {
 						format = "{icon} {percent:3}%";
 						format-icons = [ "" "" ];
@@ -110,9 +110,15 @@
 						orientation = "horizontal";
 						modules = [
 							"battery"
+							"custom/suspend"
+							"custom/shutdown"
 							"custom/reboot"
 						];
-						drawer = true;
+						drawer = {
+							transition-duration = 250;
+							transition-left-to-right = false;
+							children-class = "power";
+						};
 					};
 					"battery" = {
 						states = {
@@ -125,9 +131,17 @@
 						format-icons = [ "" "" "" "" "" ];
 						interval = 1;
 					};
-					"custom/reboot" {
-						format = "";
+					"custom/reboot" = {
+						format = "";
 						on-click = "reboot";
+					};
+					"custom/shutdown" = {
+						format = "";
+						on-click = "shutdown";
+					};
+					"custom/suspend" = {
+						format = "";
+						on-click = "systemctl suspend";
 					};
 				};
 			};
@@ -156,9 +170,12 @@
 				#workspaces,
 				#clock,
 				#tray,
-				#pulseaudio-slider,
+				#pulseaudio,
 				#backlight,
-				#battery { 
+				#battery,
+				#custom-reboot,
+				#custom-shutdown,
+				#custom-suspend {
 					background: #282828;
 				}
 
@@ -179,11 +196,11 @@
 				#workspaces button:hover {
 					box-shadow: inherit;
 					text-shadow: inherit;
+					border: #282828;
 					background: #282828;
 					padding: 0 2px;
 				}
 				
-				/* 
 				#pulseaudio {
 					color: #458588;
 				}
@@ -193,30 +210,6 @@
  				
 				#backlight {
 					color: #fabd2f;
-				}
-				*/
-
-				#pulseaudio-slider trough,
-				#pulseaudio-slider highlight,
-				#backlight-slider trough,
-				#backlight-slider highlight {
-					min-height: 10px;
-					min-width: 80px;
-				}
-
-				#pulseaudio-slider trough,
-				#pulseaudio-slider highlight {
-					color: #458588;
-				}
-
-				#backlight-slider trough,
-				#backlight-slider highlight {
-					color: #fabd2f;
-				}
-
-				#backlight-slider trough,
-				#pulseaudio-slider trough {
-					opacity: 50;
 				}
 
 				#battery {
@@ -229,9 +222,12 @@
  				#idle_inhibitor,
 				#clock,
 				#tray,
-				#pulseaudio-slider,
+				#pulseaudio,
 				#backlight,
-				#battery {
+				#battery,
+				#custom-reboot,
+				#custom-suspend,
+				#custom-shutdown {
 					padding: 0 10px;
 				}
 			'';

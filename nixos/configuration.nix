@@ -34,6 +34,9 @@
 		efi.canTouchEfiVariables = true;
 	};
 
+	# Suspend to RAM
+	boot.kernelParams = [ "mem_sleep_default=s2idle" ];
+
 	# Time zone
 	time.timeZone = "America/Los_Angeles";
 
