@@ -64,10 +64,11 @@
 						window-rewrite-default = "";
 						window-rewrite = {
 							kitty = "";
-							firefox = "";
-							steam = "";
-							discord = "";
-							rstudio = "";
+							rofi = "";
+							firefox = "";
+							steam = "";
+							discord = "";
+							rstudio = "";
 							VScodium = "";
 							eog = "";
 							Nautilus = "";
@@ -148,7 +149,7 @@
 			style = ''
 				* {
 					font-size: 20px;
-					font-family: monospace;
+					font-family: monospace, FontAwesome;
 				}
  
 				window#waybar {

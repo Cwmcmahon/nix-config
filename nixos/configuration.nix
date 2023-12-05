@@ -195,11 +195,14 @@
 	# Fonts!
 	fonts = {
 		packages = with pkgs; [
-			font-awesome
+			font-awesome_5
 			hack-font
 		];
 		enableDefaultPackages = true;
 		fontDir.enable = true;
+		fontconfig = {
+			enable = true;
+		};
 	};
 
 	# Brightness control
