@@ -57,6 +57,8 @@
 							activated = "";
 							deactivated = "";
 						};
+						tooltip-format-activated = "Idle inhibitor: {status}";
+						tooltip-format-deactivated = "Idle inhibitor: {status}";
 					};
 					"hyprland/workspaces" = {
 						format = "{name}: {windows} ";
@@ -78,6 +80,22 @@
 					};
 					"clock" = {
 						format = "{:%b %e	%I:%M %p}";
+						tooltip-format = "<small>{calendar}</small>";
+						calendar = {
+							on-scroll = 1;
+							mode-mon-col = 3;
+							format = {
+								months = "<span color='#ebdbb2'><b>{}</b></span>";
+								days = "<span color='#ebdbb2'>{}</span>";
+								weekdays = "<span color='#fabd2f'>{}</span>";
+								today = "<span color='#cc241d'><b>{}</b></span>";
+							};
+						};
+						actions = {
+							on-click-right = "mode";
+							on-scroll-up = "shift_up";
+							on-scroll-down = "shift_down";
+						};
 					};
 					"tray" = {
 						icon-size = 20;
@@ -98,6 +116,7 @@
 						on-click-right = "pavucontrol";
 						max-length = 7;
 						min-length = 7;
+						tooltip-format = "Audio level: {volume:3}%";
 					};
 					"backlight" = {
 						format = "{icon} {percent:3}%";
@@ -106,6 +125,7 @@
 						on-scroll-up = "light -A 10";
 						max-length = 7;
 						min-length = 7;
+						tooltip-format = "Brightness: {percent:3}%";
 					};
 					"group/power" = {
 						orientation = "horizontal";
@@ -135,14 +155,17 @@
 					"custom/reboot" = {
 						format = "";
 						on-click = "reboot";
+						tooltip = false;
 					};
 					"custom/shutdown" = {
 						format = "";
 						on-click = "shutdown";
+						tooltip = false;
 					};
 					"custom/suspend" = {
 						format = "";
 						on-click = "systemctl suspend";
+						tooltip = false;
 					};
 				};
 			};
@@ -199,7 +222,7 @@
 					text-shadow: inherit;
 					border: #282828;
 					background: #282828;
-					padding: 0 2px;
+					padding: 0 3px;
 				}
 				
 				#pulseaudio {

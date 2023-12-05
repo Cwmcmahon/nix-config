@@ -144,11 +144,10 @@
 		[
 			home-manager
 			waybar
-			wbg
+			swaybg
 			libnotify
 			mako
 			swayidle
-			swaylock
 			kitty
 			rofi-wayland
 			font-manager

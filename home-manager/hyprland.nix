@@ -12,7 +12,7 @@
 				"HDMI-A-1,1920x1080,auto,auto"
 			];
 			exec-once = [
-				"wbg ~/Pictures/Wallpapers/mult_falls.jpg"
+				"swaybg -i ~/Pictures/Wallpapers/mult_falls.jpg"
 				"waybar"
 				"nm-applet"
 				"blueman-applet"
