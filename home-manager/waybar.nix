@@ -211,18 +211,19 @@
 				}
  
 				#workspaces button {
-					padding: 0 2px;
 					color: #ebdbb2;
+					padding: 0 2px;
 				}
 				#workspaces button.active {
 					color: #d65d0e;
+					padding: 0 2px;
 				}
 				#workspaces button:hover {
 					box-shadow: inherit;
 					text-shadow: inherit;
 					border: #282828;
 					background: #282828;
-					padding: 0 3px;
+					padding: 0 2px;
 				}
 				
 				#pulseaudio {

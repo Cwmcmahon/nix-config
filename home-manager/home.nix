@@ -29,6 +29,16 @@
 	services = {
 		network-manager-applet.enable = true;
 		blueman-applet.enable = true;
+		mako = {
+			enable = true;
+			backgroundColor = "#076678FF";
+			borderColor = "#83a598FF";
+			borderSize = 3;
+			borderRadius = 3;
+			textColor = "#fbf1c7FF";
+			height = null;
+			width = 384;
+		};
 	}; 
 
 	# GTK enable and icons
