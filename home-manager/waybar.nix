@@ -150,6 +150,8 @@
 						format = "{icon} {capacity:3}%";
 						format-charging = "	{capacity}%";
 						format-icons = [ "" "" "" "" "" ];
+						max-length = 7;
+						min-length = 7;
 						interval = 1;
 					};
 					"custom/reboot" = {
