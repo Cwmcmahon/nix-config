@@ -77,6 +77,15 @@
 					highlightCursor = true;
 				};
 				tabStop = 2;
+				scrollOff = {
+					columns = 1;
+					lines = 3;
+				};
+				wrapLines = {
+					enable = true;
+					indent = true;
+					word = true;
+				};
 			};
 			defaultEditor = true;
 		};

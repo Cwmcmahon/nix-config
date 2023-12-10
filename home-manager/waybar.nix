@@ -148,7 +148,7 @@
 							critical = 15;
 						};
 						format = "{icon} {capacity:3}%";
-						format-charging = "	{capacity}%";
+						format-charging = "	{capacity:3}%";
 						format-icons = [ "" "" "" "" "" ];
 						max-length = 7;
 						min-length = 7;

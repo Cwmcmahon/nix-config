@@ -34,6 +34,9 @@
 		efi.canTouchEfiVariables = true;
 	};
 
+	# Firmware updater
+	services.fwupd.enable = true;
+
 	# Suspend to RAM
 	boot.kernelParams = [ "mem_sleep_default=s2idle" ];
 
@@ -170,6 +173,7 @@
 			RStudio-with-my-packages
 			unzip
 			discord
+			chromium
 			#eww-wayland # One day, when I'm braver (or just have the time)
 		];
 
