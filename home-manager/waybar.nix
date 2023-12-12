@@ -74,6 +74,8 @@
 							VScodium = "";
 							eog = "";
 							Nautilus = "";
+							chromium = "";
+							newsflash = "";
 						};
 						on-scroll-up = "hyprctl dispatch workspace e+1";
 						on-scroll-down = "hyprctl dispatch workspace e-1";
@@ -148,7 +150,7 @@
 							critical = 15;
 						};
 						format = "{icon} {capacity:3}%";
-						format-charging = "	{capacity:3}%";
+						format-charging = " {capacity:3}%";
 						format-icons = [ "" "" "" "" "" ];
 						max-length = 7;
 						min-length = 7;

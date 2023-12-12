@@ -174,6 +174,7 @@
 			unzip
 			discord
 			chromium
+			newsflash
 			#eww-wayland # One day, when I'm braver (or just have the time)
 		];
 

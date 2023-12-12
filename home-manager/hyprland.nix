@@ -16,7 +16,8 @@
 				"waybar"
 				"nm-applet"
 				"blueman-applet"
-				"swayidle -w timeout 60 'hyprctl dispatch dpms off'"
+				"swayidle -w timeout 120 'hyprctl dispatch dpms off'"
+				"[workspace 2 silent] io.gitlab.news_flash.NewsFlash"
 			];
 			env = "XCURSOR_SIZE,24";
 			input = {
