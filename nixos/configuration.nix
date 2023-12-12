@@ -90,6 +90,9 @@
 		};
 	};
 
+	# Make swaylock work with password
+	security.pam.services.swaylock = {};
+
 	# Nvidia setup
 	hardware.nvidia = {
 		modesetting.enable = true;
@@ -106,7 +109,6 @@
 	# Enable Hyprland
 	programs.hyprland = {
 		enable = true;
-		enableNvidiaPatches = true;
 		xwayland.enable = true;
 	};
 
@@ -151,6 +153,7 @@
 			libnotify
 			mako
 			swayidle
+			swaylock
 			kitty
 			rofi-wayland
 			font-manager
@@ -175,7 +178,6 @@
 			discord
 			chromium
 			newsflash
-			#eww-wayland # One day, when I'm braver (or just have the time)
 		];
 
 	# Set Kakoune as default editor

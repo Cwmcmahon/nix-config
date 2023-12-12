@@ -93,6 +93,17 @@
 			enable = true;
 			theme = "Paper";
 		};
+		swaylock = {
+			enable = true;
+			settings = {
+				color = "282828";
+				font-size = 24;
+				indicator-idle-visible = false;
+				indicator-radius = 100;
+				line-color = "ebdbb2";
+				show-failed-attempts = true;
+			};
+		};
 	};
 
 	# Nicely reload system units when changing configs

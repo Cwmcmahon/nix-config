@@ -133,9 +133,9 @@
 						orientation = "horizontal";
 						modules = [
 							"battery"
-							"custom/suspend"
 							"custom/shutdown"
 							"custom/reboot"
+							"custom/lock"
 						];
 						drawer = {
 							transition-duration = 250;
@@ -166,9 +166,9 @@
 						on-click = "shutdown";
 						tooltip = false;
 					};
-					"custom/suspend" = {
-						format = "";
-						on-click = "systemctl suspend";
+					"custom/lock" = {
+						format = "";
+						on-click = "swaylock -f && hyprctl dispatch dpms off";
 						tooltip = false;
 					};
 				};
@@ -203,7 +203,7 @@
 				#battery,
 				#custom-reboot,
 				#custom-shutdown,
-				#custom-suspend {
+				#custom-lock {
 					background: #282828;
 				}
 
@@ -255,7 +255,7 @@
 				#backlight,
 				#battery,
 				#custom-reboot,
-				#custom-suspend,
+				#custom-lock,
 				#custom-shutdown {
 					padding: 0 10px;
 				}

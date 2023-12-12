@@ -4,7 +4,6 @@
 
 	wayland.windowManager.hyprland = {
 		enable = true;
-		enableNvidiaPatches = true;
 		xwayland.enable = true;
 		settings = {
 			monitor = [
@@ -16,8 +15,7 @@
 				"waybar"
 				"nm-applet"
 				"blueman-applet"
-				"swayidle -w timeout 120 'hyprctl dispatch dpms off'"
-				"[workspace 2 silent] io.gitlab.news_flash.NewsFlash"
+				"swayidle -w timeout 120 'hyprctl dispatch dpms off' timeout 150 'swaylock -f'"
 			];
 			env = "XCURSOR_SIZE,24";
 			input = {
@@ -105,6 +103,7 @@
 				"$mainMod, F, exec, nautilus"
 				"$mainMod, T, exec, todofi.sh"
 				"$mainMod, M, fullscreen, 1"
+				"$mainMod, N, exec, io.gitlab.news_flash.NewsFlash"
 				# "$mainMod, O, togglesplit," # dwindle
 				"$mainMod, S, layoutmsg, swapwithmaster auto" # master
 				"$mainMod, O, layoutmsg, orientationcycle right left" # master
@@ -145,7 +144,7 @@
 				"$mainMod CONTROL, down, movewindow, d"
 				# Group settings 
 				"$mainMod, G, togglegroup,"
-				"$mainMod, N, changegroupactive, f"
+				"$mainMod, A, changegroupactive, f"
 				"$mainMod, L, moveoutofgroup,"
 				# Screenshot with Prt Sc button
 				'', Print, exec, grim -g "$(slurp)"''
