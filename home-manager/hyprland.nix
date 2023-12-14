@@ -16,6 +16,7 @@
 				"nm-applet"
 				"blueman-applet"
 				"swayidle -w timeout 120 'hyprctl dispatch dpms off' timeout 150 'swaylock -f'"
+				"swayidle -w timeout 10 'if pgrep -x swaylock; then hyprctl dispatch dpms off; fi'"
 			];
 			env = "XCURSOR_SIZE,24";
 			input = {

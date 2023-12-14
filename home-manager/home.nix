@@ -96,12 +96,26 @@
 		swaylock = {
 			enable = true;
 			settings = {
-				color = "282828";
+				image = "/home/carterm/Pictures/Wallpapers/mult_falls.jpg";
+				text-color = "ebdbb2";
+				text-caps-lock-color = "d65d0e";
 				font-size = 24;
+				inside-color = "28282880";
+				inside-ver-color = "45858880";
+				inside-wrong-color = "cc241d80";
+				inside-clear-color = "689d6a80";
+				ring-color = "282828";
+				ring-ver-color = "458588";
+				ring-wrong-color = "cc241d";
+				ring-clear-color = "689d6a";
+				line-color = "282828";
+				line-ver-color = "458588";
+				line-wrong-color = "cc241d";
+				line-clear-color = "689d6a";
+				key-hl-color = "d79921";
+				bs-hl-color = "d65d0e";
 				indicator-idle-visible = false;
 				indicator-radius = 100;
-				line-color = "ebdbb2";
-				show-failed-attempts = true;
 			};
 		};
 	};
