@@ -114,6 +114,7 @@
 							];
 						};
 						scroll-step = 5;
+						reverse-scrolling = true;
 						on-click = "pamixer -t";
 						on-click-right = "pavucontrol";
 						max-length = 7;

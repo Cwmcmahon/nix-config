@@ -178,6 +178,7 @@
 			discord
 			chromium
 			newsflash
+			quarto
 		];
 
 	# Set Kakoune as default editor
