@@ -10,12 +10,12 @@
 (B) Set up scene @home +daily due:$(date +%F)
 (B) Do dishes @home +daily due:$(date +%F)
 (A) Brush teeth PM @home +daily due:$(date +%F)"'';
-		commit-notes = ''(cd ~/Documents/workbench/ && git add -A && git commit -am "$(date)")'';
-		push-notes = ''(cd ~/Documents/workbench/ && git push)'';
-		pull-notes = "(cd ~/Documents/workbench/ && git pull)";
+		commit-notes = ''(cd ~/Documents/my_notes/ && git add -A && git commit -am "$(date)")'';
+		push-notes = ''(cd ~/Documents/my_notes/ && git push private private_notes)'';
+		pull-notes = "(cd ~/Documents/my_notes/ && git pull private private_notes)";
 		nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#cwm-nixos";
 		hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm@cwm-nixos";
-		open-notes = "codium ~/Documents/workbench/ && sleep 2 && codium ~/Documents/workbench/README.md";
-		quick-note = "kak ~/Documents/workbench/scratch/quicknote.md";
+		open-notes = "codium ~/Documents/my_notes/ && sleep 2 && codium ~/Documents/my_notes/README.md";
+		quick-note = "kak ~/Documents/my_notes/quicknote/quicknote.md";
 	};
 }
