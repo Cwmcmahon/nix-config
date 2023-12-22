@@ -91,12 +91,9 @@
 			};
 			# See https://wiki.hyprland.org/Configuring/Keywords/ for more
 			"$mainMod" = "SUPER";
-			# Rofi
-			bindr = [
-				"$mainMod, SUPER_L, exec, rofi -show drun -show-icons"
-			];
 			# Semi-custom binds
-			bind = [ 
+			bind = [
+				"$mainMod, A, exec, rofi -show drun -show-icons"
 				"$mainMod, Q, killactive,"
 				"$mainMod, E, exit,"
 				"$mainMod, RETURN, exec, kitty"
@@ -145,8 +142,8 @@
 				"$mainMod CONTROL, down, movewindow, d"
 				# Group settings 
 				"$mainMod, G, togglegroup,"
-				"$mainMod, A, changegroupactive, f"
-				"$mainMod, L, moveoutofgroup,"
+				"$mainMod SHIFT, S, changegroupactive, f"
+				"$mainMod SHIFT, G, moveoutofgroup,"
 				# Screenshot with Prt Sc button
 				'', Print, exec, grim -g "$(slurp)"''
 			];
