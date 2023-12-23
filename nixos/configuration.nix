@@ -140,46 +140,39 @@
 	};
 
 	# System Packages
-	environment.systemPackages = with pkgs;
-		let
-			RStudio-with-my-packages = rstudioWrapper.override{
-				packages = with rPackages; [ tidyverse shiny quarto crosstalk leaflet plotly sf gt cowplot patchwork ggiraph flexdashboard DT paletteer countrycode tidytuesdayR ];
-			};
-		in
-		[
-			home-manager
-			waybar
-			swaybg
-			libnotify
-			mako
-			swayidle
-			swaylock
-			kitty
-			rofi-wayland
-			font-manager
-			gnome.nautilus
-			gnome.eog
-			git
-			gh
-			pamixer
-			pavucontrol
-			networkmanagerapplet
-			grim
-			slurp
-			papirus-icon-theme
-			kakoune
-			pandoc
-			todo-txt-cli
-			todofi-sh
-			vscodium
-			steam-run
-			RStudio-with-my-packages
-			unzip
-			discord
-			chromium
-			newsflash
-			quarto
-		];
+	environment.systemPackages = with pkgs; [
+		home-manager
+		waybar
+		swaybg
+		libnotify
+		mako
+		swayidle
+		swaylock
+		kitty
+		rofi-wayland
+		font-manager
+		gnome.nautilus
+		gnome.eog
+		git
+		gh
+		pamixer
+		pavucontrol
+		networkmanagerapplet
+		grim
+		slurp
+		papirus-icon-theme
+		kakoune
+		pandoc
+		todo-txt-cli
+		todofi-sh
+		vscodium
+		steam-run
+		unzip
+		discord
+		chromium
+		newsflash
+		quarto
+	];
 
 	# Set Kakoune as default editor
 	environment.variables = {

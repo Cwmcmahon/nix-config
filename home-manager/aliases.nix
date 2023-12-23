@@ -13,9 +13,10 @@
 		commit-notes = ''(cd ~/Documents/my_notes/ && git add -A && git commit -am "$(date)")'';
 		push-notes = ''(cd ~/Documents/my_notes/ && git push private private_notes)'';
 		pull-notes = "(cd ~/Documents/my_notes/ && git pull private private_notes)";
-		nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#cwm-nixos";
-		hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm@cwm-nixos";
 		open-notes = "codium ~/Documents/my_notes/ && sleep 2 && codium ~/Documents/my_notes/README.md";
 		quick-note = "kak ~/Documents/my_notes/quicknote/quicknote.md";
+		nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#cwm-nixos";
+		hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm@cwm-nixos";
+		rstudio-dev = "nix develop /tmp/rstudio";
 	};
 }
