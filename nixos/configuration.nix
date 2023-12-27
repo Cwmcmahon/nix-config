@@ -90,6 +90,9 @@
 		};
 	};
 
+	# Enable the OpenSSH server
+	services.sshd.enable = true;
+
 	# Make swaylock work with password
 	security.pam.services.swaylock = {};
 

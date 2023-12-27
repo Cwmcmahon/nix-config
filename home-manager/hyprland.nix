@@ -102,6 +102,7 @@
 				"$mainMod, T, exec, todofi.sh"
 				"$mainMod, M, fullscreen, 1"
 				"$mainMod, N, exec, io.gitlab.news_flash.NewsFlash"
+				# "$mainMod, R, exec, nix develop '/tmp/rstudio'" # FIX THIS
 				# "$mainMod, O, togglesplit," # dwindle
 				"$mainMod, S, layoutmsg, swapwithmaster auto" # master
 				"$mainMod, O, layoutmsg, orientationcycle right left" # master
