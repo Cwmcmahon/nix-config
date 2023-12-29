@@ -175,6 +175,7 @@
 		chromium
 		newsflash
 		quarto
+		itch
 	];
 
 	# Set Kakoune as default editor

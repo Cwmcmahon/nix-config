@@ -69,6 +69,7 @@
 							rofi = "";
 							firefox = "";
 							steam = "";
+							itch = "";
 							discord = "";
 							rstudio = "";
 							VScodium = "";
