@@ -176,7 +176,7 @@
 		steam-run
 		unzip
 		discord
-		chromium
+		vivaldi
 		newsflash
 		quarto
 		itch
