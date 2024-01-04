@@ -17,6 +17,9 @@
 				"blueman-applet"
 				"swayidle -w timeout 120 'hyprctl dispatch dpms off' timeout 150 'swaylock -f'"
 				"swayidle -w timeout 10 'if pgrep -x swaylock; then hyprctl dispatch dpms off; fi'"
+				"wl-paste --type text --watch cliphist store" #Stores only text data
+				"wl-paste --type image --watch cliphist store" #Stores only image data
+				"sway-audio-idle-inhibit"
 			];
 			env = "XCURSOR_SIZE,24";
 			input = {
@@ -145,8 +148,10 @@
 				"$mainMod, G, togglegroup,"
 				"$mainMod SHIFT, S, changegroupactive, f"
 				"$mainMod SHIFT, G, moveoutofgroup,"
-				# Screenshot with Prt Sc button
+				# Screenshot with print screen key
 				'', Print, exec, grim -g "$(slurp)"''
+				# Cliphist
+				"$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 			];
 			binde = [
 				# Adjust brightness or volume					 

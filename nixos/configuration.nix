@@ -38,7 +38,9 @@
 	services.fwupd.enable = true;
 
 	# Suspend to RAM
-	boot.kernelParams = [ "mem_sleep_default=s2idle" ];
+	boot.kernelParams = [
+		"mem_sleep_default=s2idle"
+	];
 
 	# Time zone
 	time.timeZone = "America/Los_Angeles";
@@ -153,6 +155,8 @@
 		swaylock
 		kitty
 		rofi-wayland
+		wl-clipboard
+		cliphist
 		font-manager
 		gnome.nautilus
 		gnome.eog
@@ -176,6 +180,7 @@
 		newsflash
 		quarto
 		itch
+		sway-audio-idle-inhibit
 	];
 
 	# Set Kakoune as default editor
