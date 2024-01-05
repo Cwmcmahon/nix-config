@@ -1,3 +1,4 @@
-import applauncher from './applauncher/applauncher.js';
+import { applauncher } from './applauncher/applauncher.js';
+import { Bar } from './topbar/topbar.js';
 
-export default applauncher;
+export default { windows: [applauncher, Bar()]  };

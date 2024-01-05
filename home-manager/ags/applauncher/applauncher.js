@@ -98,7 +98,7 @@ export const applauncher = Widget.Window({
 	focusable: true,
 	child: Applauncher({
 		width: 960,
-		height: 500,
+		height: 540,
 		spacing: 12,
 	}),
 });

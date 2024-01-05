@@ -5,7 +5,7 @@
 		./hyprland.nix
 		./waybar.nix
 		./todo.nix
-		./aliases.nix
+		./bash.nix
 	];
 
 	nixpkgs = {
