@@ -13,7 +13,10 @@
 						"idle_inhibitor"
 						"custom/right-arrow-dark"
 						"custom/right-arrow-light"
-						"hyprland/workspaces" 
+						"hyprland/workspaces"
+						"custom/right-arrow-dark"
+						"custom/right-arrow-light"
+						"hyprland/window"
 						"custom/right-arrow-dark"
 					];
 					modules-center = [ 
@@ -26,7 +29,7 @@
 						"tray"
 						"custom/left-arrow-light"
 						"custom/left-arrow-dark"
-						"pulseaudio"
+						"group/audio"
 						"custom/left-arrow-light"
 						"custom/left-arrow-dark"
 						"backlight"
@@ -61,7 +64,7 @@
 						tooltip-format-deactivated = "Idle inhibitor: {status}";
 					};
 					"hyprland/workspaces" = {
-						format = "{name}: {windows} ";
+						format = "{name}";
 						format-window-separator = " ";
 						window-rewrite-default = "";
 						window-rewrite = {
@@ -80,6 +83,15 @@
 						};
 						on-scroll-up = "hyprctl dispatch workspace e+1";
 						on-scroll-down = "hyprctl dispatch workspace e-1";
+					};
+					"hyprland/window" = {
+						format = " {class} ";
+						rewrite	= {
+							"(.*)Nautilus(.*)" = " Nautilus ";
+							"(.*)newsflash(.*)"  = " newsflash ";
+							"(.*)eog(.*)" = " Eye of Gnome ";
+							"(.*)Vivaldi(.*)" = " Vivaldi " ;
+						};
 					};
 					"clock" = {
 						format = "{:%b %e	%I:%M %p}";
@@ -104,6 +116,18 @@
 						icon-size = 20;
 						spacing = 10;
 					};
+					"group/audio" = {
+						orientation = "horizontal";
+						modules = [
+							"pulseaudio"
+							"mpris"
+						];
+						drawer = {
+							transition-duration = 250;
+							transition-left-to-right = false;
+							children-class = "audio";
+						};
+					};
 					"pulseaudio" = {
 						format = "{icon} {volume:3}%";
 						format-muted = "MUTE";
@@ -121,6 +145,11 @@
 						max-length = 7;
 						min-length = 7;
 						tooltip-format = "Audio level: {volume:3}%";
+					};
+					"mpris" = {
+						format = "{dynamic}";
+						dynamic-len = 27;
+						title-len = 24;
 					};
 					"backlight" = {
 						format = "{icon} {percent:3}%";
@@ -198,9 +227,11 @@
 
 				#idle_inhibitor,
 				#workspaces,
+				#window,
 				#clock,
 				#tray,
 				#pulseaudio,
+				#mpris,
 				#backlight,
 				#battery,
 				#custom-reboot,
@@ -218,21 +249,22 @@
  
 				#workspaces button {
 					color: #ebdbb2;
-					padding: 0 2px;
+					padding: 0 4px;
 				}
 				#workspaces button.active {
 					color: #d65d0e;
-					padding: 0 2px;
+					padding: 0 4px;
 				}
 				#workspaces button:hover {
 					box-shadow: inherit;
 					text-shadow: inherit;
 					border: #282828;
 					background: #282828;
-					padding: 0 2px;
+					padding: 0 4px;
 				}
 				
-				#pulseaudio {
+				#pulseaudio,
+				#mpris {
 					color: #458588;
 				}
 				#pulseaudio.muted {
@@ -254,6 +286,7 @@
 				#clock,
 				#tray,
 				#pulseaudio,
+				#mpris,
 				#backlight,
 				#battery,
 				#custom-reboot,

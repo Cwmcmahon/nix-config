@@ -1,7 +1,6 @@
 { inputs, lib, config, pkgs, host, ... }: {
 	# You can import other home-manager modules here
 	imports = [
-		inputs.ags.homeManagerModules.default
 		./hyprland.nix
 		./waybar.nix
 		./todo.nix
@@ -93,11 +92,6 @@
 		rofi = {
 			enable = true;
 			theme = "Paper";
-		};
-		ags = {
-			enable = true;
-			configDir = ./ags;
-			extraPackages = [ pkgs.libsoup_3 ];
 		};
 		swaylock = {
 			enable = true;

@@ -181,6 +181,7 @@
 		quarto
 		itch
 		sway-audio-idle-inhibit
+		playerctl
 	];
 
 	# Set Kakoune as default editor
