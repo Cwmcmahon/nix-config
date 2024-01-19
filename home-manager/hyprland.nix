@@ -100,7 +100,7 @@
 				"$mainMod, Q, killactive,"
 				"$mainMod, E, exit,"
 				"$mainMod, RETURN, exec, kitty"
-				"$mainMod, B, exec, firefox"
+				"$mainMod, B, exec, vivaldi"
 				"$mainMod, F, exec, nautilus"
 				"$mainMod, T, exec, todofi.sh"
 				"$mainMod, M, fullscreen, 1"

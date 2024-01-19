@@ -7,6 +7,7 @@
 			enable = true;
 			settings = {
 				mainBar = {
+					exclusive = true;
 					layer = "top";
 					modules-left = [
 						"custom/right-arrow-light"
@@ -150,6 +151,10 @@
 						format = "{dynamic}";
 						dynamic-len = 27;
 						title-len = 24;
+						dynamic-order = [
+							"title"
+							"artist"
+						];
 					};
 					"backlight" = {
 						format = "{icon} {percent:3}%";

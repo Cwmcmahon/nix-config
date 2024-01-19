@@ -18,5 +18,6 @@
 		nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#cwm-nixos";
 		hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm@cwm-nixos";
 		rstudio-dev = "nix develop /tmp/rstudio";
+		nvim = "nix run ~/Documents/nix-config/dev-envs/nixvim/# --";
 	};
 }
