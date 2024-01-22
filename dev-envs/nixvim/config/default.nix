@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
 # Import all your configuration modules here
   imports = [
     ./bufferline.nix
@@ -39,13 +39,22 @@
           action = "live_grep";
         };
       };
+      extensions = {
+        fzf-native.enable = true;
+      };
     };
 
     plugins.treesitter = {
       enable = true;
     };
 
+    extraPlugins = with pkgs.vimPlugins; [
+      nvim-web-devicons
+    ];
+
     options = {
+      guifont = "Hack,Font Awesome 5 Free\\,Font Awesome 5 Free Regular";
+
       number = true;
       relativenumber = true;
       cursorline = true;

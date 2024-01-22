@@ -65,6 +65,9 @@
 		kitty = {
 			enable = true;
 			theme = "Gruvbox Dark Hard";
+      font = {
+        name = "Hack";
+      };
 		};
 		kakoune = {
 			enable = true;

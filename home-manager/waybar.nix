@@ -212,7 +212,7 @@
 			style = ''
 				* {
 					font-size: 20px;
-					font-family: monospace, FontAwesome;
+					font-family: Hack, monospace, "Font Awesome 5 Brands,Font Awesome 5 Brands Regular", "Font Awesome 5 Free,Font Awesome 5 Free Solid";
 				}
  
 				window#waybar {

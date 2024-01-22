@@ -187,8 +187,8 @@
 
 	# Set Kakoune as default editor
 	environment.variables = {
-		EDITOR = "kak";
-		VISUAL = "kak";
+		EDITOR = "nvim";
+		VISUAL = "nvim";
 	};
 
 	# Firefox
@@ -207,6 +207,7 @@
 	fonts = {
 		packages = with pkgs; [
 			font-awesome_5
+      nerdfonts
 			hack-font
 		];
 		enableDefaultPackages = true;
