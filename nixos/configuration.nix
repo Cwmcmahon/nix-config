@@ -182,7 +182,8 @@
 		itch
 		sway-audio-idle-inhibit
 		playerctl
-	];
+	  ripgrep
+  ];
 
 	# Set Kakoune as default editor
 	environment.variables = {
