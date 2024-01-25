@@ -207,7 +207,7 @@
 					};
 					"custom/shutdown" = {
 						format = "";
-						on-click = "shutdown";
+						on-click = "shutdown now";
 						tooltip = false;
 					};
 					"custom/lock" = {

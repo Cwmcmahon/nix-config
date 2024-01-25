@@ -21,23 +21,38 @@
 		# Available through 'nixos-rebuild --flake .#your-hostname'
 		nixosConfigurations = {
 			cwm-nixos = nixpkgs.lib.nixosSystem {
-				specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-				# > Our main nixos configuration file <
+				specialArgs = { inherit inputs; };
 				modules = [
-					./nixos/configuration.nix 
+					./nixos/hosts/cwm-nixos.nix 
 				];
 			};
+
+      dell-nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./nixos/hosts/dell-nixos.nix
+        ];
+      };
 		};
 
 		# Standalone home-manager configuration entrypoint
 		# Available through 'home-manager --flake .#your-username@your-hostname'
-		homeConfigurations."carterm@cwm-nixos" = home-manager.lib.homeManagerConfiguration {
-				pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-				extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
-				# > Our main home-manager configuration file <
-				modules = [ 
-					./home-manager/home.nix
-				];
-		};
+		homeConfigurations = {
+      "carterm@cwm-nixos" = home-manager.lib.homeManagerConfiguration {
+	  			pkgs = nixpkgs.legacyPackages.x86_64-linux;
+	  			extraSpecialArgs = { inherit inputs; };
+	  			modules = [ 
+	  				./home-manager/home.nix
+	  			];
+	  	};
+      
+      "carterm@dell-nixos" = home-manager.lib.homeManagerConfiguration {
+	  			pkgs = nixpkgs.legacyPackages.x86_64-linux;
+	  			extraSpecialArgs = { inherit inputs; };
+	  			modules = [ 
+	  				./home-manager/home.nix
+	  			];
+	  	};
+    };
 	};
 }

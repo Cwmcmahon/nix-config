@@ -1,11 +1,9 @@
-{ inputs, lib, config, pkgs, ... }: {
-	# You can import other NixOS modules here
+{ pkgs, lib, inputs, config, ... }: { 
 	imports = [
-		./hardware-configuration.nix
+		/etc/nixos/hardware-configuration.nix
 	];
 
 	nixpkgs = {
-		# You can add overlays here
 		overlays = [
 		];
 		config = {
@@ -37,11 +35,6 @@
 	# Firmware updater
 	services.fwupd.enable = true;
 
-	# Suspend to RAM
-	boot.kernelParams = [
-		"mem_sleep_default=s2idle"
-	];
-
 	# Time zone
 	time.timeZone = "America/Los_Angeles";
 
@@ -60,14 +53,6 @@
 		LC_TIME = "en_US.UTF-8";
 	};
 
-	# Power management
-	powerManagement.enable = true;
-
-	# Networking
-	networking = {
-		hostName = "cwm-nixos";
-		networkmanager.enable = true;
-	};
 
 	# Bluetooth
 	hardware.bluetooth.enable = true;
@@ -98,12 +83,6 @@
 	# Make swaylock work with password
 	security.pam.services.swaylock = {};
 
-	# Nvidia setup
-	hardware.nvidia = {
-		modesetting.enable = true;
-		open = false;
-		nvidiaSettings = true;
-	};
 
 	# Wayland desktop portals
 	xdg.portal = {
@@ -189,11 +168,6 @@
 	environment.variables = {
 		EDITOR = "nvim";
 		VISUAL = "nvim";
-	};
-
-	# Firefox
-	programs.firefox = {
-		enable = true;
 	};
 
 	# Steam
