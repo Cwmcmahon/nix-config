@@ -16,9 +16,9 @@
 						"custom/right-arrow-light"
 						"hyprland/workspaces"
 						"custom/right-arrow-dark"
-						"custom/right-arrow-light"
+						"custom/window-right-arrow-light"
 						"hyprland/window"
-						"custom/right-arrow-dark"
+						"custom/window-right-arrow-dark"
 					];
 					modules-center = [ 
 						"custom/left-arrow-dark"
@@ -52,6 +52,14 @@
 						tooltip = false;
 					};
 					"custom/right-arrow-light" = {
+						format = "";
+						tooltip = false;
+					};
+					"custom/window-right-arrow-dark" = {
+						format = "";
+						tooltip = false;
+					};
+					"custom/window-right-arrow-light" = {
 						format = "";
 						tooltip = false;
 					};
@@ -221,11 +229,13 @@
 				}
 				
 				#custom-right-arrow-dark,
-				#custom-left-arrow-dark {
+				#custom-left-arrow-dark, 
+        #custom-window-right-arrow-dark {
 					color: #282828;
 				}
 				#custom-right-arrow-light,
-				#custom-left-arrow-light {
+				#custom-left-arrow-light,
+        #custom-window-right-arrow-light {
 					color: #3c3836;
 					background: #282828;
 				}
@@ -267,7 +277,17 @@
 					background: #282828;
 					padding: 0 4px;
 				}
-				
+
+        window#waybar.fullscreen #window {
+          color: #d65d0e;
+        }
+        window#waybar.empty #window, 
+        window#waybar.empty #custom-window-right-arrow-dark,
+        window#waybar.empty #custom-window-right-arrow-light {
+          color: #3c3836;
+          background: #3c3836;
+        }
+
 				#pulseaudio,
 				#mpris {
 					color: #458588;
