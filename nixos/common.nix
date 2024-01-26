@@ -35,6 +35,9 @@
 	# Firmware updater
 	services.fwupd.enable = true;
 
+  # Automatic USB mounting
+  services.devmon.enable = true;
+
 	# Time zone
 	time.timeZone = "America/Los_Angeles";
 
@@ -158,6 +161,8 @@
 	  ripgrep
     bat
     busybox
+    udevil
+    trashy
   ];
 
 	# Set Neovim as default editor
