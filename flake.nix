@@ -11,12 +11,14 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+    impermanence.url = "github:nix-community/impermanence";
+
 		# Shameless plug: looking for a way to nixify your themes and make
 		# everything match nicely? Try nix-colors!
 		# nix-colors.url = "github:misterio77/nix-colors";
 	};
 
-	outputs = { nixpkgs, home-manager, ... }@inputs: {
+	outputs = { nixpkgs, home-manager, impermanence, ... }@inputs: {
 		# NixOS configuration entrypoint
 		# Available through 'nixos-rebuild --flake .#your-hostname'
 		nixosConfigurations = {
@@ -30,6 +32,7 @@
       dell-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
+          impermanence.nixosModules.impermanence
           ./nixos/hosts/dell-nixos.nix
         ];
       };

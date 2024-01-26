@@ -53,7 +53,6 @@
 		LC_TIME = "en_US.UTF-8";
 	};
 
-
 	# Bluetooth
 	hardware.bluetooth.enable = true;
 	services.blueman.enable = true;
@@ -65,7 +64,7 @@
 		driSupport32Bit = true;
 	};
 
-	# Enable the X11 windowing system.
+	# Enable Wayland.
 	services.xserver = {
 		enable = true;
 		videoDrivers = [ "nvidia" ];
@@ -82,7 +81,6 @@
 
 	# Make swaylock work with password
 	security.pam.services.swaylock = {};
-
 
 	# Wayland desktop portals
 	xdg.portal = {
@@ -147,34 +145,25 @@
 		grim
 		slurp
 		papirus-icon-theme
-		kakoune
 		pandoc
 		todo-txt-cli
 		todofi-sh
 		vscodium
-		steam-run
 		unzip
-		discord
 		vivaldi
 		newsflash
 		quarto
-		itch
 		sway-audio-idle-inhibit
 		playerctl
 	  ripgrep
+    bat
+    busybox
   ];
 
-	# Set Kakoune as default editor
+	# Set Neovim as default editor
 	environment.variables = {
 		EDITOR = "nvim";
 		VISUAL = "nvim";
-	};
-
-	# Steam
-	programs.steam = {
-		enable = true;
-		remotePlay.openFirewall = true;
-		dedicatedServer.openFirewall = true;
 	};
 
 	# Fonts!

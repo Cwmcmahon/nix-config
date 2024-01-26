@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ../common.nix
   ];
@@ -19,5 +19,18 @@
 		modesetting.enable = true;
 		open = false;
 		nvidiaSettings = true;
+	};
+
+  environment.systemPackages = with pkgs; [
+    steam-run
+    itch
+    discord
+  ];
+
+	# Steam
+	programs.steam = {
+		enable = true;
+		remotePlay.openFirewall = true;
+		dedicatedServer.openFirewall = true;
 	};
 }
