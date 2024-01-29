@@ -9,17 +9,16 @@
   ];
 
   # Networking
-  networking = {
-    hostName = "cwm-nixos";
-    networkmanager.enable = true;
-  };
- 
+  networking.hostName = "cwm-nixos";
+     
   # Nvidia setup
   hardware.nvidia = {
     modesetting.enable = true;
     open = false;
     nvidiaSettings = true;
   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   environment.systemPackages = with pkgs; [
     steam-run

@@ -53,18 +53,19 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Networking
+  networking.networkmanager.enable = true;
+
   # Enabling opengl
   hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
   };
-
   
   # Enable Wayland.
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
     layout = "us";
     xkbVariant = "";
     displayManager.gdm = {
@@ -133,13 +134,11 @@
     swayidle
     swaylock
     kitty
+    helix
     nil
     rofi-wayland
     wl-clipboard
     cliphist
-    font-manager
-    xfce.thunar
-    gnome.eog
     git
     gh
     pamixer
@@ -165,10 +164,13 @@
     trashy
   ];
 
+  programs.thunar.enable = true;
+
   # Set Neovim as default editor
   environment.variables = {
     EDITOR = "hx";
     VISUAL = "hx";
+    TERM = "kitty";
   };
 
   # Fonts!

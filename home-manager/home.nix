@@ -21,8 +21,6 @@
   home = {
     username = "carterm";
     homeDirectory = "/home/carterm";
-    shellAliases = {
-    };
   };
 
   # Services
@@ -41,23 +39,16 @@
     };
   }; 
 
-  # GTK enable and icons
-  gtk = {
-    enable = true;
-    iconTheme.name = "Papirus";
-  };
-
   # MIME Types
   xdg.mimeApps.defaultApplications = {
     "text/*" = [ "codium.desktop"  ];
-    "application/pdf" = [ "firefox.desktop" ];
-    "image/*" = [ "org.gnome.eog.desktop"  ];
+    "application/pdf" = [ "vivaldi-stable.desktop" ];
+    "image/*" = [ "gimp.desktop" ];
   };
 
   # Enable and configure programs
   programs = {
     home-manager.enable = true;
-    git.enable = true;
     bash = {
       enable = true;
       enableCompletion = true;
@@ -109,6 +100,12 @@
         indicator-radius = 100;
       };
     };
+  };
+
+  # GTK icons
+  gtk = {
+    enable = true;
+    iconTheme.name = "Papirus";
   };
 
   # Nicely reload system units when changing configs
