@@ -33,4 +33,7 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  # State Version
+  system.stateVersion = "23.05";
 }
