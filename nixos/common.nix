@@ -35,9 +35,6 @@
   # Firmware updater
   services.fwupd.enable = true;
 
-  # Automatic USB mounting
-  services.devmon.enable = true;
-
   # Time zone
   time.timeZone = "America/Los_Angeles";
 
@@ -56,10 +53,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
   # Enabling opengl
   hardware.opengl = {
     enable = true;
@@ -67,6 +60,7 @@
     driSupport32Bit = true;
   };
 
+  
   # Enable Wayland.
   services.xserver = {
     enable = true;
@@ -78,30 +72,19 @@
       wayland = true;
     };
   };
-
-  # Enable the OpenSSH server
-  services.sshd.enable = true;
-
-  # Make swaylock work with password
-  security.pam.services.swaylock = {};
-
-  # Wayland desktop portals
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
-
+ 
   # Enable Hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
 
-  # Enable bash
-  programs.bash = {
-    enableCompletion = true;
+  # Wayland desktop portals
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-
+  
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -113,6 +96,22 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
+  # Enable the OpenSSH server
+  services.sshd.enable = true;
+ 
+  # Automatic USB mounting
+  services.devmon.enable = true;
+
+  # Make swaylock work with password
+  security.pam.services.swaylock = {};
+
+  # Brightness control
+  programs.light.enable = true;
 
   # Users
   users.users = {
@@ -185,7 +184,4 @@
       enable = true;
     };
   };
-
-  # Brightness control
-  programs.light.enable = true;
 }
