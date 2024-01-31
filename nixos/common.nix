@@ -74,12 +74,6 @@
     };
   };
  
-  # Enable Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   # Wayland desktop portals
   xdg.portal = {
     enable = true;

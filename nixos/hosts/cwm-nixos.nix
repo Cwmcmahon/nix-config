@@ -3,7 +3,7 @@
     ../common.nix
   ];
   
-  # Suspend to RAM
+  # Suspend
   boot.kernelParams = [
     "mem_sleep_default=s2idle"
   ];
@@ -19,6 +19,11 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     steam-run

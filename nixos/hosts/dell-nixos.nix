@@ -1,18 +1,17 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ../common.nix
   ];
 
+  programs.niri.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    alacritty
+    fuzzel
+  ];
+
   # Networking
   networking.hostName = "dell-nixos";
-
-  # Swap
-  swapDevices = [ {
-      device = "/var/lib/swapfile";
-      size = 16*1024;
-  } ];
-
-  boot.resumeDevice = "/var/lib/swapfile";
 
   system.stateVersion = "23.11";
 }

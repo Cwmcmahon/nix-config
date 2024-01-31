@@ -11,12 +11,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Niri
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.niri-src.url = "github:YaLTeR/niri";
+    };
+
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, impermanence, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, niri, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
@@ -31,6 +37,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./nixos/hosts/dell-nixos.nix
+          niri.nixosModules.niri
         ];
       };
     };
@@ -42,7 +49,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs; };
           modules = [ 
-            ./home-manager/home.nix
+            ./home-manager/users/cwm-home.nix
           ];
       };
       
@@ -50,7 +57,8 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs; };
           modules = [ 
-            ./home-manager/home.nix
+            ./home-manager/users/dell-home.nix
+            niri.homeModules.config
           ];
       };
     };

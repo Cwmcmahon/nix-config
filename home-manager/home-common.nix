@@ -1,7 +1,6 @@
 { inputs, lib, config, pkgs, host, ... }: {
   # You can import other home-manager modules here
   imports = [
-    ./hyprland.nix
     ./waybar.nix
     ./todo.nix
     ./bash.nix
