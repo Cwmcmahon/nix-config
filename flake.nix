@@ -17,12 +17,18 @@
       inputs.niri-src.url = "github:YaLTeR/niri";
     };
 
+    # ironbar
+    ironbar = {
+      url = "github:JakeStanger/ironbar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, niri, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, niri, ironbar, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
@@ -59,6 +65,7 @@
           modules = [ 
             ./home-manager/users/dell-home.nix
             niri.homeModules.config
+            ironbar.homeManagerModules.default
           ];
       };
     };
