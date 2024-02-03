@@ -3,10 +3,9 @@
   ];
 
   programs.niri.config = ''
-    spawn-at-startup "swabg" "-i" "~/Pictures/Wallpapers/mult_falls.jpg"
+    spawn-at-startup "swaybg" "-i" "/home/carterm/Pictures/Wallpapers/mult_falls.jpg"
     spawn-at-startup "ironbar"
-    spawn-at-startup "mako"
-  
+      
     input {
       keyboard {
         xkb {
@@ -65,13 +64,13 @@
       Mod+Q { close-window; }
       
       // Volume key mappings
-      XF86AudioRaiseVolume { spawn "bash" "pamixer" "-i" "5"; }
-      XF86AudioLowerVolume { spawn "bash" "pamixer" "-d" "5"; }
-      XF86AUdioMute { spawn "bash" "pamixer" "-t"; }
+      F3 { spawn "pamixer" "-i" "5"; }
+      F2 { spawn "pamixer" "-d" "5"; }
+      F1 { spawn "pamixer" "-t"; }
 
       // Brightness key mappings
-      XF86MonBrightnessUp { "spawn" "bash" "light" "-A" "10"; }
-      XF86MonBrightnessDown { "spawn" "bash" "light" "-U" "10"; }      
+      F7 { spawn "light" "-A" "10"; }
+      F6 { spawn "light" "-U" "10"; }      
   
       Mod+Left  { focus-column-left; }
       Mod+Down  { focus-window-down; }

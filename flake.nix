@@ -12,10 +12,10 @@
     };
 
     # Niri
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.niri-src.url = "github:YaLTeR/niri";
-    };
+    #niri = {
+    #  url = "github:sodiboo/niri-flake";
+    #  inputs.niri-src.url = "github:YaLTeR/niri";
+    #};
 
     # ironbar
     ironbar = {
@@ -28,7 +28,7 @@
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, niri, ironbar, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ironbar, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
@@ -43,7 +43,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./nixos/hosts/dell-nixos.nix
-          niri.nixosModules.niri
+          #niri.nixosModules.niri
         ];
       };
     };
@@ -64,7 +64,7 @@
           extraSpecialArgs = { inherit inputs; };
           modules = [ 
             ./home-manager/users/dell-home.nix
-            niri.homeModules.config
+            #niri.homeModules.config
             ironbar.homeManagerModules.default
           ];
       };

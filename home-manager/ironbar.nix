@@ -4,7 +4,29 @@
 
   programs.ironbar = {
     enable = true;
-    config = {
+    systemd = true;
+    config = let 
+      r-a-l = {
+        type = "label";
+        label = "#r-arrow-light";
+        class = "light-arrow";
+      };
+      r-a-d = {
+        type = "label";
+        label = "#r-arrow-dark";
+        class = "dark-arrow";
+      };
+      l-a-l = {
+        type = "label";
+        label = "#l-arrow-light";
+        class = "light-arrow";
+      };
+      l-a-d = {
+        type = "label";
+        label = "#l-arrow-dark";
+        class = "dark-arrow";
+      };
+    in {
       ironvar_defaults = {
         r-arrow-light = "";
         r-arrow-dark = "";
@@ -13,34 +35,40 @@
       };
       position = "top";
       height = 24;
-      start = [];
+      start = [
+        r-a-l
+        {
+          type = "focused";
+          icon_size = 20;
+          show_label = false;
+          truncate = {
+            mode = "start";
+            max_length = 23;
+          };
+        }
+        r-a-d
+      ];
       center = [
-        {
-          type = "label";
-          label = "#l-arrow-light";
-          class = "light-arrow";
-        }
-        {
-          type = "label";
-          label = "#l-arrow-dark";
-          class = "dark-arrow";
-        }
+        l-a-d
         {
           type = "clock";
           format = "%b %e %I:%M %p";
         }
-        {
-          type = "label";
-          label = "#r-arrow-dark";
-          class = "dark-arrow";
-        }
-        {
-          type = "label";
-          label = "#r-arrow-light";
-          class = "light-arrow";
-        }
+        r-a-d
       ];
-      end = [];
+      end = [
+        l-a-d
+        {
+          type = "tray";
+        }
+        l-a-l
+        l-a-d
+        {
+          type = "upower";
+          icon_size = 20;
+        }
+        l-a-l
+      ];
     };
     style = ''
       @define-color bar_bg #3c3836;
@@ -61,7 +89,8 @@
         color: @font;
       }
 
-      .widget {
+      .widget,
+      .popup {
         background: @mod_bg;
         color: @font;
       }
