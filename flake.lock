@@ -1,42 +1,21 @@
 {
   "nodes": {
-    "crane": {
-      "inputs": {
-        "nixpkgs": [
-          "ironbar",
-          "nixpkgs"
-        ]
-      },
+    "bedload": {
+      "flake": false,
       "locked": {
-        "lastModified": 1703439018,
-        "narHash": "sha256-VT+06ft/x3eMZ1MJxWzQP3zXFGcrxGo5VR2rB7t88hs=",
-        "owner": "ipetkov",
-        "repo": "crane",
-        "rev": "afdcd41180e3dfe4dac46b5ee396e3b12ccc967a",
-        "type": "github"
+        "lastModified": 1705829418,
+        "narHash": "sha256-K3CXJjOW/oXKlVFBahTNtCTYMps0TnygRkp60lnDPlo=",
+        "ref": "refs/heads/main",
+        "rev": "9cdc0e0f7a2b39dd10675fb7cdaed6dac401ba39",
+        "revCount": 9,
+        "submodules": true,
+        "type": "git",
+        "url": "https://git.sr.ht/~novakane/river-bedload"
       },
       "original": {
-        "owner": "ipetkov",
-        "repo": "crane",
-        "type": "github"
-      }
-    },
-    "flake-utils": {
-      "inputs": {
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1681202837,
-        "narHash": "sha256-H+Rh19JDwRtpVPAWp64F+rlEtxUWBAQW28eAi3SRSzg=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "cfacdce06f30d2b68473a46042957675eebb3401",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
+        "submodules": true,
+        "type": "git",
+        "url": "https://git.sr.ht/~novakane/river-bedload"
       }
     },
     "home-manager": {
@@ -59,62 +38,7 @@
         "type": "github"
       }
     },
-    "ironbar": {
-      "inputs": {
-        "crane": "crane",
-        "naersk": "naersk",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1706563996,
-        "narHash": "sha256-b9d6RMymItnsMJIYwQPuADwtWQEHM/F9MZ1YuCToEW8=",
-        "owner": "JakeStanger",
-        "repo": "ironbar",
-        "rev": "2251ea9246921d19d99664560e670bf73cf632d9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "JakeStanger",
-        "repo": "ironbar",
-        "type": "github"
-      }
-    },
-    "naersk": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1698420672,
-        "narHash": "sha256-/TdeHMPRjjdJub7p7+w55vyABrsJlt5QkznPYy55vKA=",
-        "owner": "nix-community",
-        "repo": "naersk",
-        "rev": "aeb58d5e8faead8980a807c840232697982d47b9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "naersk",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1704008649,
-        "narHash": "sha256-rGPSWjXTXTurQN9beuHdyJhB8O761w1Zc5BqSSmHvoM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "d44d59d2b5bd694cd9d996fd8c51d03e3e9ba7f7",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
       "locked": {
         "lastModified": 1705316053,
         "narHash": "sha256-J2Ey5mPFT8gdfL2XC0JTZvKaBw/b2pnyudEXFvl+dQM=",
@@ -130,48 +54,33 @@
         "type": "github"
       }
     },
-    "root": {
+    "river-bedload": {
       "inputs": {
-        "home-manager": "home-manager",
-        "ironbar": "ironbar",
-        "nixpkgs": "nixpkgs_2"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "flake-utils": "flake-utils",
+        "bedload": "bedload",
         "nixpkgs": [
-          "ironbar",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1703902408,
-        "narHash": "sha256-qXdWvu+tlgNjeoz8yQMRKSom6QyRROfgpmeOhwbujqw=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "319f57cd2c34348c55970a4bf2b35afe82088681",
-        "type": "github"
+        "dir": "pkgs/river-bedload",
+        "dirtyRev": "9a6c17cecf879547ca1e15a8eb2988d7fd339da7-dirty",
+        "dirtyShortRev": "9a6c17c-dirty",
+        "lastModified": 1706921391,
+        "narHash": "sha256-QMoGQbKwp7PfrLzEdfMwzYeGulAo2CJpGxqDxd0t4ds=",
+        "type": "git",
+        "url": "file:///home/carterm/Documents/nix-config?dir=pkgs/river-bedload"
       },
       "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
+        "dir": "pkgs/river-bedload",
+        "type": "git",
+        "url": "file:///home/carterm/Documents/nix-config?dir=pkgs/river-bedload"
       }
     },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "river-bedload": "river-bedload"
       }
     }
   },

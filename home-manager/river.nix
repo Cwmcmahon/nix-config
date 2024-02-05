@@ -19,10 +19,10 @@
 
       # Spawn at startup
       riverctl spawn "swaybg -i ~/Pictures/Wallpapers/mult_falls.jpg"
-      riverctl spawn waybar
+      #riverctl spawn waybar
       riverctl spawn nm-applet
       riverctl spawn blueman-applet
-      riverctl spawn "swayidle -w timeout 120 'swaymsg \"output * dpms off\" dpms off' timeout 150 'swaylock -f'"
+      riverctl spawn "swayidle -w timeout 120 'swaymsg \"output * dpms off\"' timeout 150 'swaylock -f'"
       riverctl spawn "swayidle -w timeout 10 'if pgrep -x swaylock; then swaymsg \"output * dpms off\"; fi'"
       riverctl spawn sway-audio-idle-inhibit
       

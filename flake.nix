@@ -11,15 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Niri
-    #niri = {
-    #  url = "github:sodiboo/niri-flake";
-    #  inputs.niri-src.url = "github:YaLTeR/niri";
-    #};
-
-    # ironbar
-    ironbar = {
-      url = "github:JakeStanger/ironbar";
+    # river-bedload
+    river-bedload = {
+      url = "/home/carterm/Documents/nix-config/pkgs/river-bedload";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -28,14 +22,14 @@
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, ironbar, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, river-bedload, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       cwm-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./nixos/hosts/cwm-nixos.nix 
+          ./nixos/hosts/cwm-nixos.nix
         ];
       };
 
@@ -43,7 +37,11 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./nixos/hosts/dell-nixos.nix
-          #niri.nixosModules.niri
+          {
+            environment.systemPackages = [
+              inputs.river-bedload.packages."x86_64-linux".default
+            ];
+          }
         ];
       };
     };
@@ -64,8 +62,6 @@
           extraSpecialArgs = { inherit inputs; };
           modules = [ 
             ./home-manager/users/dell-home.nix
-            #niri.homeModules.config
-            ironbar.homeManagerModules.default
           ];
       };
     };

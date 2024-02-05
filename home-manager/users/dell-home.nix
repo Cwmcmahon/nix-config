@@ -1,10 +1,13 @@
 { ... }: {
   imports = [
     ../home-common.nix
-    #../ironbar.nix
-    ../waybar-river.nix
-    #../niri.nix
     ../river.nix
   ];
 
+  programs = {
+    eww = {
+      enable = true;
+      configDir = ../eww;
+    };
+  };
 }

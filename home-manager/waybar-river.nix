@@ -254,16 +254,6 @@
           padding: 0 4px;
         }
 
-        window#waybar.fullscreen #window {
-          color: #d65d0e;
-        }
-        window#waybar.empty #window, 
-        window#waybar.empty #custom-window-right-arrow-dark,
-        window#waybar.empty #custom-window-right-arrow-light {
-          color: #3c3836;
-          background: #3c3836;
-        }
-
         #pulseaudio,
         #mpris {
           color: #458588;

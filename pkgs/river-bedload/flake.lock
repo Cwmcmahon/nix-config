@@ -1,0 +1,46 @@
+{
+  "nodes": {
+    "bedload": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705829418,
+        "narHash": "sha256-K3CXJjOW/oXKlVFBahTNtCTYMps0TnygRkp60lnDPlo=",
+        "ref": "refs/heads/main",
+        "rev": "9cdc0e0f7a2b39dd10675fb7cdaed6dac401ba39",
+        "revCount": 9,
+        "submodules": true,
+        "type": "git",
+        "url": "https://git.sr.ht/~novakane/river-bedload"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://git.sr.ht/~novakane/river-bedload"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1706913249,
+        "narHash": "sha256-x3M7iV++CsvRXI1fpyFPduGELUckZEhSv0XWnUopAG8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e92b6015881907e698782c77641aa49298330223",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "bedload": "bedload",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
