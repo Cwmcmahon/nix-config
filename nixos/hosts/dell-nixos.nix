@@ -15,7 +15,8 @@
   environment.systemPackages = with pkgs; [
     ironbar
     alacritty
-    fuzzel
+    kickoff
+    rivercarro
   ];
 
   # Networking

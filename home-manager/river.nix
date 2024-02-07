@@ -12,23 +12,23 @@
       # If you wish to edit this, you will probably want to copy it to
       # $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
       #
-      # See the river(1), riverctl(1), and rivertile(1) man pages for complete
+      # See the river(1), riverctl(1), and rivercarro(1) man pages for complete
       # documentation.
       
       # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
       # Spawn at startup
       riverctl spawn "swaybg -i ~/Pictures/Wallpapers/mult_falls.jpg"
-      #riverctl spawn waybar
+      riverctl spawn waybar
       riverctl spawn nm-applet
       riverctl spawn blueman-applet
       riverctl spawn "swayidle -w timeout 120 'swaymsg \"output * dpms off\"' timeout 150 'swaylock -f'"
       riverctl spawn "swayidle -w timeout 10 'if pgrep -x swaylock; then swaymsg \"output * dpms off\"; fi'"
       riverctl spawn sway-audio-idle-inhibit
       
-      # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
+      # Shortcuts for applications
       riverctl map normal Super Return spawn alacritty
-      riverctl map normal Super A spawn fuzzel
+      riverctl map normal Super A spawn kickoff
       riverctl map normal Super B spawn vivaldi
       riverctl map normal Super F spawn thunar
       
@@ -58,13 +58,13 @@
       # Super+Return to bump the focused view to the top of the layout stack
       riverctl map normal Super+Shift Return zoom
       
-      # Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
-      riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
-      riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+      # Super+H and Super+L to decrease/increase the main ratio of rivercarro(1)
+      riverctl map normal Super H send-layout-cmd rivercarro "main-ratio -0.05"
+      riverctl map normal Super L send-layout-cmd rivercarro "main-ratio +0.05"
       
-      # Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
-      riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
-      riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+      # Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivercarro(1)
+      riverctl map normal Super+Shift H send-layout-cmd rivercarro "main-count +1"
+      riverctl map normal Super+Shift L send-layout-cmd rivercarro "main-count -1"
       
       # Super+Alt+{H,J,K,L} to move views
       riverctl map normal Super+Alt H move left 100
@@ -119,14 +119,14 @@
       # Super+Space to toggle float
       riverctl map normal Super Space toggle-float
       
-      # Super+F to toggle fullscreen
-      riverctl map normal Super M toggle-fullscreen
+      # Super+M to toggle fullscreen
+      riverctl map normal Super M spawn "if [[ \"$(river-bedload -print layout)\" =~ monocle ]]; then riverctl send-layout-cmd rivercarro 'main-location left'; else riverctl send-layout-cmd rivercarro 'main-location monocle'; fi"
       
       # Super+{Up,Right,Down,Left} to change layout orientation
-      riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
-      riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
-      riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
-      riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
+      riverctl map normal Super Up    send-layout-cmd rivercarro "main-location top"
+      riverctl map normal Super Right send-layout-cmd rivercarro "main-location right"
+      riverctl map normal Super Down  send-layout-cmd rivercarro "main-location bottom"
+      riverctl map normal Super Left  send-layout-cmd rivercarro "main-location left"
       
       # Declare a passthrough mode. This mode has only a single mapping to return to
       # normal mode. This makes it useful for testing a nested wayland compositor
@@ -175,10 +175,10 @@
       # Make all views with app-id "bar" and any title use client-side decorations
       riverctl rule-add -app-id "bar" csd
       
-      # Set the default layout generator to be rivertile and start it.
+      # Set the default layout generator to be rivercarro and start it.
       # River will send the process group of the init executable SIGTERM on exit.
-      riverctl default-layout rivertile
-      rivertile -view-padding 6 -outer-padding 6 &
+      riverctl default-layout rivercarro
+      exec rivercarro -no-smart-gaps -main-ratio 0.55
     '';
   };
 }

@@ -27,10 +27,6 @@
         wayland-protocols
         pkg-config
       ];
-
-      #buildPhase = ''
-      #  zig build -Doptimize=ReleaseSafe --prefix $out/bin
-      #'';
     };
   };
 }
