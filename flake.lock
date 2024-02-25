@@ -25,11 +25,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1705446327,
-        "narHash": "sha256-n7FCuAR2BI1SvLjF6eFc8VE6WLZCMlbToyfqU2ihbkU=",
+        "lastModified": 1708806879,
+        "narHash": "sha256-MSbxtF3RThI8ANs/G4o1zIqF5/XlShHvwjl9Ws0QAbI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "16cefa78cc801911ebd4ff1faddc6280ab3c9228",
+        "rev": "4ee704cb13a5a7645436f400b9acc89a67b9c08a",
         "type": "github"
       },
       "original": {
@@ -40,11 +40,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1705316053,
-        "narHash": "sha256-J2Ey5mPFT8gdfL2XC0JTZvKaBw/b2pnyudEXFvl+dQM=",
+        "lastModified": 1708655239,
+        "narHash": "sha256-ZrP/yACUvDB+zbqYJsln4iwotbH6CTZiTkANJ0AgDv4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c3e128f3c0ecc1fb04aef9f72b3dcc2f6cecf370",
+        "rev": "cbc4211f0afffe6dfd2478a62615dd5175a13f9a",
         "type": "github"
       },
       "original": {
@@ -63,10 +63,10 @@
       },
       "locked": {
         "dir": "pkgs/river-bedload",
-        "dirtyRev": "9a6c17cecf879547ca1e15a8eb2988d7fd339da7-dirty",
-        "dirtyShortRev": "9a6c17c-dirty",
-        "lastModified": 1706921391,
-        "narHash": "sha256-QMoGQbKwp7PfrLzEdfMwzYeGulAo2CJpGxqDxd0t4ds=",
+        "dirtyRev": "b6c946cf063bb712f4b3083476003021cfdb0092-dirty",
+        "dirtyShortRev": "b6c946c-dirty",
+        "lastModified": 1708795794,
+        "narHash": "sha256-o/QBrLb6NFndoWdw7kbG4xWg7szEnOaI0ukOGLrKEwU=",
         "type": "git",
         "url": "file:///home/carterm/Documents/nix-config?dir=pkgs/river-bedload"
       },

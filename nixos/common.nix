@@ -63,23 +63,25 @@
     driSupport32Bit = true;
   };
   
-  # Enable Wayland.
+  # Enable Wayland
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
     displayManager.gdm = {
       enable = true;
       wayland = true;
     };
   };
- 
-  # Wayland desktop portals
+
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-  
+ 
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -128,6 +130,7 @@
     swayidle
     swaylock
     kitty
+    alacritty
     helix
     nil
     rofi-wayland
@@ -164,7 +167,7 @@
   environment.variables = {
     EDITOR = "hx";
     VISUAL = "hx";
-    TERM = "kitty";
+    TERM = "alacritty";
   };
 
   # Fonts!

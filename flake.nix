@@ -30,6 +30,11 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./nixos/hosts/cwm-nixos.nix
+          {
+            environment.systemPackages = [
+              inputs.river-bedload.packages."x86_64-linux".default
+            ];
+          }
         ];
       };
 

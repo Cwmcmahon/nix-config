@@ -1,7 +1,6 @@
 { inputs, lib, config, pkgs, host, ... }: {
   # You can import other home-manager modules here
   imports = [
-    ./waybar.nix
     ./todo.nix
     ./bash.nix
   ];
@@ -66,7 +65,12 @@
         editor = {
           scrolloff = 3;
           line-number = "relative";
+          bufferline = "multiple";
           lsp.display-messages = true;
+          cursor-shape.insert = "bar";
+        };
+        keys.normal = {
+          esc = [ "collapse_selection" "keep_primary_selection" ];
         };
       };
     };

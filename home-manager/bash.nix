@@ -17,7 +17,7 @@
     quick-note = "kak ~/Documents/my_notes/quicknote/quicknote.md";
     nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#$(hostname) --impure";
     hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm@$(hostname)";
-    rstudio-dev = "nix develop /tmp/rstudio";
+    rstudio-dev = "nix develop /home/carterm/Documents/nix-config/dev-envs/rstudio/";
     nvim = "nix run ~/Documents/nix-config/dev-envs/nixvim/# --";
   };
 }

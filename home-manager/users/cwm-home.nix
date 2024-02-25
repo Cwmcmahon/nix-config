@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ../home-common.nix
-    ../hyprland.nix
+    ../river.nix
+    ../waybar-river.nix
   ];
 }

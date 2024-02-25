@@ -2,10 +2,10 @@
   imports = [
   ];
 
-  xdg.configFile.river = {
-    target = "river/init";
-    executable = true;
-    text = ''
+  wayland.windowManager.river = {
+    enable = true;
+    xwayland.enable = true;
+    extraConfig = ''
       #!${pkgs.bash}/bin/bash
       # This is the example configuration file for river.
       #
@@ -19,7 +19,6 @@
 
       # Spawn at startup
       riverctl spawn "swaybg -i ~/Pictures/Wallpapers/mult_falls.jpg"
-      riverctl spawn waybar
       riverctl spawn nm-applet
       riverctl spawn blueman-applet
       riverctl spawn "swayidle -w timeout 120 'swaymsg \"output * dpms off\"' timeout 150 'swaylock -f'"
@@ -120,7 +119,8 @@
       riverctl map normal Super Space toggle-float
       
       # Super+M to toggle fullscreen
-      riverctl map normal Super M spawn "if [[ \"$(river-bedload -print layout)\" =~ monocle ]]; then riverctl send-layout-cmd rivercarro 'main-location left'; else riverctl send-layout-cmd rivercarro 'main-location monocle'; fi"
+      riverctl map normal Super M send-layout-cmd rivercarro "main-location monocle"
+      riverctl map normal Super D send-layout-cmd rivercarro "main-location left"
       
       # Super+{Up,Right,Down,Left} to change layout orientation
       riverctl map normal Super Up    send-layout-cmd rivercarro "main-location top"
