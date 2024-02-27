@@ -5,17 +5,6 @@
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = true;
-    #systemd = {
-    #  enable = true;
-    #  variables = [
-    #    "DISPLAY"
-    #    "WAYLAND_DISPLAY"
-    #    "XDG_CURRENT_DESKTOP"
-    #    "NIXOS_OZONE_WL"
-    #    "XCURSOR_THEME"
-    #    "XCURSOR_SIZE" 
-    #  ];
-    #};
     package = null;
     extraConfig = ''
       #!${pkgs.bash}/bin/bash

@@ -77,7 +77,6 @@
   };
 
   xdg.portal = {
-    enable = true;
     configPackages = [ pkgs.river ];
     config = {
       common = {
@@ -85,7 +84,6 @@
         "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
       };
     };
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   services.dbus.implementation = "broker";
@@ -180,12 +178,6 @@
     VISUAL = "hx";
     TERM = "alacritty";
   };
-
-  #environment.sessionVariables = {
-  #  XDG_SESSION_TYPE = "wayland";
-  #  XDG_CURRENT_DESKTOP = "river";
-  #  XDG_SESSION_DESKTOP = "river";
-  #};
 
   # Fonts!
   fonts = {
