@@ -5,6 +5,18 @@
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = true;
+    #systemd = {
+    #  enable = true;
+    #  variables = [
+    #    "DISPLAY"
+    #    "WAYLAND_DISPLAY"
+    #    "XDG_CURRENT_DESKTOP"
+    #    "NIXOS_OZONE_WL"
+    #    "XCURSOR_THEME"
+    #    "XCURSOR_SIZE" 
+    #  ];
+    #};
+    package = null;
     extraConfig = ''
       #!${pkgs.bash}/bin/bash
       # This is the example configuration file for river.
@@ -19,6 +31,7 @@
 
       # Spawn at startup
       riverctl spawn "swaybg -i ~/Pictures/Wallpapers/mult_falls.jpg"
+      riverctl spawn waybar
       riverctl spawn nm-applet
       riverctl spawn blueman-applet
       riverctl spawn "swayidle -w timeout 120 'swaymsg \"output * dpms off\"' timeout 150 'swaylock -f'"
@@ -55,7 +68,7 @@
       riverctl map normal Super+Shift Comma send-to-output previous
       
       # Super+Return to bump the focused view to the top of the layout stack
-      riverctl map normal Super+Shift Return zoom
+      riverctl map normal Super S zoom
       
       # Super+H and Super+L to decrease/increase the main ratio of rivercarro(1)
       riverctl map normal Super H send-layout-cmd rivercarro "main-ratio -0.05"
@@ -174,6 +187,13 @@
       
       # Make all views with app-id "bar" and any title use client-side decorations
       riverctl rule-add -app-id "bar" csd
+
+      # Configure touchpad
+      riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad tap enabled
+      riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad drag enabled
+      riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad natural-scroll enabled
+      riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad scroll-method two-finger
+      riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad tap-button-map left-right-middle
       
       # Set the default layout generator to be rivercarro and start it.
       # River will send the process group of the init executable SIGTERM on exit.

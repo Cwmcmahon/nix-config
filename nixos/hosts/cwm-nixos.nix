@@ -20,6 +20,10 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  programs.river = {
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     rivercarro
     steam-run

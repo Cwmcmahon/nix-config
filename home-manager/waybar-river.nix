@@ -16,9 +16,6 @@
             "custom/right-arrow-light"
             "river/tags"
             "custom/right-arrow-dark"
-            "custom/window-right-arrow-light"
-            "river/window"
-            "custom/window-right-arrow-dark"
           ];
           modules-center = [ 
             "custom/left-arrow-dark"
@@ -55,14 +52,6 @@
             format = "";
             tooltip = false;
           };
-          "custom/window-right-arrow-dark" = {
-            format = "";
-            tooltip = false;
-          };
-          "custom/window-right-arrow-light" = {
-            format = "";
-            tooltip = false;
-          };
           "idle_inhibitor" = {
             format = "{icon}";
             format-icons = {
@@ -75,9 +64,6 @@
           "river/tags" = {
             num-tags = 9;
           };
-          "river/window" = {
-            format = " {class} ";
-           };
           "clock" = {
             format = "{:%b %e %I:%M %p}";
             tooltip-format = "<small>{calendar}</small>";
@@ -188,7 +174,7 @@
           };
           "custom/lock" = {
             format = "";
-            on-click = "swaylock -f && hyprctl dispatch dpms off";
+            on-click = "swaylock -f";
             tooltip = false;
           };
         };
@@ -205,13 +191,11 @@
         }
         
         #custom-right-arrow-dark,
-        #custom-left-arrow-dark, 
-        #custom-window-right-arrow-dark {
+        #custom-left-arrow-dark {
           color: #282828;
         }
         #custom-right-arrow-light,
-        #custom-left-arrow-light,
-        #custom-window-right-arrow-light {
+        #custom-left-arrow-light {
           color: #3c3836;
           background: #282828;
         }
@@ -237,13 +221,18 @@
         #idle_inhibitor.deactivated {
           color: #ebdbb2;
         }
- 
+
         #tags button {
+          color: #282828;
+          padding: 0 4px;
+        }
+        #tags button.occupied {
           color: #ebdbb2;
           padding: 0 4px;
         }
         #tags button.focused {
-          color: #d65d0e;
+          color: #282828;
+          background: #d65d0e;
           padding: 0 4px;
         }
         #tags button:hover {

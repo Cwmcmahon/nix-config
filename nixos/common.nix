@@ -78,9 +78,17 @@
 
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    configPackages = [ pkgs.river ];
+    config = {
+      common = {
+        default = [ "wlr" ];
+        "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
+      };
+    };
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
+  services.dbus.implementation = "broker";
  
   # Enable sound with pipewire.
   sound.enable = true;
@@ -159,16 +167,25 @@
     busybox
     udevil
     trashy
+    nwg-look
+    dbus
+    kickoff
   ];
 
   programs.thunar.enable = true;
 
-  # Set Neovim as default editor
+  # Set Helix as default editor
   environment.variables = {
     EDITOR = "hx";
     VISUAL = "hx";
     TERM = "alacritty";
   };
+
+  #environment.sessionVariables = {
+  #  XDG_SESSION_TYPE = "wayland";
+  #  XDG_CURRENT_DESKTOP = "river";
+  #  XDG_SESSION_DESKTOP = "river";
+  #};
 
   # Fonts!
   fonts = {
