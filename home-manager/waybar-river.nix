@@ -16,6 +16,9 @@
             "custom/right-arrow-light"
             "river/tags"
             "custom/right-arrow-dark"
+            "custom/right-arrow-light"
+            "river/layout"
+            "custom/right-arrow-dark"
           ];
           modules-center = [ 
             "custom/left-arrow-dark"
@@ -62,7 +65,17 @@
             tooltip-format-deactivated = "Idle inhibitor: {status}";
           };
           "river/tags" = {
-            num-tags = 9;
+            num-tags = 4;
+            tag-labels = [
+              "Brws"
+              "Term"
+              "File"
+              "Misc"
+            ];
+          };
+          "river/layout" = {
+            format = "{}";
+            min-length = 4;
           };
           "clock" = {
             format = "{:%b %e %I:%M %p}";
@@ -202,7 +215,7 @@
 
         #idle_inhibitor,
         #tags,
-        #window,
+        #layout,
         #clock,
         #tray,
         #pulseaudio,
@@ -228,21 +241,19 @@
         }
         #tags button.occupied {
           color: #ebdbb2;
-          padding: 0 4px;
         }
         #tags button.focused {
           color: #282828;
           background: #d65d0e;
-          padding: 0 4px;
         }
         #tags button:hover {
+          color: inherit;
+          background: inherit;
           box-shadow: inherit;
           text-shadow: inherit;
-          border: #282828;
-          background: #282828;
-          padding: 0 4px;
+          border: #282828;;
         }
-
+        
         #pulseaudio,
         #mpris {
           color: #458588;
@@ -263,6 +274,7 @@
         }
 
         #idle_inhibitor,
+        #layout,
         #clock,
         #tray,
         #pulseaudio,

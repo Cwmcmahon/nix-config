@@ -26,7 +26,7 @@
       riverctl spawn "swayidle -w timeout 120 'swaymsg \"output * dpms off\"' timeout 150 'swaylock -f'"
       riverctl spawn "swayidle -w timeout 10 'if pgrep -x swaylock; then swaymsg \"output * dpms off\"; fi'"
       riverctl spawn sway-audio-idle-inhibit
-      
+          
       # Shortcuts for applications
       riverctl map normal Super Return spawn alacritty
       riverctl map normal Super A spawn kickoff
@@ -98,14 +98,14 @@
       do
           tags=$((1 << ($i - 1)))
       
-          # Super+[1-9] to focus tag [0-8]
-          riverctl map normal Super $i set-focused-tags $tags
+          # Super+[1-9] to toggle focus of tag [0-8]
+          riverctl map normal Super $i toggle-focused-tags $tags
       
           # Super+Shift+[1-9] to tag focused view with tag [0-8]
           riverctl map normal Super+Shift $i set-view-tags $tags
       
-          # Super+Control+[1-9] to toggle focus of tag [0-8]
-          riverctl map normal Super+Control $i toggle-focused-tags $tags
+          # Super+Control+[1-9] to focus tag [0-8]
+          riverctl map normal Super+Control $i set-focused-tags $tags
       
           # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
           riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
@@ -116,6 +116,26 @@
       all_tags=$(((1 << 32) - 1))
       riverctl map normal Super 0 set-focused-tags $all_tags
       riverctl map normal Super+Shift 0 set-view-tags $all_tags
+
+      # Scratch pad on unused tag 20
+      scratch_tag=$((1 << 20))
+
+      # Toggle scratchpad with Super+P
+      riverctl map normal Super P toggle-focused-tags ''${scratch_tag}
+
+      # Send windows to the scratchpad with Super+Shift+P
+      riverctl map normal Super+Shift P set-view-tags ''${scratch_tag}
+      
+      # Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
+      # explicitly set.
+      all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag))
+      riverctl spawn-tagmask ''${all_but_scratch_tag}
+
+      # Make windows titled "scratch" always float by default
+      riverctl float-filter-add title "scratch"
+
+      # Spawn scratchpad 
+      riverctl spawn "alacritty -T scratch -e hx"
       
       # Super+Space to toggle float
       riverctl map normal Super Space toggle-float
@@ -144,23 +164,14 @@
       # not have a modifier
       for mode in normal locked
       do
-          # Eject the optical drive (well if you still have one that is)
-          riverctl map $mode None XF86Eject spawn 'eject -T'
-      
           # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-          riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-          riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-          riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
-      
-          # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
-          riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
-          riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
-          riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
-          riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
-      
+          riverctl map $mode None F8 spawn 'pamixer -i 5'
+          riverctl map $mode None F7 spawn 'pamixer -d 5'
+          riverctl map $mode None F6 spawn 'pamixer --toggle-mute'
+                   
           # Control screen backlight brightness with light (https://github.com/haikarainen/light)
-          riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
-          riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
+          riverctl map $mode None F3 spawn 'light -A 5'
+          riverctl map $mode None F2 spawn 'light -U 5'
       done
       
       # Set background and border color
@@ -171,12 +182,6 @@
       # Set keyboard repeat rate
       riverctl set-repeat 50 300
       
-      # Make all views with an app-id that starts with "float" and title "foo" start floating.
-      riverctl rule-add -app-id 'float*' -title 'foo' float
-      
-      # Make all views with app-id "bar" and any title use client-side decorations
-      riverctl rule-add -app-id "bar" csd
-
       # Configure touchpad
       riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad tap enabled
       riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad drag enabled
