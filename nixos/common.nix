@@ -4,8 +4,6 @@
   ];
 
   nixpkgs = {
-    overlays = [
-    ];
     config = {
       allowUnfree = true;
     };
@@ -168,6 +166,7 @@
     nwg-look
     dbus
     kickoff
+    filtile
   ];
 
   programs.thunar.enable = true;

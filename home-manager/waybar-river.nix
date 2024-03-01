@@ -67,9 +67,9 @@
           "river/tags" = {
             num-tags = 4;
             tag-labels = [
-              "Brws"
+              "Web"
               "Term"
-              "File"
+              "Files"
               "Misc"
             ];
           };
@@ -241,17 +241,22 @@
         }
         #tags button.occupied {
           color: #ebdbb2;
+          padding: 0 4px;
         }
         #tags button.focused {
           color: #282828;
           background: #d65d0e;
+          padding: 0 4px;
         }
-        #tags button:hover {
+        #tags button:hover,
+        #tags button.occupied:hover,
+        #tags button.focused:hover {
           color: inherit;
           background: inherit;
           box-shadow: inherit;
           text-shadow: inherit;
-          border: #282828;;
+          border: #282828;
+          padding: 0 4px;
         }
         
         #pulseaudio,

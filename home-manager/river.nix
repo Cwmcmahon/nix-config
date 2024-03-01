@@ -13,12 +13,13 @@
       # If you wish to edit this, you will probably want to copy it to
       # $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
       #
-      # See the river(1), riverctl(1), and rivercarro(1) man pages for complete
+      # See the river(1), and riverctl(1), and filtile(1) man pages for complete
       # documentation.
       
       # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
       # Spawn at startup
+      riverctl spawn filtile
       riverctl spawn "swaybg -i ~/Pictures/Wallpapers/mult_falls.jpg"
       riverctl spawn waybar
       riverctl spawn nm-applet
@@ -48,7 +49,7 @@
       riverctl map normal Super+Shift J swap next
       riverctl map normal Super+Shift K swap previous
       
-      # Super+Period and Super+Comma to focus the next/previous output
+      # Super+Period and Super+{Period,Comma} to focus the next/previous output
       riverctl map normal Super Period focus-output next
       riverctl map normal Super Comma focus-output previous
       
@@ -58,33 +59,26 @@
       
       # Super+Return to bump the focused view to the top of the layout stack
       riverctl map normal Super S zoom
+
+      # Super+Z to flip the main area to the other side
+      riverctl map normal Super Z send-layout-cmd filtile "flip"
+
+      # Super+{Arrow keys} to move the main location to that position
+      riverctl map normal Super LEFT send-layout-cmd filtile "main-location left"
+      riverctl map normal Super RIGHT send-layout-cmd filtile "main-location right"
+      riverctl map normal Super UP send-layout-cmd filtile "main-location top"
+      riverctl map normal Super DOWN send-layout-cmd filtile "main-location bottom"
       
-      # Super+H and Super+L to decrease/increase the main ratio of rivercarro(1)
-      riverctl map normal Super H send-layout-cmd rivercarro "main-ratio -0.05"
-      riverctl map normal Super L send-layout-cmd rivercarro "main-ratio +0.05"
-      
-      # Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivercarro(1)
-      riverctl map normal Super+Shift H send-layout-cmd rivercarro "main-count +1"
-      riverctl map normal Super+Shift L send-layout-cmd rivercarro "main-count -1"
-      
-      # Super+Alt+{H,J,K,L} to move views
-      riverctl map normal Super+Alt H move left 100
-      riverctl map normal Super+Alt J move down 100
-      riverctl map normal Super+Alt K move up 100
-      riverctl map normal Super+Alt L move right 100
-      
-      # Super+Alt+Control+{H,J,K,L} to snap views to screen edges
-      riverctl map normal Super+Alt+Control H snap left
-      riverctl map normal Super+Alt+Control J snap down
-      riverctl map normal Super+Alt+Control K snap up
-      riverctl map normal Super+Alt+Control L snap right
-      
-      # Super+Alt+Shift+{H,J,K,L} to resize views
-      riverctl map normal Super+Alt+Shift H resize horizontal -100
-      riverctl map normal Super+Alt+Shift J resize vertical 100
-      riverctl map normal Super+Alt+Shift K resize vertical -100
-      riverctl map normal Super+Alt+Shift L resize horizontal 100
-      
+      # Super+Shift+{Arrow keys} to move the split that direction
+      riverctl map normal Super+Shift LEFT send-layout-cmd filtile "move-split-left 5"
+      riverctl map normal Super+Shift RIGHT send-layout-cmd filtile "move-split-right 5"
+      riverctl map normal Super+Shift UP send-layout-cmd filtile "move-split-up 5"
+      riverctl map normal Super+Shift DOWN send-layout-cmd filtile "move-split-down 5"
+          
+      # Super+Shift+H and Super+Shift+L to increment/decrement the main count of filtile(1)
+      riverctl map normal Super+Shift H send-layout-cmd filtile "main-count +1"
+      riverctl map normal Super+Shift L send-layout-cmd filtile "main-count -1"
+               
       # Super + Left Mouse Button to move views
       riverctl map-pointer normal Super BTN_LEFT move-view
       
@@ -135,21 +129,14 @@
       riverctl float-filter-add title "scratch"
 
       # Spawn scratchpad 
-      riverctl spawn "alacritty -T scratch -e hx"
+      riverctl spawn "alacritty -T scratch"
       
       # Super+Space to toggle float
       riverctl map normal Super Space toggle-float
       
-      # Super+M to toggle fullscreen
-      riverctl map normal Super M send-layout-cmd rivercarro "main-location monocle"
-      riverctl map normal Super D send-layout-cmd rivercarro "main-location left"
-      
-      # Super+{Up,Right,Down,Left} to change layout orientation
-      riverctl map normal Super Up    send-layout-cmd rivercarro "main-location top"
-      riverctl map normal Super Right send-layout-cmd rivercarro "main-location right"
-      riverctl map normal Super Down  send-layout-cmd rivercarro "main-location bottom"
-      riverctl map normal Super Left  send-layout-cmd rivercarro "main-location left"
-      
+      # Super+M to toggle monocle
+      riverctl map normal Super M send-layout-cmd filtile "monocle"
+                     
       # Declare a passthrough mode. This mode has only a single mapping to return to
       # normal mode. This makes it useful for testing a nested wayland compositor
       riverctl declare-mode passthrough
@@ -189,10 +176,10 @@
       riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad scroll-method two-finger
       riverctl input pointer-1739-32951-SYN2602:00_06CB:80B7_Touchpad tap-button-map left-right-middle
       
-      # Set the default layout generator to be rivercarro and start it.
+      # Set the default layout generator to be filtile and start it.
       # River will send the process group of the init executable SIGTERM on exit.
-      riverctl default-layout rivercarro
-      exec rivercarro -no-smart-gaps -main-ratio 0.55
+      riverctl default-layout filtile
+      riverctl send-layout-cmd filtile smart-padding off
     '';
   };
 }

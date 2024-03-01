@@ -21,6 +21,7 @@
             pandas 
             matplotlib 
             seaborn 
+            tabulate
           ]))
         ];
         shellHook = "jupyter notebook";

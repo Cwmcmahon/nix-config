@@ -18,6 +18,7 @@
     nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#$(hostname) --impure";
     hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm@$(hostname)";
     rstudio-dev = "nix develop /home/carterm/Documents/nix-config/dev-envs/rstudio/";
+    python-dev = "nix develop /home/carterm/Documents/nix-config/dev-envs/python/";
     nvim = "nix run ~/Documents/nix-config/dev-envs/nixvim/# --";
   };
 }
