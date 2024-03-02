@@ -16,7 +16,7 @@
     open-notes = "codium ~/Documents/my_notes/ && sleep 2 && codium ~/Documents/my_notes/README.md";
     quick-note = "kak ~/Documents/my_notes/quicknote/quicknote.md";
     nix-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix-config/#$(hostname) --impure";
-    hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm@$(hostname)";
+    hm-switch = "home-manager switch --flake ~/Documents/nix-config/#carterm";
     rstudio-dev = "nix develop /home/carterm/Documents/nix-config/dev-envs/rstudio/";
     python-dev = "nix develop /home/carterm/Documents/nix-config/dev-envs/python/";
     nvim = "nix run ~/Documents/nix-config/dev-envs/nixvim/# --";

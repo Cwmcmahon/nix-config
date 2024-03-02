@@ -33,12 +33,11 @@
     in
     {
       # NixOS configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
-        cwm-nixos = nixpkgs.lib.nixosSystem {
+        samsung = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            ./nixos/hosts/cwm-nixos.nix
+            ./nixos/hosts/samsung.nix
             {
               nixpkgs.overlays = [
                 (final: prev: {
@@ -52,10 +51,10 @@
           ];
         };
 
-        dell-nixos = nixpkgs.lib.nixosSystem {
+        dell = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            ./nixos/hosts/dell-nixos.nix
+            ./nixos/hosts/dell.nix
             {
               environment.systemPackages = [
                 inputs.river-bedload.packages.${system}.default
@@ -66,23 +65,14 @@
       };
 
       # Standalone home-manager configuration entrypoint
-      # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
-        "carterm@cwm-nixos" = home-manager.lib.homeManagerConfiguration {
+        carterm = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.${system};
             extraSpecialArgs = { inherit inputs; };
             modules = [ 
-              ./home-manager/users/cwm-home.nix
+              ./home-manager/home.nix
             ];
         };
-        
-        "carterm@dell-nixos" = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.${system};
-            extraSpecialArgs = { inherit inputs; };
-            modules = [ 
-              ./home-manager/users/dell-home.nix
-            ];
-        };
-    };
+     };
   };
 }

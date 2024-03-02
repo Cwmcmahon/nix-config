@@ -3,11 +3,7 @@
     /etc/nixos/hardware-configuration.nix
   ];
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs.config.allowUnfree = true;
 
   nix = {
     # This will add each flake input as a registry
@@ -25,10 +21,17 @@
   }; 
 
   # Bootloader
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  } // (if (config.networking.hostName == "samsung") # Make s2idle default sleep mode on samsung laptop
+    then {
+      kernelParams = [ "mem_sleep_default=s2idle" ];
+    }
+    else {}
+  );
 
   # Firmware updater
   services.fwupd.enable = true;
@@ -60,6 +63,17 @@
     driSupport = true;
     driSupport32Bit = true;
   };
+
+  # Nvidia settings on samsung laptop
+  hardware.nvidia = {
+  } // (if (config.networking.hostName == "samsung")
+    then {
+      modesetting.enable = true;
+      open = false;
+      nvidiaSettings = true;
+    }
+    else {}
+  );
   
   # Enable Wayland
   services.xserver = {
@@ -72,8 +86,17 @@
       enable = true;
       wayland = true;
     };
-  };
+  } // (if (config.networking.hostName == "samsung") # Add nvidia drivers on samsung laptop
+    then {
+      videoDrivers = [ "nvidia" ];
+    }
+    else {}
+  );
 
+  # Enable riverwm
+  programs.river.enable = true;
+
+  # Portal settings
   xdg.portal = {
     configPackages = [ pkgs.river ];
     config = {
@@ -84,6 +107,7 @@
     };
   };
 
+  # Fixes some portal issues for me
   services.dbus.implementation = "broker";
  
   # Enable sound with pipewire.
@@ -133,11 +157,9 @@
     mako
     swayidle
     swaylock
-    kitty
     alacritty
     helix
     nil
-    rofi-wayland
     wl-clipboard
     cliphist
     git
@@ -150,26 +172,44 @@
     papirus-icon-theme
     pandoc
     todo-txt-cli
-    todofi-sh
     vscodium
     unzip
     vivaldi
     newsflash
     quarto
     sway-audio-idle-inhibit
-    playerctl
     ripgrep
     bat
     busybox
     udevil
     trashy
-    nwg-look
     dbus
     kickoff
     filtile
-  ];
+  ] ++ (if (config.networking.hostName == "samsung") # Add gaming packages on samsung laptop
+    then with pkgs; [
+      steam-run
+      itch
+      discord 
+    ]
+    else []
+  );
 
+  # File manager
   programs.thunar.enable = true;
+
+  # Enable steam on samsung laptop
+  programs.steam = { 
+  } // ( if (config.networking.hostName == "samsung")
+    then {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    } 
+    else {
+      enable = false;
+    }
+  );
 
   # Set Helix as default editor
   environment.variables = {

@@ -180,6 +180,8 @@
       # River will send the process group of the init executable SIGTERM on exit.
       riverctl default-layout filtile
       riverctl send-layout-cmd filtile smart-padding off
+      riverctl send-layout-cmd filtile view-padding 1
+      riverctl send-layout-cmd filtile out-padding 1
     '';
   };
 }

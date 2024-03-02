@@ -1,8 +1,10 @@
 { inputs, lib, config, pkgs, host, ... }: {
   # You can import other home-manager modules here
   imports = [
-    ./todo.nix
-    ./bash.nix
+    ./modules/todo.nix
+    ./modules/bash.nix
+    ./modules/river.nix
+    ./modules/waybar.nix
   ];
 
   nixpkgs = {
